@@ -16,17 +16,18 @@ class ParticlesState extends State<Particles>
     @override
     Widget build(BuildContext context) 
     {
-        return Container(
+        return Container
+        (
             color: const Color.fromARGB(255, 26, 34, 44),
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
             alignment: Alignment.center,
             child: SizedBox
-                (
-                    width: MediaQuery.of(context).size.width,
-                    height: 400,
-                    child: CustomPaint(painter: ParticlePainter())
-                ),
+            (
+                width: MediaQuery.of(context).size.width,
+                height: 400,
+                child: CustomPaint(painter: ParticlePainter())
+            ),
         );
 
     }

@@ -20,19 +20,19 @@ class App extends StatelessWidget
                 bodyText2: TextStyle
                 (
                     fontFamily: "SF Pro",
-                    color: Color.fromARGB(255, 255, 255, 255),
+                    color: Colors.white,
 
                 ),
                 headline2: TextStyle
                 (
                     fontFamily: "SF Pro",
-                    color: Color.fromARGB(255, 255, 255, 255),
+                    color: Colors.white,
 
                 ),
                 headline4: TextStyle
                 (
                     fontFamily: "SF Pro",
-                    color: Color.fromARGB(255, 255, 255, 255)
+                    color: Colors.white,
                 )
             )
         );

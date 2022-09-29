@@ -1,8 +1,6 @@
-
-
+import 'package:dunyakilavuz_github_io/cv_page.dart';
 import 'package:dunyakilavuz_github_io/welcome_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 class Home extends StatefulWidget 
 {
@@ -17,16 +15,24 @@ class _HomeState extends State<Home>
     @override
     Widget build(BuildContext context) 
     {
-        return SingleChildScrollView
+        return InteractiveViewer
         (
-            child: Column
+            scaleEnabled: false,
+            child: SingleChildScrollView
             (
-                
-                children: 
-                [
-                    WelcomePage(),
-                ],
-            )
+                physics: const BouncingScrollPhysics(),
+                child: Column
+                (
+                    children: const 
+                    [
+                        WelcomePage(),
+                        CurriculumVitaePage(),
+                    ],
+                )
+            ),
         );
+        
+        
+
     }    
 }

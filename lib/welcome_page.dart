@@ -11,8 +11,8 @@ class WelcomePage extends StatefulWidget
 
 class WelcomePageState extends State<WelcomePage> with SingleTickerProviderStateMixin
 {
-    late Animation animation;
-    late AnimationController controller;
+    late Animation buttonColorAnim;
+    late AnimationController buttonColorController;
 
     static TextStyle? nameText(BuildContext context) 
     {
@@ -77,19 +77,18 @@ class WelcomePageState extends State<WelcomePage> with SingleTickerProviderState
     void initState()
     {
         super.initState();
-        controller = AnimationController(vsync: this, duration: const Duration(seconds: 10))..repeat();
-        animation = ColorTween(begin: Colors.amber, end: Colors.green).animate(controller)..addListener(() { setState(() {});});
+        buttonColorController = AnimationController(vsync: this, duration: const Duration(seconds: 10))..repeat();
+        buttonColorAnim = arrowDownColor.animate(buttonColorController)..addListener(() { setState(() {});});
     }
 
     @override
     void dispose() 
     {
-        controller.dispose();
+        buttonColorController.dispose();
         super.dispose();
     }
 
-
-  @override
+    @override
     Widget build(BuildContext context) 
     {
         return Stack
@@ -97,17 +96,20 @@ class WelcomePageState extends State<WelcomePage> with SingleTickerProviderState
             children: 
             [
                 const Particles(),
-                Center
+                SizedBox
                 (
+                    width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.height,
                     child: Column
                     (
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>
                         [
-                            Container(height: 100,),
+                            Expanded(child: Container(),),
                             Text('Dünya', style: nameText(context)?.copyWith(letterSpacing: 40)),
                             Text('Kılavuz', style: nameText(context)?.copyWith(letterSpacing: 22)),
                             Text('M.Sc. Computer Engineer', style: professionText(context)),
+                            Expanded(child: Container(),),
                             Material
                             (
                                 color: Colors.transparent,
@@ -121,11 +123,11 @@ class WelcomePageState extends State<WelcomePage> with SingleTickerProviderState
                                     child: Icon
                                     (
                                         Icons.keyboard_arrow_down_sharp,
-                                        color: arrowDownColor.evaluate(AlwaysStoppedAnimation(controller.value)),
+                                        color: arrowDownColor.evaluate(AlwaysStoppedAnimation(buttonColorController.value)),
                                         size: 60,
                                     ),
                                 ),
-                            )
+                            ),
                         ],
                     ),
                 ),

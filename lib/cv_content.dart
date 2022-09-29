@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:flutter_svg/avd.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class CurriculumContent extends StatelessWidget
 {
@@ -46,28 +45,13 @@ class CurriculumContent extends StatelessWidget
         (
             children: 
             [
-                Image(image: ),
-                Text(text, style: sectionTextStyle(context),);
+                SvgPicture.asset("assets/cv_section_start_rect.svg",),
+                const SizedBox(width: 10,),
+                Text(text, style: sectionTextStyle(context),),
             ],
         );
 
     }
-
-    static Text subsectionText(String text ,BuildContext context)
-    {
-        return Text(text, style: subsectionTextStyle(context),);
-    }
-
-    static Text entryText(String text ,BuildContext context)
-    {
-        return Text(text, style: subsectionTextStyle(context),);
-    }
-
-    static Text entry2Text(String text1, String text2 ,BuildContext context)
-    {
-        return Text("$text1\t$text2", style: subsectionTextStyle(context),);
-    }
-
 
     @override
     Widget build(BuildContext context) 
@@ -78,7 +62,12 @@ class CurriculumContent extends StatelessWidget
             (
                 children: 
                 [
-
+                    sectionText("Education", context),
+                    RichText(text: TextSpan
+                    (
+                        text: "2017 - 2020    Master of Science Degree",
+                        style: entryTextStyle(context),
+                    ))
                 ],
             ),    
         );

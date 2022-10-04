@@ -1,4 +1,6 @@
-import 'package:dunyakilavuz_github_io/home.dart';
+import 'package:dunyakilavuz_github_io/curriculum_page.dart';
+import 'package:dunyakilavuz_github_io/home_page.dart';
+import 'package:dunyakilavuz_github_io/projects_page.dart';
 import 'package:flutter/material.dart';
 
 void main() 
@@ -43,9 +45,15 @@ class App extends StatelessWidget
     {
         return MaterialApp
         (
-            title: 'Flutter Demo',
+            title: 'Dünya Kılavuz',
             theme: appThemeData(),
-            home: const Home(title: 'Flutter Demo Home Page'),
+            initialRoute: Home.route,
+            routes: 
+            {
+                Home.route:(context) => const Home(),
+                Curriculum.route:(context) => const Curriculum(),
+                Projects.route:(context) => const Projects(),
+            },
         );
     }
 }

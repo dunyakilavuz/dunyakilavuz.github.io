@@ -16,7 +16,7 @@ class CurriculumContent extends StatelessWidget
             fontSize: 24, 
             fontWeight: FontWeight.w300, 
             letterSpacing: 1.5,
-            color: const Color.fromARGB(255, 26, 34, 44),
+            color: Colors.white,
         );
     }
 
@@ -27,7 +27,7 @@ class CurriculumContent extends StatelessWidget
             fontSize: 22, 
             fontWeight: FontWeight.w300, 
             letterSpacing: 1.5,
-            color: const Color.fromARGB(255, 26, 34, 44),
+            color: Colors.white,
         );
     }
 
@@ -39,7 +39,7 @@ class CurriculumContent extends StatelessWidget
             fontWeight: FontWeight.w300, 
             letterSpacing: 1,
             height: 1.8,
-            color: const Color.fromARGB(255, 26, 34, 44),
+            color: Colors.white,
         );
     }
 
@@ -72,8 +72,9 @@ class CurriculumContent extends StatelessWidget
     @override
     Widget build(BuildContext context) 
     {
-        return SizedBox
+        return Container
         (
+            color: const Color.fromARGB(255, 26, 34, 44),
             width: MediaQuery.of(context).size.width * 0.6,
             child: Table
             (
@@ -249,7 +250,7 @@ class CurriculumContent extends StatelessWidget
                             Text("Moving, re-developing a Java game project to Unity Engine.", style: entryTextStyle(context),)
                         ]
                     ),
-                                        seperator(),
+                    seperator(),
                     TableRow
                     (
                         children: 

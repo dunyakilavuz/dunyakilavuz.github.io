@@ -3,6 +3,7 @@ import 'dart:html';
 import 'package:dunyakilavuz_github_io/curriculum_page.dart';
 import 'package:dunyakilavuz_github_io/projects_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class NavButtons extends StatefulWidget
 {
@@ -15,12 +16,13 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
 {
     late Animation buttonColorAnim;
     late AnimationController buttonColorController;
+    double iconSize = 50;
 
     static TextStyle? buttonText(BuildContext context) 
     {
         return Theme.of(context).textTheme.headline2?.copyWith
         (
-            fontSize: 15,
+            fontSize: 20,
             fontWeight: FontWeight.normal,
         );
     }
@@ -116,15 +118,34 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
     {
         return  Material
         (
-            color: const Color.fromARGB(20, 255, 255, 255),
+            shape: RoundedRectangleBorder(borderRadius:BorderRadius.circular(10.0)),
+            color: const Color.fromARGB(20, 255, 255, 255), 
             child: InkWell
             (
-                borderRadius: BorderRadius.circular(45),
+                customBorder: RoundedRectangleBorder(borderRadius:BorderRadius.circular(10.0)),
                 highlightColor: Colors.transparent,
                 hoverColor: const Color.fromARGB(28, 121, 121, 121),
                 splashColor: const Color.fromARGB(14, 255, 255, 255),
                 onTap: onTap,
                 child: icon
+            ),
+        );
+    }
+
+    Material svgOnlyButton(SvgPicture svg, onTap)
+    {
+        return  Material
+        (
+            shape: RoundedRectangleBorder(borderRadius:BorderRadius.circular(10.0)),
+            color: const Color.fromARGB(20, 255, 255, 255),
+            child: InkWell
+            (
+                customBorder: RoundedRectangleBorder(borderRadius:BorderRadius.circular(10.0)),
+                highlightColor: Colors.transparent,
+                hoverColor: const Color.fromARGB(28, 121, 121, 121),
+                splashColor: const Color.fromARGB(14, 255, 255, 255),
+                onTap: onTap,
+                child: svg
             ),
         );
     }
@@ -161,7 +182,7 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
                         (
                             Icons.history_edu_sharp,
                             color: arrowDownColor.evaluate(AlwaysStoppedAnimation(buttonColorController.value)),
-                            size: 30,
+                            size: iconSize,
                         ),
                         onCurriculumTap,
                         "Curriculum",
@@ -173,7 +194,7 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
                         (
                             Icons.architecture_sharp,
                             color: arrowDownColor.evaluate(AlwaysStoppedAnimation(buttonColorController.value)),
-                            size: 30,
+                            size: iconSize,
                         ),
                         onProjectsTap,
                         "Projects",
@@ -185,31 +206,33 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
                         (
                             Icons.email_outlined,
                             color: arrowDownColor.evaluate(AlwaysStoppedAnimation(buttonColorController.value)),
-                            size: 30,
+                            size: iconSize,
                         ),
                         onMailTap
                     ),
                     seperator(10),
-                    iconOnlyButton
+                    svgOnlyButton
                     (
-                        Icon
+                        SvgPicture.asset
                         (
-                            Icons.keyboard_arrow_down_sharp,
+                            "assets/linkedin_icon.svg",
                             color: arrowDownColor.evaluate(AlwaysStoppedAnimation(buttonColorController.value)),
-                            size: 30,
+                            width: iconSize,
+                            height: iconSize,
                         ),
                         onLinkedInTap
                     ),
                     seperator(10),
-                    iconOnlyButton
+                    svgOnlyButton
                     (
-                        Icon
+                        SvgPicture.asset
                         (
-                            Icons.keyboard_arrow_down_sharp,
+                            "assets/github_icon.svg",
                             color: arrowDownColor.evaluate(AlwaysStoppedAnimation(buttonColorController.value)),
-                            size: 30,
+                            width: iconSize,
+                            height: iconSize,
                         ),
-                        onGithubTap,
+                        onGithubTap
                     ),
                 ],
             )

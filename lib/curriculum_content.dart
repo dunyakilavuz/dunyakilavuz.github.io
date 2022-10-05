@@ -16,7 +16,7 @@ class CurriculumContent extends StatelessWidget
             fontSize: 24, 
             fontWeight: FontWeight.w300, 
             letterSpacing: 1.5,
-            color: Colors.white,
+            color: const Color.fromARGB(255, 26, 34, 44),
         );
     }
 
@@ -27,7 +27,7 @@ class CurriculumContent extends StatelessWidget
             fontSize: 22, 
             fontWeight: FontWeight.w300, 
             letterSpacing: 1.5,
-            color: Colors.white,
+            color: const Color.fromARGB(255, 26, 34, 44),
         );
     }
 
@@ -39,7 +39,7 @@ class CurriculumContent extends StatelessWidget
             fontWeight: FontWeight.w300, 
             letterSpacing: 1,
             height: 1.8,
-            color: Colors.white,
+            color: const Color.fromARGB(255, 26, 34, 44),
         );
     }
 
@@ -49,7 +49,19 @@ class CurriculumContent extends StatelessWidget
         (
             children: 
             [
-                SizedBox(height: 30, child: SvgPicture.asset("assets/cv_section_start_rect.svg", alignment: Alignment.centerRight,),),
+                SizedBox // That blue line before sections.
+                (
+                    height: 30,
+                    child: Column
+                    (
+                        children: 
+                        [
+                            Expanded(child: Container()),
+                            Container(color: Colors.blue, height: 10,),
+                            Expanded(child: Container()),
+                        ],
+                    )
+                ),
                 Container(),
                 Text(text, style: sectionTextStyle(context)),
             ],
@@ -74,7 +86,7 @@ class CurriculumContent extends StatelessWidget
     {
         return Container
         (
-            color: const Color.fromARGB(255, 26, 34, 44),
+            color: Colors.white,
             width: MediaQuery.of(context).size.width * 0.6,
             child: Table
             (

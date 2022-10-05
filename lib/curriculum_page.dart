@@ -11,7 +11,7 @@ class Curriculum extends StatelessWidget
     {
         return Scaffold
         (
-            backgroundColor: const Color.fromARGB(255, 26, 34, 44),
+            backgroundColor: Colors.white,
             body: const SingleChildScrollView
             (
                 child: Center
@@ -32,6 +32,7 @@ class Curriculum extends StatelessWidget
                 (
                     Icons.chevron_left_sharp,
                     size: 30,
+                    color: Colors.black,
                 ),
             ),
             floatingActionButtonLocation: FloatingActionButtonLocation.miniStartTop,

@@ -34,31 +34,34 @@ class HomeState extends State<Home>
     @override
     Widget build(BuildContext context) 
     {
-        return Stack
+        return Scaffold
         (
-            children: 
-            [
-                const Particles(),
-                SizedBox
-                (
-                    width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height,
-                    child: Column
+            body: Stack
+            (
+                children: 
+                [
+                    const Particles(),
+                    SizedBox
                     (
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>
-                        [
-                            Expanded(child: Container(),),
-                            Text('Dünya', style: nameText(context)?.copyWith(letterSpacing: 40)),
-                            Text('Kılavuz', style: nameText(context)?.copyWith(letterSpacing: 22)),
-                            Text('M.Sc. Computer Engineer', style: professionText(context)),
-                            const SizedBox(height: 10,),
-                            const NavButtons(),
-                            Expanded(child: Container(),),
-                        ],
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height,
+                        child: Column
+                        (
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>
+                            [
+                                Expanded(child: Container(),),
+                                Text('Dünya', style: nameText(context)?.copyWith(letterSpacing: 40)),
+                                Text('Kılavuz', style: nameText(context)?.copyWith(letterSpacing: 22)),
+                                Text('M.Sc. Computer Engineer', style: professionText(context)),
+                                const SizedBox(height: 10,),
+                                const NavButtons(),
+                                Expanded(child: Container(),),
+                            ],
+                        ),
                     ),
-                ),
-            ],
+                ],
+            ),
         );
     }
 }

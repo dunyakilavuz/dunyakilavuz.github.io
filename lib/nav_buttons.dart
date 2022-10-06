@@ -1,9 +1,9 @@
-import 'dart:html';
-
 import 'package:dunyakilavuz_github_io/curriculum_page.dart';
 import 'package:dunyakilavuz_github_io/projects_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
+import 'dart:html' as html;
 
 class NavButtons extends StatefulWidget
 {
@@ -16,13 +16,26 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
 {
     late Animation buttonColorAnim;
     late AnimationController buttonColorController;
-    double iconSize = 50;
+    double iconSize = 35;
+    static String linkedinURL = "https://www.linkedin.com/in/dunyakilavuz/";
+    static String githubURL  = "https://github.com/dunyakilavuz/";
+    static String mailURL = "mailto:dunyakilavuz@gmail.com";
+    static String mailAddress = "dunyakilavuz@gmail.com";
 
     static TextStyle? buttonText(BuildContext context) 
     {
         return Theme.of(context).textTheme.headline2?.copyWith
         (
             fontSize: 20,
+            fontWeight: FontWeight.normal,
+        );
+    }
+
+    static TextStyle? notificationText(BuildContext context) 
+    {
+        return Theme.of(context).textTheme.headline2?.copyWith
+        (
+            fontSize: 15,
             fontWeight: FontWeight.normal,
         );
     }
@@ -74,16 +87,42 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
 
     void onMailTap()
     {
-        print("Mail");
+        Clipboard.setData(ClipboardData(text: mailAddress));
+        html.window.open(mailURL, 'new tab');
+        notify("Mail address copied to clipboard.");
     }
 
     void onLinkedInTap()
     {
-        print("LinkedIn");
+        html.window.open(linkedinURL, 'new tab');
+        notify("Opened LinkedIn in a new tab.");
     }
     void onGithubTap()
     {
-        print("Github");
+        html.window.open(githubURL, 'new tab');
+        notify("Opened Github in a new tab.");
+    }
+
+    void notify(String text)
+    {
+        ScaffoldMessenger.of(context).showSnackBar
+        (
+            SnackBar
+            (
+                content: Container
+                (
+                    alignment: Alignment.center,
+                    width: 500,
+                    height: 30,
+                    child: Text(text, style: notificationText(context),),
+                ),
+                duration: const Duration(seconds: 2),
+                shape: const StadiumBorder(),
+                backgroundColor: Colors.blueGrey,
+                behavior: SnackBarBehavior.floating,
+                width: MediaQuery.of(context).size.width * 0.3,
+            )
+        );
     }
 
     SizedBox seperator(double width)

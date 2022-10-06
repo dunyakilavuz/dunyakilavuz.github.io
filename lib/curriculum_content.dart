@@ -1,13 +1,13 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'dart:html' as html;
-import 'package:flutter_svg/flutter_svg.dart';
 
 class CurriculumContent extends StatelessWidget
 {
     const CurriculumContent({super.key});
     static String thesisURL = "https://tez.yok.gov.tr/UlusalTezMerkezi/TezGoster?key=fl0Kw4p1rmMDotyKRdYv1BlOn0xw7xvxfzqjc8tCRUrg-kyuC-miRPg4PxXcgxul";
     static String gamedevURL = "https://se.ieu.edu.tr/gamedev/en/";
+    static Color mainColor = Colors.lightBlue.shade900;
 
     static TextStyle? sectionTextStyle (BuildContext context) 
     {
@@ -16,7 +16,7 @@ class CurriculumContent extends StatelessWidget
             fontSize: 24, 
             fontWeight: FontWeight.w300, 
             letterSpacing: 1.5,
-            color: const Color.fromARGB(255, 26, 34, 44),
+            color: mainColor,
         );
     }
 
@@ -43,6 +43,37 @@ class CurriculumContent extends StatelessWidget
         );
     }
 
+    static TextStyle? nameText(BuildContext context) 
+    {
+        return Theme.of(context).textTheme.headline2?.copyWith
+        (
+            fontSize: 35,
+            fontWeight: FontWeight.bold,
+            color: Colors.grey.shade500,
+        );
+    }
+
+    static TextStyle? surnameText(BuildContext context) 
+    {
+        return Theme.of(context).textTheme.headline2?.copyWith
+        (
+            fontSize: 35,
+            fontWeight: FontWeight.bold,
+            color: Colors.grey.shade600,
+        );
+    }
+
+    static TextStyle? professionText(BuildContext context) 
+    {
+        return Theme.of(context).textTheme.headline4?.copyWith
+        (
+            fontSize: 25, 
+            fontWeight: FontWeight.w200, 
+            letterSpacing: 1.5,
+            color: Colors.black,
+        );
+    }
+
     static TableRow sectionText(String text ,BuildContext context)
     {
         return TableRow
@@ -57,7 +88,7 @@ class CurriculumContent extends StatelessWidget
                         children: 
                         [
                             Expanded(child: Container()),
-                            Container(color: Colors.blue, height: 10,),
+                            Container(color: mainColor, height: 10,),
                             Expanded(child: Container()),
                         ],
                     )
@@ -68,15 +99,15 @@ class CurriculumContent extends StatelessWidget
         );
     }
 
-    static TableRow seperator()
+    static TableRow seperator(double height)
     {
-        return const TableRow
+        return TableRow
         (
             children: 
             [
-                SizedBox(height: 10,),
-                SizedBox(height: 10,),
-                SizedBox(height: 10,),
+                SizedBox(height: height,),
+                SizedBox(height: height,),
+                SizedBox(height: height,),
             ]
         );
     }
@@ -100,6 +131,63 @@ class CurriculumContent extends StatelessWidget
                 },   
                 children: 
                 [
+                    seperator(100),
+                    TableRow
+                    (                        
+                        children: 
+                        [
+                            Container
+                            (
+                                decoration: BoxDecoration
+                                (
+                                    border: Border.all
+                                    (
+                                        width: 0.5,
+                                        color: Colors.blue,
+                                    ),
+                                ) ,
+                                padding: const EdgeInsets.all(5),
+                                child: Image.asset("cvpic.jpg",),  
+                            ),
+                            Container(),
+                            Column
+                            (
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children:  
+                                [
+                                    RichText
+                                    (
+                                        text: TextSpan
+                                        (
+                                            children: <TextSpan> 
+                                            [
+                                                TextSpan(text: "Dünya ", style: nameText(context),),
+                                                TextSpan(text: "Kılavuz", style: surnameText(context)),
+                                            ]
+                                        ),
+                                    ),
+                                    Text("M.Sc. Computer Engineer", style: professionText(context),),
+                                ]
+                            ),  
+                        ]
+                    ),
+                    TableRow
+                    (
+                        decoration: const BoxDecoration
+                        (
+                            border: Border
+                            (
+                                bottom: BorderSide(width: 1.0, color: Colors.black45),
+                            )
+                        ),
+                        children:
+                        [
+                            Container(height: 10,),
+                            Container(height: 10,),
+                            Container(height: 10,),
+                        ]
+                    ),
+                    seperator(10),
                     sectionText("Education", context),
                     TableRow
                     (
@@ -125,7 +213,7 @@ class CurriculumContent extends StatelessWidget
                             ),
                         ]
                     ),
-                    seperator(),
+                    seperator(10),
                     TableRow
                     (
                         children: 
@@ -150,7 +238,7 @@ class CurriculumContent extends StatelessWidget
                             ),
                         ]
                     ),
-                    seperator(),
+                    seperator(10),
                     TableRow
                     (
                         children: 
@@ -170,7 +258,7 @@ class CurriculumContent extends StatelessWidget
                             ),
                         ]
                     ),
-                    seperator(),
+                    seperator(10),
                     sectionText("Experience", context),
                     TableRow
                     (
@@ -204,7 +292,7 @@ class CurriculumContent extends StatelessWidget
                                 "I was employed while doing my Master's degree.", style: entryTextStyle(context),)
                         ]
                     ),
-                    seperator(),
+                    seperator(10),
                     TableRow
                     (
                         children: 
@@ -233,7 +321,7 @@ class CurriculumContent extends StatelessWidget
                             Text("Assisted the course 'SE 320 - Introduction to Computer Games' throughout the semester.", style: entryTextStyle(context),)
                         ]
                     ),
-                    seperator(),
+                    seperator(10),
                     TableRow
                     (
                         children: 
@@ -262,7 +350,7 @@ class CurriculumContent extends StatelessWidget
                             Text("Moving, re-developing a Java game project to Unity Engine.", style: entryTextStyle(context),)
                         ]
                     ),
-                    seperator(),
+                    seperator(10),
                     TableRow
                     (
                         children: 
@@ -291,6 +379,7 @@ class CurriculumContent extends StatelessWidget
                             Text("Introduction to Java programming language, making applications using JFrame.", style: entryTextStyle(context),)
                         ]
                     ),
+                    seperator(100),
                 ],
             ),    
         );

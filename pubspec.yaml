@@ -66,6 +66,7 @@ flutter:
   assets:
    - assets/linkedIn_icon.svg
    - assets/github_icon.svg
+   - assets/cvpic.jpg
   #  - assets/cv.md
 
   # An image asset can refer to one or more resolution-specific "variants", see

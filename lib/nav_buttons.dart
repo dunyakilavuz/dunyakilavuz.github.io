@@ -40,7 +40,7 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
         );
     }
 
-    Animatable<Color?> arrowDownColor = TweenSequence<Color?>
+    Animatable<Color?> buttonColor = TweenSequence<Color?>
     (
         [
             TweenSequenceItem
@@ -88,7 +88,6 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
     void onMailTap()
     {
         Clipboard.setData(ClipboardData(text: mailAddress));
-        html.window.open(mailURL, 'new tab');
         notify("Mail address copied to clipboard.");
     }
 
@@ -105,6 +104,7 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
 
     void notify(String text)
     {
+        double notifyWidth = text.length * 10;
         ScaffoldMessenger.of(context).showSnackBar
         (
             SnackBar
@@ -112,7 +112,7 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
                 content: Container
                 (
                     alignment: Alignment.center,
-                    width: 500,
+                    width: notifyWidth,
                     height: 30,
                     child: Text(text, style: notificationText(context),),
                 ),
@@ -120,7 +120,7 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
                 shape: const StadiumBorder(),
                 backgroundColor: Colors.blueGrey,
                 behavior: SnackBarBehavior.floating,
-                width: MediaQuery.of(context).size.width * 0.3,
+                width: notifyWidth, 
             )
         );
     }
@@ -194,7 +194,7 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
     {
         super.initState();
         buttonColorController = AnimationController(vsync: this, duration: const Duration(seconds: 10))..repeat();
-        buttonColorAnim = arrowDownColor.animate(buttonColorController)..addListener(() { setState(() {});});
+        buttonColorAnim = buttonColor.animate(buttonColorController)..addListener(() { setState(() {});});
     }
 
     @override
@@ -207,9 +207,9 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
     @override
     Widget build(BuildContext context) 
     {
-        return Container
+        return SingleChildScrollView
         (
-            alignment: Alignment.center,
+            scrollDirection: Axis.horizontal,
             child: Row
             (
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -220,7 +220,7 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
                         Icon
                         (
                             Icons.history_edu_sharp,
-                            color: arrowDownColor.evaluate(AlwaysStoppedAnimation(buttonColorController.value)),
+                            color: buttonColor.evaluate(AlwaysStoppedAnimation(buttonColorController.value)),
                             size: iconSize,
                         ),
                         onCurriculumTap,
@@ -232,7 +232,7 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
                         Icon
                         (
                             Icons.architecture_sharp,
-                            color: arrowDownColor.evaluate(AlwaysStoppedAnimation(buttonColorController.value)),
+                            color: buttonColor.evaluate(AlwaysStoppedAnimation(buttonColorController.value)),
                             size: iconSize,
                         ),
                         onProjectsTap,
@@ -244,7 +244,7 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
                         Icon
                         (
                             Icons.email_outlined,
-                            color: arrowDownColor.evaluate(AlwaysStoppedAnimation(buttonColorController.value)),
+                            color: buttonColor.evaluate(AlwaysStoppedAnimation(buttonColorController.value)),
                             size: iconSize,
                         ),
                         onMailTap
@@ -255,7 +255,7 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
                         SvgPicture.asset
                         (
                             "assets/linkedin_icon.svg",
-                            color: arrowDownColor.evaluate(AlwaysStoppedAnimation(buttonColorController.value)),
+                            color: buttonColor.evaluate(AlwaysStoppedAnimation(buttonColorController.value)),
                             width: iconSize,
                             height: iconSize,
                         ),
@@ -267,7 +267,7 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
                         SvgPicture.asset
                         (
                             "assets/github_icon.svg",
-                            color: arrowDownColor.evaluate(AlwaysStoppedAnimation(buttonColorController.value)),
+                            color: buttonColor.evaluate(AlwaysStoppedAnimation(buttonColorController.value)),
                             width: iconSize,
                             height: iconSize,
                         ),

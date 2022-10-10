@@ -1,5 +1,6 @@
 import 'package:dunyakilavuz_github_io/nav_buttons.dart';
 import 'package:dunyakilavuz_github_io/particles.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget
@@ -38,22 +39,33 @@ class HomeState extends State<Home>
         (
             body: Stack
             (
+                alignment: Alignment.center,
                 children: 
                 [
                     const Particles(),
-                    SizedBox
+                    Container
                     (
-                        width: MediaQuery.of(context).size.width,
+                        alignment: Alignment.center,
+                        width: MediaQuery.of(context).size.width * 0.9,
                         height: MediaQuery.of(context).size.height,
                         child: Column
                         (
-                            mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>
                             [
                                 Expanded(child: Container(),),
-                                Text('Dünya', style: nameText(context)?.copyWith(letterSpacing: 40)),
-                                Text('Kılavuz', style: nameText(context)?.copyWith(letterSpacing: 22)),
-                                Text('M.Sc. Computer Engineer', style: professionText(context)),
+                                FittedBox
+                                (
+                                    fit: BoxFit.scaleDown,
+                                    child: Column
+                                    (
+                                        children: 
+                                        [
+                                            Text('Dünya', style: nameText(context)?.copyWith(letterSpacing: 40),),
+                                            Text('Kılavuz', style: nameText(context)?.copyWith(letterSpacing: 22),),
+                                            Text('M.Sc. Computer Engineer', style: professionText(context)),
+                                        ],
+                                    ),
+                                ),
                                 const SizedBox(height: 10,),
                                 const NavButtons(),
                                 Expanded(child: Container(),),

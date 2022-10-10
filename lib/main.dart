@@ -14,9 +14,25 @@ class App extends StatelessWidget
 
     ThemeData appThemeData()
     {
+        Map<int, Color> colorMap =
+        {
+            50: const Color.fromRGBO(26, 34, 44, 0.1),
+            100:const Color.fromRGBO(26, 34, 44, 0.2),
+            200:const Color.fromRGBO(26, 34, 44, 0.3),
+            300:const Color.fromRGBO(26, 34, 44, 0.4),
+            400:const Color.fromRGBO(26, 34, 44, 0.5),
+            500:const Color.fromRGBO(26, 34, 44, 0.6),
+            600:const Color.fromRGBO(26, 34, 44, 0.7),
+            700:const Color.fromRGBO(26, 34, 44, 0.8),
+            800:const Color.fromRGBO(26, 34, 44, 0.9),
+            900:const Color.fromRGBO(26, 34, 44, 1.0),
+        };
+
+        MaterialColor primaryColor = MaterialColor(0x1A222C, colorMap);
+
         return ThemeData
         (
-            primarySwatch: Colors.blue,
+            primarySwatch: primaryColor,
             textTheme: const TextTheme
             (
                 bodyText2: TextStyle

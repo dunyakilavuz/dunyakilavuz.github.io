@@ -4,8 +4,9 @@ const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
   "version.json": "d0c859b52c9fa042c8627b6938ce9ef1",
-"index.html": "bfbf1aaa25ca677aaace95965bcff317",
-"/": "bfbf1aaa25ca677aaace95965bcff317",
+"index.html": "493d76b37ccd961365515443fe8a1ff5",
+"/": "493d76b37ccd961365515443fe8a1ff5",
+"CNAME": "84831ab750e34a6ca2a9a8971da8d657",
 "main.dart.js": "70ac74ee90934d93f588049e297e33e3",
 "flutter.js": "f85e6fb278b0fd20c349186fb46ae36d",
 "app-ads.txt": "1ecf32785792fb9f5d02342ceec2eada",
@@ -32,7 +33,7 @@ const RESOURCES = {
 "assets/fonts/MaterialIcons-Regular.otf": "95db9098c58fd6db106f1116bae85a0b",
 "assets/fonts/SF-Pro-Text-Semibold.otf": "85da828bdfb6b2907092a4bae41389d1",
 "assets/fonts/SF-Pro-Text-Medium.otf": "2f11ca31044ec0d53abe901722d4fb84",
-"assets/assets/linkedIn_icon.svg": "0917c1fc4d92dba29242174977c7b613",
+"assets/assets/linkedin_icon.svg": "0917c1fc4d92dba29242174977c7b613",
 "assets/assets/cvpic.jpg": "800ac90e6c2e027e69fb03687746aa7f",
 "assets/assets/github_icon.svg": "718891a8faf8dea0c5e504c2688b4aa8",
 "canvaskit/canvaskit.js": "2bc454a691c631b07a9307ac4ca47797",

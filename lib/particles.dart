@@ -39,7 +39,7 @@ class ParticlePainter extends CustomPainter
     void paint(Canvas canvas, Size size) 
     {
         var paint = Paint()
-        ..color = const Color.fromARGB(255, 68, 163, 170)
+        ..color = Color.fromARGB(255, 80, 95, 96)
         ..style = PaintingStyle.fill;
         canvas.drawCircle(const Offset(200, 0), 100, paint);
     }

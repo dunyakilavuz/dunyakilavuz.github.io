@@ -9,6 +9,7 @@ class CurriculumContent extends StatelessWidget
     static String thesisURL = "https://tez.yok.gov.tr/UlusalTezMerkezi/TezGoster?key=fl0Kw4p1rmMDotyKRdYv1BlOn0xw7xvxfzqjc8tCRUrg-kyuC-miRPg4PxXcgxul";
     static String gamedevURL = "https://se.ieu.edu.tr/gamedev/en/";
     static Color mainColor = Colors.lightBlue.shade900;
+    static String bullet = "\u2022 ";
 
     static TextStyle? sectionTextStyle (BuildContext context) 
     {
@@ -98,6 +99,11 @@ class CurriculumContent extends StatelessWidget
                 Text(text, style: sectionTextStyle(context)),
             ],
         );
+    }
+
+    static Text entryText(String text, BuildContext context, {TextAlign textAlign = TextAlign.left})
+    {
+        return Text(text , style: entryTextStyle(context), textAlign: textAlign);
     }
 
     static TableRow seperator(double height)
@@ -422,6 +428,86 @@ class CurriculumContent extends StatelessWidget
                             AutoSizeText("Description", style: entryTextStyle(context), textAlign: TextAlign.right, maxLines: 1, overflow: TextOverflow.ellipsis,),
                             Container(),
                             Text("Introduction to Java programming language, making applications using JFrame.", style: entryTextStyle(context), textAlign: TextAlign.justify,)
+                        ]
+                    ),
+                    seperator(10),
+                    sectionText("Skills", context),
+                    TableRow
+                    (
+                        children: 
+                        [
+                            Container(),
+                            Container(),
+                            Column
+                            (
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: 
+                                [
+                                    entryText("I am actively using the technologies;", context),
+                                    entryText("$bullet Dart - Flutter, this site is actually made with Flutter for web!", context),
+                                    entryText("$bullet JS   - React Native, Lens Studio. ", context),
+                                    entryText("$bullet C#   - Unity 3D, Godot Engine.", context),
+                                    entryText("But also familiar with the technologies;", context),
+                                    entryText("$bullet Java", context),
+                                    entryText("$bullet Python", context),
+                                    entryText("$bullet C & C++", context),
+                                    entryText("$bullet HTML & CSS", context),  
+                                    entryText("I actively use Git with GitHub for most of my projects.", context),
+                                ],
+                            ),
+                        ]
+                    ),
+                    seperator(10),
+                    sectionText("Language Skills", context),
+                    TableRow
+                    (
+                        children: 
+                        [
+                            Column
+                            (
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: 
+                                [
+                                    entryText("Turkish", context),
+                                    entryText("English", context),
+                                    entryText("Spanish", context),
+                                    entryText("Greek", context),
+                                ],
+                            ),
+                            Container(),
+                            Column
+                            (
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: 
+                                [
+                                    entryText("Native", context),
+                                    entryText("IELTS 7.0 / 9.0 - 20.05.2017", context),
+                                    entryText("Intermediate", context), 
+                                    entryText("Beginner, just started learning", context)   
+                                ],
+                            ),
+                        ]
+                    ),
+                    seperator(10),
+                    sectionText("About me", context),
+                    TableRow
+                    (
+                        children: 
+                        [
+                            Container(),
+                            Container(),
+                            Column
+                            (
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: 
+                                [
+                                    entryText("I enjoy;", context),
+                                    entryText("$bullet Most sports; weight-lifting, running, swimming, cycling and so on.", context),
+                                    entryText("$bullet Outdoor activities like camping and trekking.", context),
+                                    entryText("$bullet Reading and watching things about astronomy and physics.", context),
+                                    entryText("$bullet Gaming!", context),
+                                ],
+                            ),
                         ]
                     ),
                     seperator(100),

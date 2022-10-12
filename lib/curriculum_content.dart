@@ -100,9 +100,9 @@ class CurriculumContent extends StatelessWidget
         );
     }
 
-    static Text entryText(String text, BuildContext context, {TextAlign textAlign = TextAlign.left})
+    static Text entryText(String text, BuildContext context, {TextAlign textAlign = TextAlign.left, TextOverflow overflow = TextOverflow.visible})
     {
-        return Text(text , style: entryTextStyle(context), textAlign: textAlign);
+        return Text(text , style: entryTextStyle(context), textAlign: textAlign, overflow: overflow);
     }
 
     static TableRow seperator(double height)
@@ -124,7 +124,7 @@ class CurriculumContent extends StatelessWidget
         (
             children: 
             [
-                entryText(key, context, textAlign: TextAlign.right),
+                entryText(key, context, textAlign: TextAlign.right, overflow: TextOverflow.ellipsis),
                 Container(),
                 entryText(value, context),
             ]

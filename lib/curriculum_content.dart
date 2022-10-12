@@ -1,4 +1,3 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'dart:html' as html;
@@ -119,6 +118,20 @@ class CurriculumContent extends StatelessWidget
         );
     }
 
+    static TableRow dictionaryRow(String key, String value, BuildContext context)
+    {
+        return TableRow
+        (
+            children: 
+            [
+                entryText(key, context, textAlign: TextAlign.right),
+                Container(),
+                entryText(value, context),
+            ]
+        );
+    }
+
+
     @override
     Widget build(BuildContext context) 
     {
@@ -154,7 +167,7 @@ class CurriculumContent extends StatelessWidget
                                     ),
                                 ) ,
                                 padding: const EdgeInsets.all(5),
-                                child: Image.asset("cvpic.jpg",),  
+                                child: Image.asset("assets/profilepic.jpeg",),  
                             ),
                             Container(),
                             FittedBox
@@ -296,7 +309,7 @@ class CurriculumContent extends StatelessWidget
                     (
                         children: 
                         [
-                            AutoSizeText("Description", style: entryTextStyle(context), textAlign: TextAlign.right, maxLines: 1, overflow: TextOverflow.ellipsis,),
+                            Text("Description", style: entryTextStyle(context), textAlign: TextAlign.right, maxLines: 1, overflow: TextOverflow.ellipsis,),
                             Container(),
                             Text
                             (
@@ -331,7 +344,7 @@ class CurriculumContent extends StatelessWidget
                     (
                         children: 
                         [
-                            AutoSizeText("Description", style: entryTextStyle(context), textAlign: TextAlign.right, maxLines: 1, overflow: TextOverflow.ellipsis,),
+                            Text("Description", style: entryTextStyle(context), textAlign: TextAlign.right, maxLines: 1, overflow: TextOverflow.ellipsis,),
                             Container(),
                             Text(
                                 "Computer technician duty in a newly opened laboratory in IUE. "
@@ -367,7 +380,7 @@ class CurriculumContent extends StatelessWidget
                     (
                         children: 
                         [
-                            AutoSizeText("Description", style: entryTextStyle(context), textAlign: TextAlign.right, maxLines: 1, overflow: TextOverflow.ellipsis,),
+                            Text("Description", style: entryTextStyle(context), textAlign: TextAlign.right, maxLines: 1, overflow: TextOverflow.ellipsis,),
                             Container(),
                             Text("Assisted the course 'SE 320 - Introduction to Computer Games' throughout the semester.", style: entryTextStyle(context), textAlign: TextAlign.justify,)
                         ]
@@ -377,7 +390,7 @@ class CurriculumContent extends StatelessWidget
                     (
                         children: 
                         [
-                            AutoSizeText("2014 Summer", style: entryTextStyle(context), textAlign: TextAlign.right, maxLines: 2, overflow: TextOverflow.ellipsis,),
+                            Text("2014 Summer", style: entryTextStyle(context), textAlign: TextAlign.right, maxLines: 2, overflow: TextOverflow.ellipsis,),
                             Container(),
                             RichText
                             (
@@ -396,7 +409,7 @@ class CurriculumContent extends StatelessWidget
                     (
                         children: 
                         [
-                            AutoSizeText("Description", style: entryTextStyle(context), textAlign: TextAlign.right, maxLines: 1, overflow: TextOverflow.ellipsis,),
+                            Text("Description", style: entryTextStyle(context), textAlign: TextAlign.right, maxLines: 1, overflow: TextOverflow.ellipsis,),
                             Container(),
                             Text("Moving, re-developing a Java game project to Unity Engine.", style: entryTextStyle(context), textAlign: TextAlign.justify,)
                         ]
@@ -406,7 +419,7 @@ class CurriculumContent extends StatelessWidget
                     (
                         children: 
                         [
-                            AutoSizeText("2013 Summer", style: entryTextStyle(context), textAlign: TextAlign.right, maxLines: 2, overflow: TextOverflow.ellipsis,),
+                            Text("2013 Summer", style: entryTextStyle(context), textAlign: TextAlign.right, maxLines: 2, overflow: TextOverflow.ellipsis,),
                             Container(),
                             RichText
                             (
@@ -425,7 +438,7 @@ class CurriculumContent extends StatelessWidget
                     (
                         children: 
                         [
-                            AutoSizeText("Description", style: entryTextStyle(context), textAlign: TextAlign.right, maxLines: 1, overflow: TextOverflow.ellipsis,),
+                            Text("Description", style: entryTextStyle(context), textAlign: TextAlign.right, maxLines: 1, overflow: TextOverflow.ellipsis,),
                             Container(),
                             Text("Introduction to Java programming language, making applications using JFrame.", style: entryTextStyle(context), textAlign: TextAlign.justify,)
                         ]
@@ -459,35 +472,10 @@ class CurriculumContent extends StatelessWidget
                     ),
                     seperator(10),
                     sectionText("Language Skills", context),
-                    TableRow
-                    (
-                        children: 
-                        [
-                            Column
-                            (
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: 
-                                [
-                                    entryText("Turkish", context),
-                                    entryText("English", context),
-                                    entryText("Spanish", context),
-                                    entryText("Greek", context),
-                                ],
-                            ),
-                            Container(),
-                            Column
-                            (
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: 
-                                [
-                                    entryText("Native", context),
-                                    entryText("IELTS 7.0 / 9.0 - 20.05.2017", context),
-                                    entryText("Intermediate", context), 
-                                    entryText("Beginner, just started learning", context)   
-                                ],
-                            ),
-                        ]
-                    ),
+                    dictionaryRow("Turkish", "Native", context),
+                    dictionaryRow("English", "IELTS 7.0 / 9.0 - 20.05.2017", context),
+                    dictionaryRow("Spanish", "Intermediate", context),
+                    dictionaryRow("Greek", "Beginner, just started learning", context),
                     seperator(10),
                     sectionText("About me", context),
                     TableRow

@@ -1,6 +1,5 @@
 import 'package:dunyakilavuz_github_io/nav_buttons.dart';
 import 'package:dunyakilavuz_github_io/particles.dart';
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget

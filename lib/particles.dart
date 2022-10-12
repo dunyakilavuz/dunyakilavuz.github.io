@@ -1,7 +1,8 @@
 import 'dart:async';
+import 'dart:math' as math;
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:vector_math/vector_math.dart';
+import 'package:vector_math/vector_math_64.dart';
 
 class Particles extends StatefulWidget
 {
@@ -86,7 +87,7 @@ class ParticleModel
 {
     late double size;
     late double speed;
-    late Vector2 direction;
+    late Vector3 direction;
     late Vector2 velocity;
     Vector2 position = Vector2.zero();
     late Random random;
@@ -95,10 +96,9 @@ class ParticleModel
 
     ParticleModel(this.random)
     {
-        direction = Vector2(random.nextDouble(), random.nextDouble()).normalized();
-        direction = random.nextDouble() < 0.5 ? direction : -direction;
+        direction = Quaternion.axisAngle(Vector3(0,0,1), random.nextDouble() * 2 * math.pi).rotate(Vector3(1,0,0));
         speed = random.nextDouble() * 3 + 1;
-        velocity = direction * speed;
+        velocity = direction.xy * speed;
         size = random.nextDouble() * 5 + 5;
         alpha = random.nextDouble();
         alphaProgress = random.nextDouble() * 0.05;

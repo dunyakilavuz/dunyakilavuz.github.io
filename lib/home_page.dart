@@ -42,7 +42,7 @@ class HomeState extends State<Home>
                 alignment: Alignment.center,
                 children: 
                 [
-                    const Particles(),
+                    const Particles(numberOfParticles: 20,),
                     Container
                     (
                         alignment: Alignment.center,

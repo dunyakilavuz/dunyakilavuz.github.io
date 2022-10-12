@@ -40,6 +40,7 @@ dependencies:
   flutter_markdown: ^0.6.12
   flutter_svg: ^1.1.5
   auto_size_text: ^3.0.0
+  vector_math: ^2.1.2
 
 dev_dependencies:
   flutter_test:

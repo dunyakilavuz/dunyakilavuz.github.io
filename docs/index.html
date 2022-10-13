@@ -32,17 +32,19 @@
 
   <title>dunyakilavuz_github_io</title>
   <link rel="manifest" href="manifest.json">
-
+  <link rel="stylesheet" href="styles.css"> <!--Added this for styles-->
   <script>
     // The value below is injected by flutter build, do not touch.
-    var serviceWorkerVersion = '2454364837';
+    var serviceWorkerVersion = '157372877';
   </script>
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
 </head>
 <body>
+  <div class="loader"></div>  <!--Added this for loading-->
   <script>
-    window.addEventListener('load', function(ev) {
+    window.addEventListener('load', function(ev) 
+    {
       // Download main.dart.js
       _flutter.loader.loadEntrypoint({
         serviceWorker: {

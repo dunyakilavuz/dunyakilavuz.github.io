@@ -10,64 +10,55 @@ class CurriculumContent extends StatelessWidget
     static Color mainColor = Colors.lightBlue.shade900;
     static String bullet = "\u2022 ";
 
-    static TextStyle? sectionTextStyle (BuildContext context) 
+    static TextStyle sectionTextStyle (BuildContext context) 
     {
-        return Theme.of(context).textTheme.headline1?.copyWith
+        return TextStyle
         (
+            fontFamily: "SF Pro",
             fontSize: 24, 
-            fontWeight: FontWeight.w300, 
-            letterSpacing: 1.5,
+            fontWeight: FontWeight.w400, 
             color: mainColor,
         );
     }
 
-    static TextStyle? subsectionTextStyle (BuildContext context) 
+    static TextStyle entryTextStyle (BuildContext context)
     {
-        return Theme.of(context).textTheme.headline2?.copyWith
+        return const TextStyle
         (
-            fontSize: 22, 
-            fontWeight: FontWeight.w300, 
-            letterSpacing: 1.5,
-            color: const Color.fromARGB(255, 26, 34, 44),
-        );
-    }
-
-    static TextStyle? entryTextStyle (BuildContext context)
-    {
-        return Theme.of(context).textTheme.bodyText1?.copyWith
-        (
+            fontFamily: "SF Pro",
             fontSize: 18, 
-            fontWeight: FontWeight.w300, 
-            letterSpacing: 1,
             height: 1.8,
-            color: const Color.fromARGB(255, 26, 34, 44),
+            color: Color.fromARGB(255, 26, 34, 44),
         );
     }
 
-    static TextStyle? nameText(BuildContext context) 
+    static TextStyle nameText(BuildContext context) 
     {
-        return Theme.of(context).textTheme.headline2?.copyWith
+        return TextStyle
         (
+            fontFamily: "SF Pro",
             fontSize: 35,
             fontWeight: FontWeight.bold,
             color: Colors.grey.shade500,
         );
     }
 
-    static TextStyle? surnameText(BuildContext context) 
+    static TextStyle surnameText(BuildContext context) 
     {
-        return Theme.of(context).textTheme.headline2?.copyWith
+        return TextStyle
         (
+            fontFamily: "SF Pro",
             fontSize: 35,
             fontWeight: FontWeight.bold,
             color: Colors.grey.shade600,
         );
     }
 
-    static TextStyle? professionText(BuildContext context) 
+    static TextStyle professionText(BuildContext context) 
     {
-        return Theme.of(context).textTheme.headline4?.copyWith
+        return const TextStyle
         (
+            fontFamily: "SF Pro",
             fontSize: 25, 
             fontWeight: FontWeight.w200, 
             letterSpacing: 1.5,
@@ -102,7 +93,13 @@ class CurriculumContent extends StatelessWidget
 
     static Text entryText(String text, BuildContext context, {TextAlign textAlign = TextAlign.left, TextOverflow overflow = TextOverflow.visible})
     {
-        return Text(text , style: entryTextStyle(context), textAlign: textAlign, overflow: overflow);
+        return Text
+        (
+            text , 
+            textAlign: textAlign, 
+            overflow: overflow,
+            style: entryTextStyle(context)
+        );
     }
 
     static TableRow seperator(double height)
@@ -225,13 +222,13 @@ class CurriculumContent extends StatelessWidget
                                 (
                                     children: <TextSpan>
                                     [
-                                        TextSpan(text: "Master of Science Degree", style: entryTextStyle(context)?.copyWith(fontWeight: FontWeight.bold),),
-                                        TextSpan(text: ", Izmir University of Economics", style: entryTextStyle(context)?.copyWith(fontStyle: FontStyle.italic),),
+                                        TextSpan(text: "Master of Science Degree", style: entryTextStyle(context).copyWith(fontWeight: FontWeight.bold),),
+                                        TextSpan(text: ", Izmir University of Economics", style: entryTextStyle(context).copyWith(fontStyle: FontStyle.italic),),
                                         TextSpan(text: ", Faculty of Engineering and Computer Science", style: entryTextStyle(context)),
                                         TextSpan(text: ", Computer Engineering", style: entryTextStyle(context)),
-                                        TextSpan(text: ", GPA - 3.50 / 4.00.", style: entryTextStyle(context)?.copyWith(fontStyle: FontStyle.italic),),
-                                        TextSpan(text: "\nTo view the thesis document, follow the Council of Higher Education's Thesis ", style: entryTextStyle(context)?.copyWith(fontSize: 16),),
-                                        TextSpan(text: "'link.'", style: entryTextStyle(context)?.copyWith(fontSize: 16, color: mainColor),recognizer: TapGestureRecognizer()..onTap = () { html.window.open(thesisURL, 'new tab');}),
+                                        TextSpan(text: ", GPA - 3.50 / 4.00.", style: entryTextStyle(context).copyWith(fontStyle: FontStyle.italic),),
+                                        TextSpan(text: "\nTo view the thesis document, follow the Council of Higher Education's Thesis ", style: entryTextStyle(context).copyWith(fontSize: 16),),
+                                        TextSpan(text: "'link.'", style: entryTextStyle(context).copyWith(fontSize: 16, color: mainColor),recognizer: TapGestureRecognizer()..onTap = () { html.window.open(thesisURL, 'new tab');}),
                                     ],
                                 ),
                                 textAlign: TextAlign.justify,
@@ -251,13 +248,13 @@ class CurriculumContent extends StatelessWidget
                                 (
                                     children: <TextSpan>
                                     [
-                                        TextSpan(text: "Bachelor of Science Degree", style: entryTextStyle(context)?.copyWith(fontWeight: FontWeight.bold),),
-                                        TextSpan(text: ", Izmir University of Economics", style: entryTextStyle(context)?.copyWith(fontStyle: FontStyle.italic),),
+                                        TextSpan(text: "Bachelor of Science Degree", style: entryTextStyle(context).copyWith(fontWeight: FontWeight.bold),),
+                                        TextSpan(text: ", Izmir University of Economics", style: entryTextStyle(context).copyWith(fontStyle: FontStyle.italic),),
                                         TextSpan(text: ", Faculty of Engineering and Computer Science", style: entryTextStyle(context)),
                                         TextSpan(text: ", Computer Engineering", style: entryTextStyle(context)),
-                                        TextSpan(text: ", GPA - 2.99 / 4.00.", style: entryTextStyle(context)?.copyWith(fontStyle: FontStyle.italic),),
-                                        TextSpan(text: "\nSpecialized in Game Development. For more info follow this ", style: entryTextStyle(context)?.copyWith(fontSize: 16),),
-                                        TextSpan(text: "'link.'", style: entryTextStyle(context)?.copyWith(fontSize: 16, color: mainColor),recognizer: TapGestureRecognizer()..onTap = () { html.window.open(gamedevURL, 'new tab');}),
+                                        TextSpan(text: ", GPA - 2.99 / 4.00.", style: entryTextStyle(context).copyWith(fontStyle: FontStyle.italic),),
+                                        TextSpan(text: "\nSpecialized in Game Development. For more info follow this ", style: entryTextStyle(context).copyWith(fontSize: 16),),
+                                        TextSpan(text: "'link.'", style: entryTextStyle(context).copyWith(fontSize: 16, color: mainColor),recognizer: TapGestureRecognizer()..onTap = () { html.window.open(gamedevURL, 'new tab');}),
                                     ],
                                 ),
                                 textAlign: TextAlign.justify,
@@ -277,8 +274,8 @@ class CurriculumContent extends StatelessWidget
                                 (
                                     children: <TextSpan>
                                     [
-                                        TextSpan(text: "High School Education", style: entryTextStyle(context)?.copyWith(fontWeight: FontWeight.bold),),
-                                        TextSpan(text: ", Bodrum Marmara College", style: entryTextStyle(context)?.copyWith(fontStyle: FontStyle.italic),),
+                                        TextSpan(text: "High School Education", style: entryTextStyle(context).copyWith(fontWeight: FontWeight.bold),),
+                                        TextSpan(text: ", Bodrum Marmara College", style: entryTextStyle(context).copyWith(fontStyle: FontStyle.italic),),
                                     ],
                                 ),
                             ),
@@ -298,8 +295,8 @@ class CurriculumContent extends StatelessWidget
                                 (
                                     children: <TextSpan>
                                     [
-                                        TextSpan(text: "QReal 3D - The Glimpse Group", style: entryTextStyle(context)?.copyWith(fontWeight: FontWeight.bold),),
-                                        TextSpan(text: ", XR Developer", style: entryTextStyle(context)?.copyWith(fontStyle: FontStyle.italic),),
+                                        TextSpan(text: "QReal 3D - The Glimpse Group", style: entryTextStyle(context).copyWith(fontWeight: FontWeight.bold),),
+                                        TextSpan(text: ", XR Developer", style: entryTextStyle(context).copyWith(fontStyle: FontStyle.italic),),
                                     ],
                                 ),
                             ),
@@ -333,8 +330,8 @@ class CurriculumContent extends StatelessWidget
                                 (
                                     children: <TextSpan>
                                     [
-                                        TextSpan(text: "Izmir University of Economics", style: entryTextStyle(context)?.copyWith(fontWeight: FontWeight.bold),),
-                                        TextSpan(text: ", Laboratory Specialist.", style: entryTextStyle(context)?.copyWith(fontStyle: FontStyle.italic),),
+                                        TextSpan(text: "Izmir University of Economics", style: entryTextStyle(context).copyWith(fontWeight: FontWeight.bold),),
+                                        TextSpan(text: ", Laboratory Specialist.", style: entryTextStyle(context).copyWith(fontStyle: FontStyle.italic),),
                                     ],
                                 ),
                             ),
@@ -369,8 +366,8 @@ class CurriculumContent extends StatelessWidget
                                 (
                                     children: <TextSpan>
                                     [
-                                        TextSpan(text: "Izmir University of Economics", style: entryTextStyle(context)?.copyWith(fontWeight: FontWeight.bold),),
-                                        TextSpan(text: ", Voluntary Laboratory Assistant.", style: entryTextStyle(context)?.copyWith(fontStyle: FontStyle.italic),),
+                                        TextSpan(text: "Izmir University of Economics", style: entryTextStyle(context).copyWith(fontWeight: FontWeight.bold),),
+                                        TextSpan(text: ", Voluntary Laboratory Assistant.", style: entryTextStyle(context).copyWith(fontStyle: FontStyle.italic),),
                                     ],
                                 ),
                             ),
@@ -398,8 +395,8 @@ class CurriculumContent extends StatelessWidget
                                 (
                                     children: <TextSpan>
                                     [
-                                        TextSpan(text: "Mobexis Software Corporation", style: entryTextStyle(context)?.copyWith(fontWeight: FontWeight.bold),),
-                                        TextSpan(text: ", Software Developer Intern.", style: entryTextStyle(context)?.copyWith(fontStyle: FontStyle.italic),),
+                                        TextSpan(text: "Mobexis Software Corporation", style: entryTextStyle(context).copyWith(fontWeight: FontWeight.bold),),
+                                        TextSpan(text: ", Software Developer Intern.", style: entryTextStyle(context).copyWith(fontStyle: FontStyle.italic),),
                                     ],
                                 ),
                             ),
@@ -427,8 +424,8 @@ class CurriculumContent extends StatelessWidget
                                 (
                                     children: <TextSpan>
                                     [
-                                        TextSpan(text: "Bilsa Software Corporation", style: entryTextStyle(context)?.copyWith(fontWeight: FontWeight.bold),),
-                                        TextSpan(text: ", Software Developer Intern.", style: entryTextStyle(context)?.copyWith(fontStyle: FontStyle.italic),),
+                                        TextSpan(text: "Bilsa Software Corporation", style: entryTextStyle(context).copyWith(fontWeight: FontWeight.bold),),
+                                        TextSpan(text: ", Software Developer Intern.", style: entryTextStyle(context).copyWith(fontStyle: FontStyle.italic),),
                                     ],
                                 ),
                             ),

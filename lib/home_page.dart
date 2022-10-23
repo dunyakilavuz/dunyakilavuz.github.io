@@ -12,19 +12,37 @@ class Home extends StatefulWidget
 
 class HomeState extends State<Home>
 {
-    static TextStyle? nameText(BuildContext context) 
+    static TextStyle nameText(BuildContext context) 
     {
-        return Theme.of(context).textTheme.headline2?.copyWith
+        return const TextStyle
         (
+            fontFamily: "SF Pro",
+            color: Colors.white,
             fontSize: 90,
             fontWeight: FontWeight.w100,
+            letterSpacing: 40,
         );
     }
 
-    static TextStyle? professionText(BuildContext context) 
+    static TextStyle surnameText(BuildContext context) 
     {
-        return Theme.of(context).textTheme.headline4?.copyWith
+        return const TextStyle
         (
+            fontFamily: "SF Pro",
+            color: Colors.white,
+            fontSize: 90,
+            fontWeight: FontWeight.w100,
+            letterSpacing: 22,
+        );
+    }
+
+
+    static TextStyle professionText(BuildContext context) 
+    {
+        return const TextStyle
+        (
+            fontFamily: "SF Pro",
+            color: Colors.white,
             fontSize: 29, 
             fontWeight: FontWeight.bold, 
             letterSpacing: 1.5,
@@ -59,8 +77,8 @@ class HomeState extends State<Home>
                                     (
                                         children: 
                                         [
-                                            Text('Dünya', style: nameText(context)?.copyWith(letterSpacing: 40),),
-                                            Text('Kılavuz', style: nameText(context)?.copyWith(letterSpacing: 22),),
+                                            Text('Dünya', style: nameText(context)),
+                                            Text('Kılavuz', style: surnameText(context)),
                                             Text('M.Sc. Computer Engineer', style: professionText(context)),
                                         ],
                                     ),

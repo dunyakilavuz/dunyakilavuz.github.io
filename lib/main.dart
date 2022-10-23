@@ -33,26 +33,6 @@ class App extends StatelessWidget
         return ThemeData
         (
             primarySwatch: primaryColor,
-            textTheme: const TextTheme
-            (
-                bodyText2: TextStyle
-                (
-                    fontFamily: "SF Pro",
-                    color: Colors.white,
-
-                ),
-                headline2: TextStyle
-                (
-                    fontFamily: "SF Pro",
-                    color: Colors.white,
-
-                ),
-                headline4: TextStyle
-                (
-                    fontFamily: "SF Pro",
-                    color: Colors.white,
-                )
-            )
         );
     }
 

@@ -16,7 +16,6 @@ class ProjectsState extends State<Projects>
     {
         return Scaffold
         (
-            backgroundColor: Colors.amber,
             body: const SingleChildScrollView
             (
                 child: Center

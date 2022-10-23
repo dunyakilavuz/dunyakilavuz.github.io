@@ -22,19 +22,23 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
     static String mailURL = "mailto:dunyakilavuz@gmail.com";
     static String mailAddress = "dunyakilavuz@gmail.com";
 
-    static TextStyle? buttonText(BuildContext context) 
+    static TextStyle buttonText(BuildContext context) 
     {
-        return Theme.of(context).textTheme.headline2?.copyWith
+        return const TextStyle
         (
+            fontFamily: "SF Pro",
+            color: Colors.white,
             fontSize: 20,
             fontWeight: FontWeight.normal,
         );
     }
 
-    static TextStyle? notificationText(BuildContext context) 
+    static TextStyle notificationText(BuildContext context) 
     {
-        return Theme.of(context).textTheme.headline2?.copyWith
+        return const TextStyle
         (
+            fontFamily: "SF Pro",
+            color: Colors.white,
             fontSize: 15,
             fontWeight: FontWeight.normal,
         );

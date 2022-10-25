@@ -1,6 +1,9 @@
+// ignore_for_file: avoid_web_libraries_in_flutter
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'dart:html' as html;
+import 'package:google_fonts/google_fonts.dart';
 
 class CurriculumContent extends StatelessWidget
 {
@@ -12,57 +15,56 @@ class CurriculumContent extends StatelessWidget
 
     static TextStyle sectionTextStyle (BuildContext context) 
     {
-        return TextStyle
+        return GoogleFonts.roboto
         (
-            fontFamily: "SF Pro",
             fontSize: 24, 
             fontWeight: FontWeight.w400, 
             color: mainColor,
+            letterSpacing: 1,
         );
     }
 
     static TextStyle entryTextStyle (BuildContext context)
     {
-        return const TextStyle
+        return GoogleFonts.roboto
         (
-            fontFamily: "SF Pro",
             fontSize: 18, 
             height: 1.8,
-            color: Color.fromARGB(255, 26, 34, 44),
+            color: Theme.of(context).backgroundColor,
+            letterSpacing: 1,
         );
     }
 
     static TextStyle nameText(BuildContext context) 
     {
-        return TextStyle
+        return GoogleFonts.roboto
         (
-            fontFamily: "SF Pro",
             fontSize: 35,
             fontWeight: FontWeight.bold,
             color: Colors.grey.shade500,
+            letterSpacing: 1,
         );
     }
 
     static TextStyle surnameText(BuildContext context) 
     {
-        return TextStyle
+        return GoogleFonts.roboto
         (
-            fontFamily: "SF Pro",
             fontSize: 35,
             fontWeight: FontWeight.bold,
             color: Colors.grey.shade600,
+            letterSpacing: 1,
         );
     }
 
     static TextStyle professionText(BuildContext context) 
     {
-        return const TextStyle
+        return GoogleFonts.roboto
         (
-            fontFamily: "SF Pro",
             fontSize: 25, 
             fontWeight: FontWeight.w200, 
-            letterSpacing: 1.5,
             color: Colors.black,
+            letterSpacing: 1.5,
         );
     }
 
@@ -454,15 +456,15 @@ class CurriculumContent extends StatelessWidget
                                 children: 
                                 [
                                     entryText("I am actively using the technologies;", context),
-                                    entryText("$bullet Dart - Flutter, this site is actually made with Flutter for web!", context),
-                                    entryText("$bullet JS   - React Native, Lens Studio. ", context),
                                     entryText("$bullet C#   - Unity 3D, Godot Engine.", context),
+                                    entryText("$bullet JS   - React Native, Lens Studio. ", context),
+                                    entryText("$bullet Dart - Flutter, this site is actually made with Flutter for web!", context),
                                     entryText("But also familiar with the technologies;", context),
                                     entryText("$bullet Java", context),
                                     entryText("$bullet Python", context),
                                     entryText("$bullet C & C++", context),
                                     entryText("$bullet HTML & CSS", context),  
-                                    entryText("I actively use Git with GitHub for most of my projects.", context),
+                                    entryText("For most projects, I use Git with GitHub for version control.", context),
                                 ],
                             ),
                         ]
@@ -487,7 +489,7 @@ class CurriculumContent extends StatelessWidget
                                 children: 
                                 [
                                     entryText("I enjoy;", context),
-                                    entryText("$bullet Most sports; weight-lifting, running, swimming, cycling and so on.", context),
+                                    entryText("$bullet Cycling, weight-lifting, running, swimming and so on.", context),
                                     entryText("$bullet Outdoor activities like camping and trekking.", context),
                                     entryText("$bullet Reading and watching things about astronomy and physics.", context),
                                     entryText("$bullet Gaming!", context),

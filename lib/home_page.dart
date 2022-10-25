@@ -1,6 +1,7 @@
 import 'package:dunyakilavuz_github_io/nav_buttons.dart';
 import 'package:dunyakilavuz_github_io/particles.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Home extends StatefulWidget
 {
@@ -14,38 +15,35 @@ class HomeState extends State<Home>
 {
     static TextStyle nameText(BuildContext context) 
     {
-        return const TextStyle
+        return GoogleFonts.roboto
         (
-            fontFamily: "SF Pro",
             color: Colors.white,
             fontSize: 90,
             fontWeight: FontWeight.w100,
-            letterSpacing: 40,
+            letterSpacing: 43,
         );
     }
 
     static TextStyle surnameText(BuildContext context) 
     {
-        return const TextStyle
+        return GoogleFonts.roboto
         (
-            fontFamily: "SF Pro",
             color: Colors.white,
             fontSize: 90,
             fontWeight: FontWeight.w100,
-            letterSpacing: 22,
+            letterSpacing: 23.5,
         );
     }
 
 
     static TextStyle professionText(BuildContext context) 
     {
-        return const TextStyle
+        return GoogleFonts.roboto
         (
-            fontFamily: "SF Pro",
             color: Colors.white,
             fontSize: 29, 
             fontWeight: FontWeight.bold, 
-            letterSpacing: 1.5,
+            letterSpacing: 3.3,
         );
     }
 
@@ -59,7 +57,11 @@ class HomeState extends State<Home>
                 alignment: Alignment.center,
                 children: 
                 [
-                    const Particles(numberOfParticles: 20,),
+                    const Particles
+                    (
+                        numberOfParticles: 20, 
+                        refreshRate: Duration(milliseconds: 20),
+                    ),
                     Container
                     (
                         alignment: Alignment.center,

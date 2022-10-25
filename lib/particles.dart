@@ -9,7 +9,8 @@ class Particles extends StatefulWidget
     @override
     State<StatefulWidget> createState() => ParticlesState();
     final int numberOfParticles;
-    const Particles({super.key, required this.numberOfParticles});
+    final Duration refreshRate;
+    const Particles({super.key, required this.numberOfParticles, required this.refreshRate});
 }
 
 class ParticlesState extends State<Particles> with SingleTickerProviderStateMixin
@@ -30,7 +31,8 @@ class ParticlesState extends State<Particles> with SingleTickerProviderStateMixi
     // defines a timer 
         timer = Timer.periodic
         (
-            const Duration(milliseconds: 20), (Timer t) 
+            widget.refreshRate,
+            (Timer t) 
             {
                 setState(() {});
             }
@@ -44,7 +46,7 @@ class ParticlesState extends State<Particles> with SingleTickerProviderStateMixi
 
         return Container
         (
-            color: const Color.fromARGB(255, 26, 34, 44),
+            color: Theme.of(context).backgroundColor,
             width: dimensions.x,
             height: dimensions.y,
             alignment: Alignment.topLeft,

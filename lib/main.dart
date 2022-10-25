@@ -1,10 +1,20 @@
 import 'package:dunyakilavuz_github_io/curriculum_page.dart';
 import 'package:dunyakilavuz_github_io/home_page.dart';
 import 'package:dunyakilavuz_github_io/projects_page.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() 
 {
+    GoogleFonts.config.allowRuntimeFetching = false;
+    LicenseRegistry.addLicense(() async* 
+    {
+        final license = await rootBundle.loadString('fonts/LICENSE.txt');
+        yield LicenseEntryWithLineBreaks(['google_fonts'], license);
+    });
+
     runApp(const App());
 }
 
@@ -33,6 +43,8 @@ class App extends StatelessWidget
         return ThemeData
         (
             primarySwatch: primaryColor,
+            primaryColor: Colors.white,
+            backgroundColor: const Color.fromARGB(255, 26, 34, 44),
         );
     }
 
@@ -49,6 +61,7 @@ class App extends StatelessWidget
                 Home.route:(context) => const Home(),
                 Curriculum.route:(context) => const Curriculum(),
                 Projects.route:(context) => const Projects(),
+                
             },
         );
     }

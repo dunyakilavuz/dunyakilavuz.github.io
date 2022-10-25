@@ -1,9 +1,12 @@
+// ignore_for_file: avoid_web_libraries_in_flutter
+
 import 'package:dunyakilavuz_github_io/curriculum_page.dart';
 import 'package:dunyakilavuz_github_io/projects_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'dart:html' as html;
+import 'package:google_fonts/google_fonts.dart';
 
 class NavButtons extends StatefulWidget
 {
@@ -24,23 +27,23 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
 
     static TextStyle buttonText(BuildContext context) 
     {
-        return const TextStyle
+        return GoogleFonts.roboto
         (
-            fontFamily: "SF Pro",
             color: Colors.white,
             fontSize: 20,
             fontWeight: FontWeight.normal,
+            letterSpacing: 1,
         );
     }
 
     static TextStyle notificationText(BuildContext context) 
     {
-        return const TextStyle
+        return GoogleFonts.roboto
         (
-            fontFamily: "SF Pro",
             color: Colors.white,
             fontSize: 15,
             fontWeight: FontWeight.normal,
+            letterSpacing: 1,
         );
     }
 

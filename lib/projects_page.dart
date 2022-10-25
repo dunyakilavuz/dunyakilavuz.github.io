@@ -36,6 +36,7 @@ class ProjectsState extends State<Projects>
                 (
                     Icons.chevron_left_sharp,
                     size: 30,
+                    color: Colors.black,
                 ),
             ),
             floatingActionButtonLocation: FloatingActionButtonLocation.miniStartTop,

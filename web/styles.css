@@ -5,13 +5,13 @@ body
 
 h2
 {
-    font-family: Helvetica Neue, Arial, sans-serif;
+    font-family: Roboto,'Helvetica Neue', sans-serif;
     font-weight: 100;
-    font-size:200%;
+    font-size: 400%;
     color: white;
     position: absolute;
     text-align: center;
-    top: 30%;
+    top: 20%;
     left: 0%;
     width: 100%;
 }

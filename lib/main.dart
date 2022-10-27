@@ -43,7 +43,7 @@ class App extends StatelessWidget
         return ThemeData
         (
             primarySwatch: primaryColor,
-            primaryColor: Colors.white,
+            primaryColor: const Color.fromARGB(255, 26, 34, 44),
             backgroundColor: const Color.fromARGB(255, 26, 34, 44),
         );
     }
@@ -60,8 +60,7 @@ class App extends StatelessWidget
             {
                 Home.route:(context) => const Home(),
                 Curriculum.route:(context) => const Curriculum(),
-                Projects.route:(context) => const Projects(),
-                
+                Projects.route:(context) => const Projects(), 
             },
         );
     }

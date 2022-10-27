@@ -1,6 +1,7 @@
 import 'package:dunyakilavuz_github_io/project_digital_daragac.dart';
 import 'package:dunyakilavuz_github_io/utils.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 
@@ -9,7 +10,6 @@ class ProjectTemplate extends StatelessWidget
     final String route;
     final String title;
     final String imagePath;
-    final Color cardColor;
     final Widget projectContent;
 
     const ProjectTemplate
@@ -19,7 +19,6 @@ class ProjectTemplate extends StatelessWidget
             required this.route, 
             required this.title,
             required this.imagePath,
-            required this.cardColor,
             required this.projectContent,
         }
     );
@@ -49,22 +48,20 @@ class ProjectsContentState extends State<ProjectsContent>
         route: "/digitaldaragac",
         title: "Digital Daragac",
         imagePath: "assets/digitaldaragac.png",
-        cardColor: Colors.black38,
         projectContent: projectDigitalDaragac(),
     );
 
     ProjectTemplate lensStudioProjects = ProjectTemplate
     (
         route: "/snapchatlensstudio",
-        title: "Lens Studio",
-        imagePath: "assets/lensstudio.png",
-        cardColor: Colors.black38,
+        title: "AR Projects",
+        imagePath: "assets/ar_icon.svg",
         projectContent: projectDigitalDaragac(),
     );
 
 
 
-    static TextStyle sectionText(BuildContext context) 
+    static TextStyle sectionText() 
     {
         return GoogleFonts.roboto
         (
@@ -75,7 +72,18 @@ class ProjectsContentState extends State<ProjectsContent>
         );
     }
 
-    static TextStyle cardTitleText(BuildContext context) 
+    static TextStyle entryTextStyle()
+    {
+        return GoogleFonts.roboto
+        (
+            fontSize: 18, 
+            height: 1.8,
+            color: Colors.black,
+            letterSpacing: 1,
+        );
+    }
+
+    static TextStyle cardTitleText() 
     {
         return GoogleFonts.roboto
         (
@@ -100,7 +108,11 @@ class ProjectsContentState extends State<ProjectsContent>
                     (
                         borderRadius:BorderRadius.circular(15.0)
                     ),
-                    child: project
+                    child: SingleChildScrollView
+                    (
+                        scrollDirection: Axis.vertical,
+                        child: project,
+                    )
                 );
             }
         );
@@ -112,18 +124,18 @@ class ProjectsContentState extends State<ProjectsContent>
         double boxSize = 250;
         return Material
         (
-            color: project.cardColor,
+            color: const Color.fromARGB(255, 26, 34, 44),
             borderRadius: radius,
             child: InkWell
             (
                 borderRadius: radius,
                 onTap: () => displayProject(project),
+                hoverColor: const Color.fromARGB(255, 36, 48, 61),
                 child: Container
                 (
                     decoration: BoxDecoration
                     (
                         borderRadius: radius,
-                        color: project.cardColor,
                     ),
                     width: boxSize,
                     height: boxSize,
@@ -135,7 +147,16 @@ class ProjectsContentState extends State<ProjectsContent>
                             ClipRRect
                             (
                                 borderRadius: radius,
-                                child: Image.asset
+                                child: project.imagePath.endsWith(".svg") ?
+                                SvgPicture.asset
+                                (
+                                    project.imagePath,
+                                    color: Colors.white,
+                                    width: 100,
+                                    height: 100,
+                                )
+                                :
+                                Image.asset
                                 (
                                     project.imagePath,
                                     width: 100,
@@ -143,7 +164,7 @@ class ProjectsContentState extends State<ProjectsContent>
                                 )
                             ),
                             Utils.columnSeperator(10),
-                            Text(project.title, style: cardTitleText(context),),
+                            Text(project.title, style: cardTitleText(),),
                             Expanded(child: Container()),
                         ],
                     ),
@@ -155,41 +176,38 @@ class ProjectsContentState extends State<ProjectsContent>
     @override
     Widget build(BuildContext context) 
     {
-        return SingleChildScrollView
+        return Column
         (
-            child: Column
-            (
-                children: 
-                [
-                    Utils.columnSeperator(10),
-                    Row
-                    (
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: 
-                        [
-                            const Icon
-                            (
-                                Icons.architecture_outlined,
-                                color: Colors.black,
-                                size: 35,
-                            ),
-                            Text("Projects",style: sectionText(context),),
-                        ]
-                    ),
-                    Utils.columnSeperator(50),
-                    Wrap
-                    (
-                        spacing: 10,
-                        runSpacing: 10,
-                        children: 
-                        [
-                            projectCard(digitalDaragacProject),
-                            projectCard(lensStudioProjects),
-                        ],
-                    ),
-                ],
-            )
+            children: 
+            [
+                Utils.columnSeperator(10),
+                Row
+                (
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: 
+                    [
+                        const Icon
+                        (
+                            Icons.architecture_outlined,
+                            color: Colors.black,
+                            size: 35,
+                        ),
+                        Text("Projects",style: sectionText(),),
+                    ]
+                ),
+                Utils.columnSeperator(50),
+                Wrap
+                (
+                    spacing: 10,
+                    runSpacing: 10,
+                    children: 
+                    [
+                        projectCard(digitalDaragacProject),
+                        projectCard(lensStudioProjects),
+                    ],
+                ),
+            ],
         );
     }
 }

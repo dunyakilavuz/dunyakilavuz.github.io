@@ -1,5 +1,6 @@
 import 'package:dunyakilavuz_github_io/nav_buttons.dart';
 import 'package:dunyakilavuz_github_io/particles.dart';
+import 'package:dunyakilavuz_github_io/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -41,9 +42,9 @@ class HomeState extends State<Home>
         return GoogleFonts.roboto
         (
             color: Colors.white,
-            fontSize: 29, 
+            fontSize: 30, 
             fontWeight: FontWeight.bold, 
-            letterSpacing: 3.3,
+            letterSpacing: 2.8,
         );
     }
 
@@ -62,37 +63,28 @@ class HomeState extends State<Home>
                         numberOfParticles: 20, 
                         refreshRate: Duration(milliseconds: 20),
                     ),
-                    Container
+                    Padding
                     (
-                        alignment: Alignment.center,
-                        width: MediaQuery.of(context).size.width * 0.9,
-                        height: MediaQuery.of(context).size.height,
-                        child: Column
+                        padding: const EdgeInsets.only(left: 20, right: 20),
+                        child: FittedBox
                         (
-                            children: <Widget>
-                            [
-                                Expanded(child: Container(),),
-                                FittedBox
-                                (
-                                    fit: BoxFit.scaleDown,
-                                    child: Column
-                                    (
-                                        children: 
-                                        [
-                                            Text('Dünya', style: nameText(context)),
-                                            Text('Kılavuz', style: surnameText(context)),
-                                            Text('M.Sc. Computer Engineer', style: professionText(context)),
-                                        ],
-                                    ),
-                                ),
-                                const SizedBox(height: 10,),
-                                const NavButtons(),
-                                Expanded(child: Container(),),
-                            ],
+                            fit: BoxFit.scaleDown,
+                            alignment: Alignment.center,
+                            child: Column
+                            (
+                                children: 
+                                [
+                                    Text('Dünya', style: nameText(context)),
+                                    Text('Kılavuz', style: surnameText(context)),
+                                    Text('M.Sc. Computer Engineer', style: professionText(context)),
+                                    Utils.columnSeperator(10),
+                                    const NavButtons(),
+                                ],
+                            ),
                         ),
                     ),
                 ],
-            ),
+            )
         );
     }
 }

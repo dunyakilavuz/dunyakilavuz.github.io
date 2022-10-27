@@ -13,7 +13,7 @@ class CurriculumContent extends StatelessWidget
     static Color mainColor = Colors.lightBlue.shade900;
     static String bullet = "\u2022 ";
 
-    static TextStyle sectionTextStyle (BuildContext context) 
+    static TextStyle sectionTextStyle () 
     {
         return GoogleFonts.roboto
         (
@@ -24,18 +24,18 @@ class CurriculumContent extends StatelessWidget
         );
     }
 
-    static TextStyle entryTextStyle (BuildContext context)
+    static TextStyle entryTextStyle()
     {
         return GoogleFonts.roboto
         (
             fontSize: 18, 
             height: 1.8,
-            color: Theme.of(context).backgroundColor,
+            color: Colors.black,
             letterSpacing: 1,
         );
     }
 
-    static TextStyle nameText(BuildContext context) 
+    static TextStyle nameText() 
     {
         return GoogleFonts.roboto
         (
@@ -46,7 +46,7 @@ class CurriculumContent extends StatelessWidget
         );
     }
 
-    static TextStyle surnameText(BuildContext context) 
+    static TextStyle surnameText() 
     {
         return GoogleFonts.roboto
         (
@@ -57,7 +57,7 @@ class CurriculumContent extends StatelessWidget
         );
     }
 
-    static TextStyle professionText(BuildContext context) 
+    static TextStyle professionText() 
     {
         return GoogleFonts.roboto
         (
@@ -68,7 +68,7 @@ class CurriculumContent extends StatelessWidget
         );
     }
 
-    static TableRow sectionText(String text ,BuildContext context)
+    static TableRow sectionText(String text)
     {
         return TableRow
         (
@@ -88,19 +88,19 @@ class CurriculumContent extends StatelessWidget
                     )
                 ),
                 Container(),
-                Text(text, style: sectionTextStyle(context)),
+                Text(text, style: sectionTextStyle()),
             ],
         );
     }
 
-    static Text entryText(String text, BuildContext context, {TextAlign textAlign = TextAlign.left, TextOverflow overflow = TextOverflow.visible})
+    static Text entryText(String text, {TextAlign textAlign = TextAlign.left, TextOverflow overflow = TextOverflow.visible})
     {
         return Text
         (
             text , 
             textAlign: textAlign, 
             overflow: overflow,
-            style: entryTextStyle(context)
+            style: entryTextStyle()
         );
     }
 
@@ -117,15 +117,15 @@ class CurriculumContent extends StatelessWidget
         );
     }
 
-    static TableRow dictionaryRow(String key, String value, BuildContext context)
+    static TableRow dictionaryRow(String key, String value)
     {
         return TableRow
         (
             children: 
             [
-                entryText(key, context, textAlign: TextAlign.right, overflow: TextOverflow.ellipsis),
+                entryText(key, textAlign: TextAlign.right, overflow: TextOverflow.ellipsis),
                 Container(),
-                entryText(value, context),
+                entryText(value),
             ]
         );
     }
@@ -183,12 +183,12 @@ class CurriculumContent extends StatelessWidget
                                             (
                                                 children: <TextSpan> 
                                                 [
-                                                    TextSpan(text: "Dünya ", style: nameText(context),),
-                                                    TextSpan(text: "Kılavuz", style: surnameText(context)),
+                                                    TextSpan(text: "Dünya ", style: nameText(),),
+                                                    TextSpan(text: "Kılavuz", style: surnameText()),
                                                 ]
                                             ),
                                         ),
-                                        Text("M.Sc. Computer Engineer", style: professionText(context),),
+                                        Text("M.Sc. Computer Engineer", style: professionText(),),
                                     ]
                                 ),  
                             )
@@ -211,12 +211,12 @@ class CurriculumContent extends StatelessWidget
                         ]
                     ),
                     seperator(10),
-                    sectionText("Education", context),
+                    sectionText("Education"),
                     TableRow
                     (
                         children: 
                         [
-                            Text("2017 - 2020", style: entryTextStyle(context), textAlign: TextAlign.right,),
+                            Text("2017 - 2020", style: entryTextStyle(), textAlign: TextAlign.right,),
                             Container(),
                             RichText
                             (
@@ -224,13 +224,13 @@ class CurriculumContent extends StatelessWidget
                                 (
                                     children: <TextSpan>
                                     [
-                                        TextSpan(text: "Master of Science Degree", style: entryTextStyle(context).copyWith(fontWeight: FontWeight.bold),),
-                                        TextSpan(text: ", Izmir University of Economics", style: entryTextStyle(context).copyWith(fontStyle: FontStyle.italic),),
-                                        TextSpan(text: ", Faculty of Engineering and Computer Science", style: entryTextStyle(context)),
-                                        TextSpan(text: ", Computer Engineering", style: entryTextStyle(context)),
-                                        TextSpan(text: ", GPA - 3.50 / 4.00.", style: entryTextStyle(context).copyWith(fontStyle: FontStyle.italic),),
-                                        TextSpan(text: "\nTo view the thesis document, follow the Council of Higher Education's Thesis ", style: entryTextStyle(context).copyWith(fontSize: 16),),
-                                        TextSpan(text: "'link.'", style: entryTextStyle(context).copyWith(fontSize: 16, color: mainColor),recognizer: TapGestureRecognizer()..onTap = () { html.window.open(thesisURL, 'new tab');}),
+                                        TextSpan(text: "Master of Science Degree", style: entryTextStyle().copyWith(fontWeight: FontWeight.bold),),
+                                        TextSpan(text: ", Izmir University of Economics", style: entryTextStyle().copyWith(fontStyle: FontStyle.italic),),
+                                        TextSpan(text: ", Faculty of Engineering and Computer Science", style: entryTextStyle()),
+                                        TextSpan(text: ", Computer Engineering", style: entryTextStyle()),
+                                        TextSpan(text: ", GPA - 3.50 / 4.00.", style: entryTextStyle().copyWith(fontStyle: FontStyle.italic),),
+                                        TextSpan(text: "\nTo view the thesis document, follow the Council of Higher Education's Thesis ", style: entryTextStyle().copyWith(fontSize: 16),),
+                                        TextSpan(text: "'link.'", style: entryTextStyle().copyWith(fontSize: 16, color: mainColor),recognizer: TapGestureRecognizer()..onTap = () { html.window.open(thesisURL, 'new tab');}),
                                     ],
                                 ),
                                 textAlign: TextAlign.justify,
@@ -242,7 +242,7 @@ class CurriculumContent extends StatelessWidget
                     (
                         children: 
                         [
-                            Text("2012 - 2016", style: entryTextStyle(context), textAlign: TextAlign.right,),
+                            Text("2012 - 2016", style: entryTextStyle(), textAlign: TextAlign.right,),
                             Container(),
                             RichText
                             (
@@ -250,13 +250,13 @@ class CurriculumContent extends StatelessWidget
                                 (
                                     children: <TextSpan>
                                     [
-                                        TextSpan(text: "Bachelor of Science Degree", style: entryTextStyle(context).copyWith(fontWeight: FontWeight.bold),),
-                                        TextSpan(text: ", Izmir University of Economics", style: entryTextStyle(context).copyWith(fontStyle: FontStyle.italic),),
-                                        TextSpan(text: ", Faculty of Engineering and Computer Science", style: entryTextStyle(context)),
-                                        TextSpan(text: ", Computer Engineering", style: entryTextStyle(context)),
-                                        TextSpan(text: ", GPA - 2.99 / 4.00.", style: entryTextStyle(context).copyWith(fontStyle: FontStyle.italic),),
-                                        TextSpan(text: "\nSpecialized in Game Development. For more info follow this ", style: entryTextStyle(context).copyWith(fontSize: 16),),
-                                        TextSpan(text: "'link.'", style: entryTextStyle(context).copyWith(fontSize: 16, color: mainColor),recognizer: TapGestureRecognizer()..onTap = () { html.window.open(gamedevURL, 'new tab');}),
+                                        TextSpan(text: "Bachelor of Science Degree", style: entryTextStyle().copyWith(fontWeight: FontWeight.bold),),
+                                        TextSpan(text: ", Izmir University of Economics", style: entryTextStyle().copyWith(fontStyle: FontStyle.italic),),
+                                        TextSpan(text: ", Faculty of Engineering and Computer Science", style: entryTextStyle()),
+                                        TextSpan(text: ", Computer Engineering", style: entryTextStyle()),
+                                        TextSpan(text: ", GPA - 2.99 / 4.00.", style: entryTextStyle().copyWith(fontStyle: FontStyle.italic),),
+                                        TextSpan(text: "\nSpecialized in Game Development. For more info follow this ", style: entryTextStyle().copyWith(fontSize: 16),),
+                                        TextSpan(text: "'link.'", style: entryTextStyle().copyWith(fontSize: 16, color: mainColor),recognizer: TapGestureRecognizer()..onTap = () { html.window.open(gamedevURL, 'new tab');}),
                                     ],
                                 ),
                                 textAlign: TextAlign.justify,
@@ -268,7 +268,7 @@ class CurriculumContent extends StatelessWidget
                     (
                         children: 
                         [
-                            Text("2008 - 2012", style: entryTextStyle(context), textAlign: TextAlign.right,),
+                            Text("2008 - 2012", style: entryTextStyle(), textAlign: TextAlign.right,),
                             Container(),
                             RichText
                             (
@@ -276,20 +276,20 @@ class CurriculumContent extends StatelessWidget
                                 (
                                     children: <TextSpan>
                                     [
-                                        TextSpan(text: "High School Education", style: entryTextStyle(context).copyWith(fontWeight: FontWeight.bold),),
-                                        TextSpan(text: ", Bodrum Marmara College", style: entryTextStyle(context).copyWith(fontStyle: FontStyle.italic),),
+                                        TextSpan(text: "High School Education", style: entryTextStyle().copyWith(fontWeight: FontWeight.bold),),
+                                        TextSpan(text: ", Bodrum Marmara College", style: entryTextStyle().copyWith(fontStyle: FontStyle.italic),),
                                     ],
                                 ),
                             ),
                         ]
                     ),
                     seperator(10),
-                    sectionText("Experience", context),
+                    sectionText("Experience"),
                     TableRow
                     (
                         children: 
                         [
-                            Text("2021 Aug - Today", style: entryTextStyle(context), textAlign: TextAlign.right,),
+                            Text("2021 Aug - Today", style: entryTextStyle(), textAlign: TextAlign.right,),
                             Container(),
                             RichText
                             (
@@ -297,8 +297,8 @@ class CurriculumContent extends StatelessWidget
                                 (
                                     children: <TextSpan>
                                     [
-                                        TextSpan(text: "QReal 3D - The Glimpse Group", style: entryTextStyle(context).copyWith(fontWeight: FontWeight.bold),),
-                                        TextSpan(text: ", XR Developer", style: entryTextStyle(context).copyWith(fontStyle: FontStyle.italic),),
+                                        TextSpan(text: "QReal 3D - The Glimpse Group", style: entryTextStyle().copyWith(fontWeight: FontWeight.bold),),
+                                        TextSpan(text: ", XR Developer", style: entryTextStyle().copyWith(fontStyle: FontStyle.italic),),
                                     ],
                                 ),
                             ),
@@ -308,14 +308,14 @@ class CurriculumContent extends StatelessWidget
                     (
                         children: 
                         [
-                            Text("Description", style: entryTextStyle(context), textAlign: TextAlign.right, maxLines: 1, overflow: TextOverflow.ellipsis,),
+                            Text("Description", style: entryTextStyle(), textAlign: TextAlign.right, maxLines: 1, overflow: TextOverflow.ellipsis,),
                             Container(),
                             Text
                             (
                                 "QReal specializes in creating life-like 3D and Augmented Reality (AR) content. "
                                 "Job includes creating Snapchat Lenses from storyboards, implementing game mechanics by mainly scripting in Javascript, "
                                 "material editing for both 2D and 3D content, designing levels and so on. Used Lens Studio, a very similar tool to Unity 3D." , 
-                                style: entryTextStyle(context), 
+                                style: entryTextStyle(), 
                                 textAlign: TextAlign.justify,
                             )
                         ]
@@ -324,7 +324,7 @@ class CurriculumContent extends StatelessWidget
                     (
                         children: 
                         [
-                            Text("2018 Jul - 2021 Aug", style: entryTextStyle(context), textAlign: TextAlign.right,),
+                            Text("2018 Jul - 2021 Aug", style: entryTextStyle(), textAlign: TextAlign.right,),
                             Container(),
                             RichText
                             (
@@ -332,8 +332,8 @@ class CurriculumContent extends StatelessWidget
                                 (
                                     children: <TextSpan>
                                     [
-                                        TextSpan(text: "Izmir University of Economics", style: entryTextStyle(context).copyWith(fontWeight: FontWeight.bold),),
-                                        TextSpan(text: ", Laboratory Specialist.", style: entryTextStyle(context).copyWith(fontStyle: FontStyle.italic),),
+                                        TextSpan(text: "Izmir University of Economics", style: entryTextStyle().copyWith(fontWeight: FontWeight.bold),),
+                                        TextSpan(text: ", Laboratory Specialist.", style: entryTextStyle().copyWith(fontStyle: FontStyle.italic),),
                                     ],
                                 ),
                             ),
@@ -343,14 +343,14 @@ class CurriculumContent extends StatelessWidget
                     (
                         children: 
                         [
-                            Text("Description", style: entryTextStyle(context), textAlign: TextAlign.right, maxLines: 1, overflow: TextOverflow.ellipsis,),
+                            Text("Description", style: entryTextStyle(), textAlign: TextAlign.right, maxLines: 1, overflow: TextOverflow.ellipsis,),
                             Container(),
                             Text(
                                 "Computer technician duty in a newly opened laboratory in IUE. "
                                 "Job includes duties like server management, mail service administration, "
                                 "local networking, periodic checks and maintenance of laboratory computers and other hardware. "
                                 "I was employed while doing my Master's degree.", 
-                                style: entryTextStyle(context), 
+                                style: entryTextStyle(), 
                                 textAlign: TextAlign.justify,
                             )
                         ]
@@ -360,7 +360,7 @@ class CurriculumContent extends StatelessWidget
                     (
                         children: 
                         [
-                            Text("2017 Fall", style: entryTextStyle(context), textAlign: TextAlign.right,),
+                            Text("2017 Fall", style: entryTextStyle(), textAlign: TextAlign.right,),
                             Container(),
                             RichText
                             (
@@ -368,8 +368,8 @@ class CurriculumContent extends StatelessWidget
                                 (
                                     children: <TextSpan>
                                     [
-                                        TextSpan(text: "Izmir University of Economics", style: entryTextStyle(context).copyWith(fontWeight: FontWeight.bold),),
-                                        TextSpan(text: ", Voluntary Laboratory Assistant.", style: entryTextStyle(context).copyWith(fontStyle: FontStyle.italic),),
+                                        TextSpan(text: "Izmir University of Economics", style: entryTextStyle().copyWith(fontWeight: FontWeight.bold),),
+                                        TextSpan(text: ", Voluntary Laboratory Assistant.", style: entryTextStyle().copyWith(fontStyle: FontStyle.italic),),
                                     ],
                                 ),
                             ),
@@ -379,9 +379,9 @@ class CurriculumContent extends StatelessWidget
                     (
                         children: 
                         [
-                            Text("Description", style: entryTextStyle(context), textAlign: TextAlign.right, maxLines: 1, overflow: TextOverflow.ellipsis,),
+                            Text("Description", style: entryTextStyle(), textAlign: TextAlign.right, maxLines: 1, overflow: TextOverflow.ellipsis,),
                             Container(),
-                            Text("Assisted the course 'SE 320 - Introduction to Computer Games' throughout the semester.", style: entryTextStyle(context), textAlign: TextAlign.justify,)
+                            Text("Assisted the course 'SE 320 - Introduction to Computer Games' throughout the semester.", style: entryTextStyle(), textAlign: TextAlign.justify,)
                         ]
                     ),
                     seperator(10),
@@ -389,7 +389,7 @@ class CurriculumContent extends StatelessWidget
                     (
                         children: 
                         [
-                            Text("2014 Summer", style: entryTextStyle(context), textAlign: TextAlign.right, maxLines: 2, overflow: TextOverflow.ellipsis,),
+                            Text("2014 Summer", style: entryTextStyle(), textAlign: TextAlign.right, maxLines: 2, overflow: TextOverflow.ellipsis,),
                             Container(),
                             RichText
                             (
@@ -397,8 +397,8 @@ class CurriculumContent extends StatelessWidget
                                 (
                                     children: <TextSpan>
                                     [
-                                        TextSpan(text: "Mobexis Software Corporation", style: entryTextStyle(context).copyWith(fontWeight: FontWeight.bold),),
-                                        TextSpan(text: ", Software Developer Intern.", style: entryTextStyle(context).copyWith(fontStyle: FontStyle.italic),),
+                                        TextSpan(text: "Mobexis Software Corporation", style: entryTextStyle().copyWith(fontWeight: FontWeight.bold),),
+                                        TextSpan(text: ", Software Developer Intern.", style: entryTextStyle().copyWith(fontStyle: FontStyle.italic),),
                                     ],
                                 ),
                             ),
@@ -408,9 +408,9 @@ class CurriculumContent extends StatelessWidget
                     (
                         children: 
                         [
-                            Text("Description", style: entryTextStyle(context), textAlign: TextAlign.right, maxLines: 1, overflow: TextOverflow.ellipsis,),
+                            Text("Description", style: entryTextStyle(), textAlign: TextAlign.right, maxLines: 1, overflow: TextOverflow.ellipsis,),
                             Container(),
-                            Text("Moving, re-developing a Java game project to Unity Engine.", style: entryTextStyle(context), textAlign: TextAlign.justify,)
+                            Text("Moving, re-developing a Java game project to Unity Engine.", style: entryTextStyle(), textAlign: TextAlign.justify,)
                         ]
                     ),
                     seperator(10),
@@ -418,7 +418,7 @@ class CurriculumContent extends StatelessWidget
                     (
                         children: 
                         [
-                            Text("2013 Summer", style: entryTextStyle(context), textAlign: TextAlign.right, maxLines: 2, overflow: TextOverflow.ellipsis,),
+                            Text("2013 Summer", style: entryTextStyle(), textAlign: TextAlign.right, maxLines: 2, overflow: TextOverflow.ellipsis,),
                             Container(),
                             RichText
                             (
@@ -426,8 +426,8 @@ class CurriculumContent extends StatelessWidget
                                 (
                                     children: <TextSpan>
                                     [
-                                        TextSpan(text: "Bilsa Software Corporation", style: entryTextStyle(context).copyWith(fontWeight: FontWeight.bold),),
-                                        TextSpan(text: ", Software Developer Intern.", style: entryTextStyle(context).copyWith(fontStyle: FontStyle.italic),),
+                                        TextSpan(text: "Bilsa Software Corporation", style: entryTextStyle().copyWith(fontWeight: FontWeight.bold),),
+                                        TextSpan(text: ", Software Developer Intern.", style: entryTextStyle().copyWith(fontStyle: FontStyle.italic),),
                                     ],
                                 ),
                             ),
@@ -437,13 +437,13 @@ class CurriculumContent extends StatelessWidget
                     (
                         children: 
                         [
-                            Text("Description", style: entryTextStyle(context), textAlign: TextAlign.right, maxLines: 1, overflow: TextOverflow.ellipsis,),
+                            Text("Description", style: entryTextStyle(), textAlign: TextAlign.right, maxLines: 1, overflow: TextOverflow.ellipsis,),
                             Container(),
-                            Text("Introduction to Java programming language, making applications using JFrame.", style: entryTextStyle(context), textAlign: TextAlign.justify,)
+                            Text("Introduction to Java programming language, making applications using JFrame.", style: entryTextStyle(), textAlign: TextAlign.justify,)
                         ]
                     ),
                     seperator(10),
-                    sectionText("Skills", context),
+                    sectionText("Skills"),
                     TableRow
                     (
                         children: 
@@ -455,28 +455,28 @@ class CurriculumContent extends StatelessWidget
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: 
                                 [
-                                    entryText("I am actively using the technologies;", context),
-                                    entryText("$bullet C#   - Unity 3D, Godot Engine.", context),
-                                    entryText("$bullet JS   - React Native, Lens Studio. ", context),
-                                    entryText("$bullet Dart - Flutter, this site is actually made with Flutter for web!", context),
-                                    entryText("But also familiar with the technologies;", context),
-                                    entryText("$bullet Java", context),
-                                    entryText("$bullet Python", context),
-                                    entryText("$bullet C & C++", context),
-                                    entryText("$bullet HTML & CSS", context),  
-                                    entryText("For most projects, I use Git with GitHub for version control.", context),
+                                    entryText("I am actively using the technologies;"),
+                                    entryText("$bullet C#   - Unity 3D, Godot Engine."),
+                                    entryText("$bullet JS   - React Native, Lens Studio. "),
+                                    entryText("$bullet Dart - Flutter, this site is actually made with Flutter for web!"),
+                                    entryText("But also familiar with the technologies;"),
+                                    entryText("$bullet Java"),
+                                    entryText("$bullet Python"),
+                                    entryText("$bullet C & C++"),
+                                    entryText("$bullet HTML & CSS"),  
+                                    entryText("For most projects, I use Git with GitHub for version control."),
                                 ],
                             ),
                         ]
                     ),
                     seperator(10),
-                    sectionText("Language Skills", context),
-                    dictionaryRow("Turkish", "Native", context),
-                    dictionaryRow("English", "IELTS 7.0 / 9.0 - 20.05.2017", context),
-                    dictionaryRow("Spanish", "Intermediate", context),
-                    dictionaryRow("Greek", "Beginner, just started learning", context),
+                    sectionText("Language Skills"),
+                    dictionaryRow("Turkish", "Native"),
+                    dictionaryRow("English", "IELTS 7.0 / 9.0 - 20.05.2017"),
+                    dictionaryRow("Spanish", "Intermediate"),
+                    dictionaryRow("Greek", "Beginner, just started learning"),
                     seperator(10),
-                    sectionText("About me", context),
+                    sectionText("About me"),
                     TableRow
                     (
                         children: 
@@ -488,11 +488,11 @@ class CurriculumContent extends StatelessWidget
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: 
                                 [
-                                    entryText("I enjoy;", context),
-                                    entryText("$bullet Cycling, weight-lifting, running, swimming and so on.", context),
-                                    entryText("$bullet Outdoor activities like camping and trekking.", context),
-                                    entryText("$bullet Reading and watching things about astronomy and physics.", context),
-                                    entryText("$bullet Gaming!", context),
+                                    entryText("I enjoy;"),
+                                    entryText("$bullet Cycling, weight-lifting, running, swimming and so on."),
+                                    entryText("$bullet Outdoor activities like camping and trekking."),
+                                    entryText("$bullet Reading and watching things about astronomy and physics."),
+                                    entryText("$bullet Gaming!"),
                                 ],
                             ),
                         ]

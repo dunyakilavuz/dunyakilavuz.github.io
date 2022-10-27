@@ -214,74 +214,70 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
     @override
     Widget build(BuildContext context) 
     {
-        return SingleChildScrollView
+        return Row
         (
-            scrollDirection: Axis.horizontal,
-            child: Row
-            (
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: 
-                [
-                    iconAndLabelButton
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: 
+            [
+                iconAndLabelButton
+                (
+                    Icon
                     (
-                        Icon
-                        (
-                            Icons.history_edu_sharp,
-                            color: buttonColor.evaluate(AlwaysStoppedAnimation(buttonColorController.value)),
-                            size: iconSize,
-                        ),
-                        onCurriculumTap,
-                        "Curriculum",
+                        Icons.history_edu_sharp,
+                        color: buttonColor.evaluate(AlwaysStoppedAnimation(buttonColorController.value)),
+                        size: iconSize,
                     ),
-                    seperator(10),
-                    iconAndLabelButton
+                    onCurriculumTap,
+                    "Curriculum",
+                ),
+                seperator(10),
+                iconAndLabelButton
+                (
+                    Icon
                     (
-                        Icon
-                        (
-                            Icons.architecture_sharp,
-                            color: buttonColor.evaluate(AlwaysStoppedAnimation(buttonColorController.value)),
-                            size: iconSize,
-                        ),
-                        onProjectsTap,
-                        "Projects",
+                        Icons.architecture_sharp,
+                        color: buttonColor.evaluate(AlwaysStoppedAnimation(buttonColorController.value)),
+                        size: iconSize,
                     ),
-                    seperator(10),
-                    iconOnlyButton
+                    onProjectsTap,
+                    "Projects",
+                ),
+                seperator(10),
+                iconOnlyButton
+                (
+                    Icon
                     (
-                        Icon
-                        (
-                            Icons.email_outlined,
-                            color: buttonColor.evaluate(AlwaysStoppedAnimation(buttonColorController.value)),
-                            size: iconSize,
-                        ),
-                        onMailTap
+                        Icons.email_outlined,
+                        color: buttonColor.evaluate(AlwaysStoppedAnimation(buttonColorController.value)),
+                        size: iconSize,
                     ),
-                    seperator(10),
-                    svgOnlyButton
+                    onMailTap
+                ),
+                seperator(10),
+                svgOnlyButton
+                (
+                    SvgPicture.asset
                     (
-                        SvgPicture.asset
-                        (
-                            "assets/linkedin_icon.svg",
-                            color: buttonColor.evaluate(AlwaysStoppedAnimation(buttonColorController.value)),
-                            width: iconSize,
-                            height: iconSize,
-                        ),
-                        onLinkedInTap
+                        "assets/linkedin_icon.svg",
+                        color: buttonColor.evaluate(AlwaysStoppedAnimation(buttonColorController.value)),
+                        width: iconSize,
+                        height: iconSize,
                     ),
-                    seperator(10),
-                    svgOnlyButton
+                    onLinkedInTap
+                ),
+                seperator(10),
+                svgOnlyButton
+                (
+                    SvgPicture.asset
                     (
-                        SvgPicture.asset
-                        (
-                            "assets/github_icon.svg",
-                            color: buttonColor.evaluate(AlwaysStoppedAnimation(buttonColorController.value)),
-                            width: iconSize,
-                            height: iconSize,
-                        ),
-                        onGithubTap
+                        "assets/github_icon.svg",
+                        color: buttonColor.evaluate(AlwaysStoppedAnimation(buttonColorController.value)),
+                        width: iconSize,
+                        height: iconSize,
                     ),
-                ],
-            )
+                    onGithubTap
+                ),
+            ],
         );
     }
 }

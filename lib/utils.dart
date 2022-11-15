@@ -1,5 +1,8 @@
+// ignore_for_file: avoid_web_libraries_in_flutter
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'dart:html' as html;
 
 class Utils
 {
@@ -12,7 +15,7 @@ class Utils
             child: enabled ?
             InkWell // Enabled
             (
-                customBorder: RoundedRectangleBorder(borderRadius:BorderRadius.circular(10.0)),
+                customBorder: RoundedRectangleBorder(borderRadius:BorderRadius.circular(10.0),),
                 onTap: onTap,
                 child: svg
             )
@@ -50,5 +53,47 @@ class Utils
     static Container rowSeperator(double width)
     {
         return Container(width: width);
+    }
+
+    static Container imageGallery(List<String> images, double height)
+    {
+        final ScrollController scrollController = ScrollController();
+
+        return Container
+        (
+            height: height,
+            decoration: BoxDecoration
+            (
+                color: Colors.grey.shade100,
+                borderRadius: BorderRadius.circular(18.0),
+            ),
+            child: Scrollbar
+            (
+                thumbVisibility: true,
+                controller: scrollController,
+                child: ListView.builder
+                (
+                    controller: scrollController,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: images.length,
+                    shrinkWrap: true,
+                    physics: const BouncingScrollPhysics(),
+                    itemBuilder: (context, index)
+                    {
+                        return Container
+                        (
+                            color: Colors.grey,
+                            margin: const EdgeInsets.all(20),
+                            child: Image.asset(images.elementAt(index), height: height,),
+                        );
+                    }
+                )
+            )
+        );
+    }
+
+    static void openURLatNewTab(String url)
+    {
+        html.window.open(url, 'new tab');
     }
 }

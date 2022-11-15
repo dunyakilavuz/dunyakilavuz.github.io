@@ -166,7 +166,7 @@ class CurriculumContent extends StatelessWidget
                                     ),
                                 ) ,
                                 padding: const EdgeInsets.all(5),
-                                child: Image.asset("assets/profilepic.jpeg",),  
+                                child: Image.asset("assets/profilepic.jpg",),  
                             ),
                             Container(),
                             FittedBox

@@ -2,10 +2,10 @@
 
 import 'package:dunyakilavuz_github_io/curriculum_page.dart';
 import 'package:dunyakilavuz_github_io/projects_page.dart';
+import 'package:dunyakilavuz_github_io/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
-import 'dart:html' as html;
 import 'package:google_fonts/google_fonts.dart';
 
 class NavButtons extends StatefulWidget
@@ -25,7 +25,7 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
     static String mailURL = "mailto:dunyakilavuz@gmail.com";
     static String mailAddress = "dunyakilavuz@gmail.com";
 
-    static TextStyle buttonText(BuildContext context) 
+    static TextStyle buttonText() 
     {
         return GoogleFonts.roboto
         (
@@ -36,7 +36,7 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
         );
     }
 
-    static TextStyle notificationText(BuildContext context) 
+    static TextStyle notificationText() 
     {
         return GoogleFonts.roboto
         (
@@ -100,12 +100,12 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
 
     void onLinkedInTap()
     {
-        html.window.open(linkedinURL, 'new tab');
+        Utils.openURLatNewTab(linkedinURL);
         notify("Opened LinkedIn in a new tab.");
     }
     void onGithubTap()
     {
-        html.window.open(githubURL, 'new tab');
+        Utils.openURLatNewTab(githubURL);
         notify("Opened Github in a new tab.");
     }
 
@@ -121,7 +121,7 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
                     alignment: Alignment.center,
                     width: notifyWidth,
                     height: 30,
-                    child: Text(text, style: notificationText(context),),
+                    child: Text(text, style: notificationText(),),
                 ),
                 duration: const Duration(seconds: 2),
                 shape: const StadiumBorder(),
@@ -155,7 +155,7 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
             label: Text
             (
                 labelText,
-                style: buttonText(context),
+                style: buttonText(),
             ),
         );
     }

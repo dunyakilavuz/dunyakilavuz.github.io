@@ -3,6 +3,19 @@ body
     background-color:#1a222c;
 }
 
+h2
+{
+    font-family: Roboto,'Helvetica Neue', sans-serif;
+    font-weight: 100;
+    font-size: 400%;
+    color: white;
+    position: absolute;
+    text-align: center;
+    top: 20%;
+    left: 0%;
+    width: 100%;
+}
+
 .loader 
 {
     position: absolute;

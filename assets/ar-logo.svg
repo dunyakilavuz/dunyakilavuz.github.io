@@ -13,18 +13,8 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
-     id="namedview7"
-     pagecolor="#ffffff"
-     bordercolor="#000000"
-     borderopacity="0.25"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
-     inkscape:document-units="mm"
-     showgrid="false" /><defs
-     id="defs2"><rect
+   xmlns:svg="http://www.w3.org/2000/svg">
+<rect
        id="SVGID_1_"
        x="87.400002"
        y="17.799999"
@@ -44,14 +34,13 @@
        x="116.7"
        y="18.4"
        width="1.6"
-       height="67.900002" /></defs><g
+       height="67.900002" />
+  <g
      id="Layer_1"
      transform="matrix(0.26458333,0,0,0.26458334,-23.124578,-4.7095831)">
 	<g
    id="g495"
    style="opacity:1;stroke-width:1.00157;stroke-dasharray:none">
-		<defs
-   id="defs378" />
 		<clipPath
    id="SVGID_2_">
 			<use
@@ -143,8 +132,6 @@
    id="g429"
    style="stroke-width:1.00157;stroke-dasharray:none"
    inkscape:label="g429">
-				<defs
-   id="defs418" />
 				<path
    id="use420"
    style="display:inline;opacity:0.5;fill:#666666;stroke-width:1.00157"
@@ -161,8 +148,6 @@
 			<g
    id="g441"
    style="stroke-width:1.00157;stroke-dasharray:none">
-				<defs
-   id="defs432" />
 				<path
    id="use434"
    style="display:inline;opacity:0.5;fill:#666666;fill-opacity:1;stroke-width:1.00157"
@@ -180,8 +165,6 @@
 			<g
    id="g455"
    style="stroke-width:1.00157;stroke-dasharray:none">
-				<defs
-   id="defs444" />
 				<path
    id="use446"
    style="opacity:0.5;fill:#666666;stroke-width:1.00157"

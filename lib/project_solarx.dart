@@ -3,22 +3,20 @@ import 'package:dunyakilavuz_github_io/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class ProjectDigitalDaragac extends StatelessWidget
+class ProjectSolarX extends StatelessWidget
 {
-    ProjectDigitalDaragac({super.key});
-    final String title = "DIGITAL DARAGAC";
+    ProjectSolarX({super.key});
+    final String title = "SOLAR X";
     final double galleryHeight = 600;
-    final String appStoreURL = "https://apps.apple.com/tr/app/dijital-dara%C4%9Fa%C3%A7/id1578002749";
-    final String googlePlayURL = "https://play.google.com/store/apps/details?id=tr.edu.ieu.digitaldaragac&pli=1";
+    final String appStoreURL = "";
+    final String googlePlayURL = "https://play.google.com/store/apps/details?id=com.dunyakilavuz.SolarX";
     final List<String> images = 
     [
-        "assets/daragac_01.png",
-        "assets/daragac_02.png",
-        "assets/daragac_03.png",
-        "assets/daragac_04.png",
-        "assets/daragac_05.png",
-        "assets/daragac_06.png",
-        "assets/daragac_07.png",
+        "assets/solarx_01.png",
+        "assets/solarx_02.png",
+        "assets/solarx_03.png",
+        "assets/solarx_04.png",
+        "assets/solarx_05.png",
     ];
 
     @override
@@ -49,15 +47,13 @@ class ProjectDigitalDaragac extends StatelessWidget
                         (
                             children: 
                             [
-                                ProjectTemplate.entry("A project we developed to create a virtual museum for the open-space art exhibitions which are displayed in Daragac, Izmir, Turkey."),
-                                ProjectTemplate.entry(" We are displaying some of the best artworks of Daragac in the app. Some artworks are available in 3-D which can be viewed via Augmented Reality "),
-                                ProjectTemplate.icon("ar-logo"),
-                                ProjectTemplate.entry(" .We used"),
-                                ProjectTemplate.entry(" React Native ", textColor: const Color.fromARGB(255, 96, 216, 248)),
-                                ProjectTemplate.icon("react-native-logo"),
-                                ProjectTemplate.entry(" to develop the front-end for iOS and Android while "),
-                                ProjectTemplate.icon("django-logo"),
-                                ProjectTemplate.entry(" is used for back-end web services."),
+                                ProjectTemplate.entry("A hobby project of mine. It is a solar system planetarium where you can set a date and time"),
+                                ProjectTemplate.entry(" and it will show you how the planets will stand at that time. Also it will show you the azimuth and altitude info of the celestial objects respectively."),
+                                ProjectTemplate.entry(" I used Godot Engine "),
+                                ProjectTemplate.icon("godot-logo", width: 40, height: 40),
+                                ProjectTemplate.entry(" with "),
+                                ProjectTemplate.icon("c-sharp-logo", width: 40, height: 40),
+                                ProjectTemplate.entry(" to develop the app."),
                             ]
                         )
                     ),
@@ -71,7 +67,8 @@ class ProjectDigitalDaragac extends StatelessWidget
                         (
                             children: 
                             [
-                                ProjectTemplate.entry("The project should be available as long as Izmir University of Economics supports it. You can obtain mobile versions from links below."),
+                                ProjectTemplate.entry("The project is only available for Android devices right now. However I plan to publish for iOS as well. "),
+                                ProjectTemplate.entry("You can download the app from the link below."),
                             ]
                         )
                     ),
@@ -83,7 +80,7 @@ class ProjectDigitalDaragac extends StatelessWidget
                         (
                             children: 
                             [
-                                Utils.svgButton(SvgPicture.asset("assets/appStore.svg", width: 120, height: 80,), () => {Utils.openURLatNewTab(appStoreURL)}),
+                                //Utils.svgButton(SvgPicture.asset("assets/appStore.svg", width: 120, height: 80,), () => {Utils.openURLatNewTab(appStoreURL)}),
                                 Utils.svgButton(SvgPicture.asset("assets/googlePlay.svg", width: 120, height: 80,), () => {Utils.openURLatNewTab(googlePlayURL)}),
                             ],
                         ),

@@ -14,7 +14,7 @@ class Home extends StatefulWidget
 
 class HomeState extends State<Home>
 {
-    static TextStyle nameText(BuildContext context) 
+    static TextStyle nameText() 
     {
         return GoogleFonts.roboto
         (
@@ -25,7 +25,7 @@ class HomeState extends State<Home>
         );
     }
 
-    static TextStyle surnameText(BuildContext context) 
+    static TextStyle surnameText() 
     {
         return GoogleFonts.roboto
         (
@@ -37,7 +37,7 @@ class HomeState extends State<Home>
     }
 
 
-    static TextStyle professionText(BuildContext context) 
+    static TextStyle professionText() 
     {
         return GoogleFonts.roboto
         (
@@ -74,9 +74,9 @@ class HomeState extends State<Home>
                             (
                                 children: 
                                 [
-                                    Text('Dünya', style: nameText(context)),
-                                    Text('Kılavuz', style: surnameText(context)),
-                                    Text('M.Sc. Computer Engineer', style: professionText(context)),
+                                    Text('Dünya', style: nameText()),
+                                    Text('Kılavuz', style: surnameText()),
+                                    Text('M.Sc. Computer Engineer', style: professionText()),
                                     Utils.columnSeperator(10),
                                     const NavButtons(),
                                 ],

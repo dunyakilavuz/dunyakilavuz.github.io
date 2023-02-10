@@ -1,11 +1,13 @@
 import 'package:dunyakilavuz_github_io/curriculum_content.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 
 class Curriculum extends StatelessWidget
 {
-    const Curriculum({super.key});
+    const Curriculum({super.key, required this.analytics, required this.observer});
     static const String route = "/curriculum";
-
+    final FirebaseAnalytics analytics;
+    final FirebaseAnalyticsObserver observer;
     @override
     Widget build(BuildContext context) 
     {

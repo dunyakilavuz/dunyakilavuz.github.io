@@ -11,13 +11,14 @@ class ProjectDigitalDaragac extends ProjectTemplate
         route: "/projects/digitaldaragac",
         title: "DIGITAL DARAGAC",
         imagePath: "assets/digitaldaragac.png",
-        projectContent: content(context,)
+        isFolder: false,
     );
     
-    
+
     final double galleryHeight = 600;
     final String appStoreURL = "https://apps.apple.com/tr/app/dijital-dara%C4%9Fa%C3%A7/id1578002749";
     final String googlePlayURL = "https://play.google.com/store/apps/details?id=tr.edu.ieu.digitaldaragac&pli=1";
+    final String webURL = "http://digitaldaragac.ieu.edu.tr/";
     final List<String> images = 
     [
         "assets/daragac_01.png",
@@ -56,8 +57,9 @@ class ProjectDigitalDaragac extends ProjectTemplate
                         (
                             children: 
                             [
-                                ProjectTemplate.entry("A project we developed to create a virtual museum for the open-space art exhibitions which are displayed in Daragac, Izmir, Turkey."),
-                                ProjectTemplate.entry(" We are displaying some of the best artworks of Daragac in the app. Some artworks are available in 3-D which can be viewed via Augmented Reality "),
+                                ProjectTemplate.entry("A scientific research project developed with our professors at Izmir University of Economics."),
+                                ProjectTemplate.entry(" Projects aim was to create a virtual museum for the open-space art exhibitions which are displayed in Daragac, Izmir, Turkey."),
+                                ProjectTemplate.entry(" With this project, we are preserving and displaying some of the best artworks of Daragac collective in both iOS, Android and Web. Some artworks are available in 3-D which can be viewed via Augmented Reality "),
                                 ProjectTemplate.icon("ar-logo"),
                                 ProjectTemplate.entry(" .We used"),
                                 ProjectTemplate.entry(" React Native ", textColor: const Color.fromARGB(255, 96, 216, 248)),
@@ -78,7 +80,7 @@ class ProjectDigitalDaragac extends ProjectTemplate
                         (
                             children: 
                             [
-                                ProjectTemplate.entry("The project should be available as long as Izmir University of Economics supports it. You can obtain mobile versions from links below."),
+                                ProjectTemplate.entry("The project should be available as long as Izmir University of Economics supports it. You can access the apps from the links below."),
                             ]
                         )
                     ),
@@ -92,6 +94,7 @@ class ProjectDigitalDaragac extends ProjectTemplate
                             [
                                 Utils.svgButton(SvgPicture.asset("assets/appStore.svg", width: 120, height: 80,), () => {Utils.openURLatNewTab(appStoreURL)}),
                                 Utils.svgButton(SvgPicture.asset("assets/googlePlay.svg", width: 120, height: 80,), () => {Utils.openURLatNewTab(googlePlayURL)}),
+                                Utils.svgButton(SvgPicture.asset("assets/webURL.svg", width: 80, height: 55), () => {Utils.openURLatNewTab(webURL)}),
                             ],
                         ),
                     ),
@@ -99,5 +102,11 @@ class ProjectDigitalDaragac extends ProjectTemplate
             ),
         );
 
+    }
+    
+    @override
+    Widget build(BuildContext context) 
+    {
+        return template(context, content);
     }
 }

@@ -1,12 +1,20 @@
-import 'package:dunyakilavuz_github_io/projects_content.dart';
+import 'package:dunyakilavuz_github_io/project_template.dart';
 import 'package:dunyakilavuz_github_io/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class ProjectDigitalDaragac extends StatelessWidget
+class ProjectDigitalDaragac extends ProjectTemplate
 {
-    ProjectDigitalDaragac({super.key});
-    final String title = "DIGITAL DARAGAC";
+    ProjectDigitalDaragac({super.key}) : 
+    super
+    (
+        route: "/projects/digitaldaragac",
+        title: "DIGITAL DARAGAC",
+        imagePath: "assets/digitaldaragac.png",
+        projectContent: content(context,)
+    );
+    
+    
     final double galleryHeight = 600;
     final String appStoreURL = "https://apps.apple.com/tr/app/dijital-dara%C4%9Fa%C3%A7/id1578002749";
     final String googlePlayURL = "https://play.google.com/store/apps/details?id=tr.edu.ieu.digitaldaragac&pli=1";
@@ -21,8 +29,7 @@ class ProjectDigitalDaragac extends StatelessWidget
         "assets/daragac_07.png",
     ];
 
-    @override
-    Widget build(BuildContext context) 
+    Widget content(BuildContext context) 
     {
         return SingleChildScrollView
         (

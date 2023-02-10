@@ -1,5 +1,6 @@
 import 'package:dunyakilavuz_github_io/curriculum_page.dart';
 import 'package:dunyakilavuz_github_io/home_page.dart';
+import 'package:dunyakilavuz_github_io/project_digital_daragac.dart';
 import 'package:dunyakilavuz_github_io/projects_page.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -61,6 +62,7 @@ class App extends StatelessWidget
                 Home.route:(context) => const Home(),
                 Curriculum.route:(context) => const Curriculum(),
                 Projects.route:(context) => const Projects(), 
+                    ProjectDigitalDaragac.route:((context) => ProjectDigitalDaragac()),
             },
         );
     }

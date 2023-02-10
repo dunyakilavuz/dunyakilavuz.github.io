@@ -1,4 +1,4 @@
-import 'package:dunyakilavuz_github_io/projects_content.dart';
+import 'package:dunyakilavuz_github_io/project_template.dart';
 import 'package:dunyakilavuz_github_io/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';

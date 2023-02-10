@@ -1,10 +1,13 @@
 import 'package:dunyakilavuz_github_io/projects_content.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 
 class Projects extends StatefulWidget
 {
-    const Projects({super.key});
+    const Projects({super.key, required this.analytics, required this.observer});
     static const String route = "/projects";
+    final FirebaseAnalytics analytics;
+    final FirebaseAnalyticsObserver observer;
     @override
     State<StatefulWidget> createState() => ProjectsState();
 }

@@ -3,10 +3,17 @@ import 'package:dunyakilavuz_github_io/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class ProjectSolarX extends StatelessWidget
+class ProjectSolarX extends ProjectTemplate
 {
-    ProjectSolarX({super.key});
-    final String title = "SOLAR X";
+    ProjectSolarX({super.key}): 
+    super
+    (
+        route: "/projects/solarx",
+        title: "SOLAR X",
+        imagePath: "assets/solarx-logo.png",
+        isFolder:  false,
+    );
+
     final double galleryHeight = 600;
     final String appStoreURL = "";
     final String googlePlayURL = "https://play.google.com/store/apps/details?id=com.dunyakilavuz.SolarX";
@@ -19,8 +26,8 @@ class ProjectSolarX extends StatelessWidget
         "assets/solarx_05.png",
     ];
 
-    @override
-    Widget build(BuildContext context) 
+
+    Widget content(BuildContext context) 
     {
         return SingleChildScrollView
         (
@@ -47,7 +54,7 @@ class ProjectSolarX extends StatelessWidget
                         (
                             children: 
                             [
-                                ProjectTemplate.entry("A hobby project of mine. It is a solar system planetarium where you can set a date and time"),
+                                ProjectTemplate.entry("A hobby project. It is a solar system planetarium where you can set a date and time"),
                                 ProjectTemplate.entry(" and it will show you how the planets will stand at that time. Also it will show you the azimuth and altitude info of the celestial objects respectively."),
                                 ProjectTemplate.entry(" I used Godot Engine "),
                                 ProjectTemplate.icon("godot-logo", width: 40, height: 40),
@@ -89,5 +96,11 @@ class ProjectSolarX extends StatelessWidget
             ),
         );
 
+    }
+
+    @override
+    Widget build(BuildContext context) 
+    {
+        return template(context, content);
     }
 }

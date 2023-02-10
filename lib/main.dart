@@ -1,13 +1,17 @@
 import 'package:dunyakilavuz_github_io/curriculum_page.dart';
 import 'package:dunyakilavuz_github_io/home_page.dart';
 import 'package:dunyakilavuz_github_io/project_digital_daragac.dart';
+import 'package:dunyakilavuz_github_io/project_solarx.dart';
 import 'package:dunyakilavuz_github_io/projects_page.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'firebase_options.dart';
 
-void main() 
+Future<void> main() async 
 {
     GoogleFonts.config.allowRuntimeFetching = false;
     LicenseRegistry.addLicense(() async* 
@@ -16,12 +20,19 @@ void main()
         yield LicenseEntryWithLineBreaks(['google_fonts'], license);
     });
 
+    WidgetsFlutterBinding.ensureInitialized();
+    await Firebase.initializeApp
+    (
+        options: DefaultFirebaseOptions.currentPlatform,
+    );
     runApp(const App());
 }
 
 class App extends StatelessWidget 
 {
     const App({super.key});
+    static FirebaseAnalytics analytics = FirebaseAnalytics.instance;
+    static FirebaseAnalyticsObserver observer = FirebaseAnalyticsObserver(analytics: analytics);
 
     ThemeData appThemeData()
     {
@@ -57,12 +68,14 @@ class App extends StatelessWidget
             title: 'Dünya Kılavuz',
             theme: appThemeData(),
             initialRoute: Home.route,
+            navigatorObservers: [FirebaseAnalyticsObserver(analytics: analytics),],
             routes: 
             {
-                Home.route:(context) => const Home(),
-                Curriculum.route:(context) => const Curriculum(),
-                Projects.route:(context) => const Projects(), 
-                    ProjectDigitalDaragac.route:((context) => ProjectDigitalDaragac()),
+                Home.route:(context) =>  Home(analytics: analytics, observer: observer,),
+                Curriculum.route:(context) => Curriculum(analytics: analytics, observer: observer,),
+                Projects.route:(context) => Projects(analytics: analytics, observer: observer,), 
+                    ProjectDigitalDaragac().route:(context) => ProjectDigitalDaragac(),
+                    ProjectSolarX().route:(context) => ProjectSolarX(),
             },
         );
     }

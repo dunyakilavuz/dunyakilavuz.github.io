@@ -61,7 +61,7 @@ class ProjectsContentState extends State<ProjectsContent>
                                 )
                             ),
                             Utils.columnSeperator(10),
-                            Text(project.title, style: ProjectTemplate.cardTitleText(),),
+                            Text(project.title, style: ProjectTemplate.cardTitleText(),textAlign: TextAlign.center,),
                             Expanded(child: Container()),
                         ],
                     ),
@@ -102,7 +102,6 @@ class ProjectsContentState extends State<ProjectsContent>
                     [
                         projectCard(ProjectDigitalDaragac()),
                         projectCard(ProjectSolarX()),
-                        projectCard(ProjectARWorks()),
                     ],
                 ),
             ],

@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_web_libraries_in_flutter
 
+import 'package:dunyakilavuz_github_io/utils.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'dart:html' as html;
@@ -104,19 +105,6 @@ class CurriculumContent extends StatelessWidget
         );
     }
 
-    static TableRow seperator(double height)
-    {
-        return TableRow
-        (
-            children: 
-            [
-                SizedBox(height: height,),
-                SizedBox(height: height,),
-                SizedBox(height: height,),
-            ]
-        );
-    }
-
     static TableRow dictionaryRow(String key, String value)
     {
         return TableRow
@@ -150,7 +138,7 @@ class CurriculumContent extends StatelessWidget
                 },   
                 children: 
                 [
-                    seperator(100),
+                    Utils.tableRowSeperator(100),
                     TableRow
                     (                        
                         children: 
@@ -210,7 +198,7 @@ class CurriculumContent extends StatelessWidget
                             Container(height: 10,),
                         ]
                     ),
-                    seperator(10),
+                    Utils.tableRowSeperator(10),
                     sectionText("Education"),
                     TableRow
                     (
@@ -237,7 +225,7 @@ class CurriculumContent extends StatelessWidget
                             ),
                         ]
                     ),
-                    seperator(10),
+                    Utils.tableRowSeperator(10),
                     TableRow
                     (
                         children: 
@@ -263,7 +251,7 @@ class CurriculumContent extends StatelessWidget
                             ),
                         ]
                     ),
-                    seperator(10),
+                    Utils.tableRowSeperator(10),
                     TableRow
                     (
                         children: 
@@ -283,7 +271,7 @@ class CurriculumContent extends StatelessWidget
                             ),
                         ]
                     ),
-                    seperator(10),
+                    Utils.tableRowSeperator(10),
                     sectionText("Experience"),
                     TableRow
                     (
@@ -355,7 +343,7 @@ class CurriculumContent extends StatelessWidget
                             )
                         ]
                     ),
-                    seperator(10),
+                    Utils.tableRowSeperator(10),
                     TableRow
                     (
                         children: 
@@ -384,7 +372,7 @@ class CurriculumContent extends StatelessWidget
                             Text("Assisted the course 'SE 320 - Introduction to Computer Games' throughout the semester.", style: entryTextStyle(), textAlign: TextAlign.justify,)
                         ]
                     ),
-                    seperator(10),
+                    Utils.tableRowSeperator(10),
                     TableRow
                     (
                         children: 
@@ -413,7 +401,7 @@ class CurriculumContent extends StatelessWidget
                             Text("Moving, re-developing a Java game project to Unity Engine.", style: entryTextStyle(), textAlign: TextAlign.justify,)
                         ]
                     ),
-                    seperator(10),
+                    Utils.tableRowSeperator(10),
                     TableRow
                     (
                         children: 
@@ -442,7 +430,7 @@ class CurriculumContent extends StatelessWidget
                             Text("Introduction to Java programming language, making applications using JFrame.", style: entryTextStyle(), textAlign: TextAlign.justify,)
                         ]
                     ),
-                    seperator(10),
+                    Utils.tableRowSeperator(10),
                     sectionText("Skills"),
                     TableRow
                     (
@@ -469,13 +457,13 @@ class CurriculumContent extends StatelessWidget
                             ),
                         ]
                     ),
-                    seperator(10),
+                    Utils.tableRowSeperator(10),
                     sectionText("Language Skills"),
                     dictionaryRow("Turkish", "Native"),
                     dictionaryRow("English", "IELTS 7.0 / 9.0 - 20.05.2017"),
                     dictionaryRow("Spanish", "Intermediate"),
                     dictionaryRow("Greek", "Beginner, just started learning"),
-                    seperator(10),
+                    Utils.tableRowSeperator(10),
                     sectionText("About me"),
                     TableRow
                     (
@@ -497,7 +485,7 @@ class CurriculumContent extends StatelessWidget
                             ),
                         ]
                     ),
-                    seperator(100),
+                    Utils.tableRowSeperator(100),
                 ],
             ),    
         );

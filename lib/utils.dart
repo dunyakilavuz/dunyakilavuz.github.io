@@ -55,6 +55,19 @@ class Utils
         return Container(width: width);
     }
 
+    static TableRow tableRowSeperator(double height)
+    {
+        return TableRow
+        (
+            children: 
+            [
+                SizedBox(height: height,),
+                SizedBox(height: height,),
+                SizedBox(height: height,),
+            ]
+        );
+    }
+
     static Container imageGallery(List<String> images, double height)
     {
         final ScrollController scrollController = ScrollController();

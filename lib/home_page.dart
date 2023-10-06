@@ -1,3 +1,4 @@
+import 'package:dunyakilavuz_github_io/main.dart';
 import 'package:dunyakilavuz_github_io/nav_buttons.dart';
 import 'package:dunyakilavuz_github_io/particles.dart';
 import 'package:dunyakilavuz_github_io/utils.dart';
@@ -63,8 +64,16 @@ class HomeState extends State<Home>
                 [
                     const Particles
                     (
-                        numberOfParticles: 20, 
+                        numberOfParticles: 40, 
                         refreshRate: Duration(milliseconds: 20),
+                        bgColor: App.mainBGColor,
+                        particleColors: 
+                        [
+                            Color.fromARGB(255, 122, 253, 166),
+                            Color.fromARGB(255, 124, 218, 255),
+                            Color.fromARGB(255, 227, 156, 255),
+                            Color.fromARGB(255, 255, 169, 125),
+                        ]
                     ),
                     Padding
                     (

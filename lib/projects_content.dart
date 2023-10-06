@@ -1,6 +1,7 @@
-import 'package:dunyakilavuz_github_io/project_ar_works.dart';
+import 'package:dunyakilavuz_github_io/main.dart';
 import 'package:dunyakilavuz_github_io/project_digital_daragac.dart';
 import 'package:dunyakilavuz_github_io/project_solarx.dart';
+import 'package:dunyakilavuz_github_io/project_solarxar.dart';
 import 'package:dunyakilavuz_github_io/project_template.dart';
 import 'package:dunyakilavuz_github_io/utils.dart';
 import 'package:flutter/material.dart';
@@ -21,13 +22,13 @@ class ProjectsContentState extends State<ProjectsContent>
         double boxSize = 250;
         return Material
         (
-            color: const Color.fromARGB(255, 26, 34, 44),
+            color: App.secondaryBGColor,
             borderRadius: radius,
             child: InkWell
             (
                 borderRadius: radius,
                 onTap: () => Navigator.of(context).pushNamed(project.route),
-                hoverColor: const Color.fromARGB(255, 36, 48, 61),
+                hoverColor: const Color.fromARGB(255, 84, 89, 103),
                 child: Container
                 (
                     decoration: BoxDecoration
@@ -100,8 +101,9 @@ class ProjectsContentState extends State<ProjectsContent>
                     runSpacing: 10,
                     children: 
                     [
-                        projectCard(ProjectDigitalDaragac()),
+                        projectCard(ProjectSolarXAR()),
                         projectCard(ProjectSolarX()),
+                        projectCard(ProjectDigitalDaragac()),
                     ],
                 ),
             ],

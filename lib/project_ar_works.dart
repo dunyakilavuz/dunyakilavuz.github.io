@@ -1,8 +1,4 @@
-import 'package:dunyakilavuz_github_io/projects_content.dart';
-import 'package:dunyakilavuz_github_io/utils.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class ProjectARWorks extends StatelessWidget
 {

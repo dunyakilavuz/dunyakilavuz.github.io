@@ -10,7 +10,16 @@ class Particles extends StatefulWidget
     State<StatefulWidget> createState() => ParticlesState();
     final int numberOfParticles;
     final Duration refreshRate;
-    const Particles({super.key, required this.numberOfParticles, required this.refreshRate});
+    final Color bgColor;
+    final List<Color> particleColors;
+    const Particles
+    ({
+            super.key, 
+            required this.numberOfParticles, 
+            required this.refreshRate, 
+            required this.bgColor, 
+            required this.particleColors
+    });
 }
 
 class ParticlesState extends State<Particles> with SingleTickerProviderStateMixin
@@ -26,17 +35,22 @@ class ParticlesState extends State<Particles> with SingleTickerProviderStateMixi
         super.initState();
         List.generate(widget.numberOfParticles, (index) 
         {
-            particles.add(ParticleModel(random));
+            particles.add(ParticleModel(random, widget.particleColors));
         });
     // defines a timer 
+        setState(() {});
         timer = Timer.periodic
         (
             widget.refreshRate,
-            (Timer t) 
-            {
-                setState(() {});
-            }
+            (Timer t) {setState(() {});}
         );
+    }
+
+    @override
+    void dispose() 
+    {
+        timer.cancel();
+        super.dispose();
     }
 
     @override
@@ -46,9 +60,9 @@ class ParticlesState extends State<Particles> with SingleTickerProviderStateMixi
 
         return Container
         (
-            color: Theme.of(context).backgroundColor,
-            width: dimensions.x,
-            height: dimensions.y,
+            color: widget.bgColor,
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
             alignment: Alignment.topLeft,
             child: CustomPaint(painter: ParticlePainter(particles, dimensions))
         );
@@ -75,7 +89,11 @@ class ParticlePainter extends CustomPainter
                 Offset(particle.position.x, particle.position.y),
                 particle.size,
                 Paint()
-                ..color = Color.fromRGBO(30, 60, 90, particle.alpha)
+                ..color = Color.fromRGBO(
+                    particle.particleColor.red, 
+                    particle.particleColor.green, 
+                    particle.particleColor.blue, 
+                    particle.alpha)
                 ..style = PaintingStyle.fill
             );
         }
@@ -95,15 +113,18 @@ class ParticleModel
     late Random random;
     late double alpha;
     late double alphaProgress; 
+    List<Color> particleColors;
+    late Color particleColor;
 
-    ParticleModel(this.random)
+    ParticleModel(this.random, this.particleColors)
     {
         direction = Quaternion.axisAngle(Vector3(0,0,1), random.nextDouble() * 2 * math.pi).rotate(Vector3(1,0,0));
-        speed = random.nextDouble() * 3 + 1;
+        speed = random.nextDouble() + 2;
         velocity = direction.xy * speed;
-        size = random.nextDouble() * 5 + 5;
+        size = random.nextDouble() * 1 + 1.5;
         alpha = random.nextDouble();
         alphaProgress = random.nextDouble() * 0.05;
+        particleColor = particleColors[random.nextInt(particleColors.length)];
     }
     
     void updateParticle(Vector2 dimensions) 

@@ -2,6 +2,7 @@ import 'package:dunyakilavuz_github_io/curriculum_page.dart';
 import 'package:dunyakilavuz_github_io/home_page.dart';
 import 'package:dunyakilavuz_github_io/project_digital_daragac.dart';
 import 'package:dunyakilavuz_github_io/project_solarx.dart';
+import 'package:dunyakilavuz_github_io/project_solarxar.dart';
 import 'package:dunyakilavuz_github_io/projects_page.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -34,31 +35,8 @@ class App extends StatelessWidget
     static FirebaseAnalytics analytics = FirebaseAnalytics.instance;
     static FirebaseAnalyticsObserver observer = FirebaseAnalyticsObserver(analytics: analytics);
 
-    ThemeData appThemeData()
-    {
-        Map<int, Color> colorMap =
-        {
-            50: const Color.fromRGBO(26, 34, 44, 0.1),
-            100:const Color.fromRGBO(26, 34, 44, 0.2),
-            200:const Color.fromRGBO(26, 34, 44, 0.3),
-            300:const Color.fromRGBO(26, 34, 44, 0.4),
-            400:const Color.fromRGBO(26, 34, 44, 0.5),
-            500:const Color.fromRGBO(26, 34, 44, 0.6),
-            600:const Color.fromRGBO(26, 34, 44, 0.7),
-            700:const Color.fromRGBO(26, 34, 44, 0.8),
-            800:const Color.fromRGBO(26, 34, 44, 0.9),
-            900:const Color.fromRGBO(26, 34, 44, 1.0),
-        };
-
-        MaterialColor primaryColor = MaterialColor(0x1A222C, colorMap);
-
-        return ThemeData
-        (
-            primarySwatch: primaryColor,
-            primaryColor: const Color.fromARGB(255, 26, 34, 44),
-            backgroundColor: const Color.fromARGB(255, 26, 34, 44),
-        );
-    }
+    static const Color mainBGColor = Color.fromRGBO(31, 51, 74, 1);
+    static const Color secondaryBGColor = Color.fromRGBO(39,43,53, 1);
 
     @override
     Widget build(BuildContext context) 
@@ -66,7 +44,6 @@ class App extends StatelessWidget
         return MaterialApp
         (
             title: 'Dünya Kılavuz',
-            theme: appThemeData(),
             initialRoute: Home.route,
             navigatorObservers: [FirebaseAnalyticsObserver(analytics: analytics),],
             routes: 
@@ -74,8 +51,9 @@ class App extends StatelessWidget
                 Home.route:(context) =>  Home(analytics: analytics, observer: observer,),
                 Curriculum.route:(context) => Curriculum(analytics: analytics, observer: observer,),
                 Projects.route:(context) => Projects(analytics: analytics, observer: observer,), 
-                    ProjectDigitalDaragac().route:(context) => ProjectDigitalDaragac(),
+                    ProjectSolarXAR().route:(context) => ProjectSolarXAR(),
                     ProjectSolarX().route:(context) => ProjectSolarX(),
+                    ProjectDigitalDaragac().route:(context) => ProjectDigitalDaragac(),
             },
         );
     }

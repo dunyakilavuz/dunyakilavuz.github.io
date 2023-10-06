@@ -243,15 +243,16 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
                     "Projects",
                 ),
                 seperator(10),
-                iconOnlyButton
+                svgOnlyButton
                 (
-                    Icon
+                    SvgPicture.asset
                     (
-                        Icons.email_outlined,
+                        "assets/github_icon.svg",
                         color: buttonColor.evaluate(AlwaysStoppedAnimation(buttonColorController.value)),
-                        size: iconSize,
+                        width: iconSize,
+                        height: iconSize,
                     ),
-                    onMailTap
+                    onGithubTap
                 ),
                 seperator(10),
                 svgOnlyButton
@@ -266,16 +267,15 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
                     onLinkedInTap
                 ),
                 seperator(10),
-                svgOnlyButton
+                iconOnlyButton
                 (
-                    SvgPicture.asset
+                    Icon
                     (
-                        "assets/github_icon.svg",
+                        Icons.email_outlined,
                         color: buttonColor.evaluate(AlwaysStoppedAnimation(buttonColorController.value)),
-                        width: iconSize,
-                        height: iconSize,
+                        size: iconSize,
                     ),
-                    onGithubTap
+                    onMailTap
                 ),
             ],
         );

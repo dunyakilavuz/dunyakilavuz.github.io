@@ -277,7 +277,42 @@ class CurriculumContent extends StatelessWidget
                     (
                         children: 
                         [
-                            Text("2021 Aug - Today", style: entryTextStyle(), textAlign: TextAlign.right,),
+                            Text("2023 Jul - Today", style: entryTextStyle(), textAlign: TextAlign.right,),
+                            Container(),
+                            RichText
+                            (
+                                text: TextSpan
+                                (
+                                    children: <TextSpan>
+                                    [
+                                        TextSpan(text: "Maritime Trainer", style: entryTextStyle().copyWith(fontWeight: FontWeight.bold),),
+                                        TextSpan(text: ", Unreal Engine Developer", style: entryTextStyle().copyWith(fontStyle: FontStyle.italic),),
+                                    ],
+                                ),
+                            ),
+                        ]
+                    ),
+                    TableRow
+                    (
+                        children: 
+                        [
+                            Text("Description", style: entryTextStyle(), textAlign: TextAlign.right, maxLines: 1, overflow: TextOverflow.ellipsis,),
+                            Container(),
+                            Text
+                            (
+                                "Maritime Trainer is a specialized organization dedicated to advancing maritime education and assessment.  "
+                                "We are leveraging the cutting-edge Unreal Engine 5 to craft immersive virtual reality scenarios that not "
+                                "only enhance the educational experience but also provide individuals with a deeper understanding of maritime concepts and practices.", 
+                                style: entryTextStyle(), 
+                                textAlign: TextAlign.justify,
+                            )
+                        ]
+                    ),
+                    TableRow
+                    (
+                        children: 
+                        [
+                            Text("2021 Aug - 2023 Jul", style: entryTextStyle(), textAlign: TextAlign.right,),
                             Container(),
                             RichText
                             (

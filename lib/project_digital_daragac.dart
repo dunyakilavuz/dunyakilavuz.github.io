@@ -92,9 +92,8 @@ class ProjectDigitalDaragac extends ProjectTemplate
                         (
                             children: 
                             [
-                                Utils.svgButton(SvgPicture.asset("assets/appStore.svg", width: 120, height: 80,), () => {Utils.openURLatNewTab(appStoreURL)}),
-                                Utils.svgButton(SvgPicture.asset("assets/googlePlay.svg", width: 120, height: 80,), () => {Utils.openURLatNewTab(googlePlayURL)}),
-                                Utils.svgButton(SvgPicture.asset("assets/webURL.svg", width: 80, height: 55), () => {Utils.openURLatNewTab(webURL)}),
+                                Utils.svgButton(SvgPicture.asset("assets/appStore.svg", width: 100, height: 80,), () => {Utils.openURLatNewTab(appStoreURL)}),
+                                Utils.svgButton(SvgPicture.asset("assets/googlePlay.svg", width: 100, height: 80,), () => {Utils.openURLatNewTab(googlePlayURL)}),
                             ],
                         ),
                     ),

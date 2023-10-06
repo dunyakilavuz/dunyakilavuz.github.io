@@ -17,7 +17,7 @@ class Utils
             (
                 customBorder: RoundedRectangleBorder(borderRadius:BorderRadius.circular(10.0),),
                 onTap: onTap,
-                child: svg
+                child: svg,
             )
             :
             InkWell // Disabled

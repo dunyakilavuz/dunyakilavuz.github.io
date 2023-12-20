@@ -80,7 +80,7 @@ class HomeState extends State<Home>
                         padding: const EdgeInsets.only(left: 20, right: 20),
                         child: FittedBox
                         (
-                            fit: BoxFit.scaleDown,
+                            fit: BoxFit.contain,
                             alignment: Alignment.center,
                             child: Column
                             (

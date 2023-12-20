@@ -5,10 +5,10 @@ class ProjectARWorks extends StatelessWidget
     ProjectARWorks({super.key});
     final String title = "AR WORKS";
     final double galleryHeight = 600;
-    final String instagramURL_dunya = "https://www.instagram.com/dunyakilavuz/";
-    final String snapchatURL_dunya = "https://t.snapchat.com/jJbq9KnQ";
-    final String instagramURl_lensy = "https://www.instagram.com/lensy.ar/";
-    final String snapchatURL_lensy = "https://t.snapchat.com/qbh4dGgI";
+    final String instagramURLDunya = "https://www.instagram.com/dunyakilavuz/";
+    final String snapchatURLDunya = "https://t.snapchat.com/jJbq9KnQ";
+    final String instagramURlLensy = "https://www.instagram.com/lensy.ar/";
+    final String snapchatURLLensy = "https://t.snapchat.com/qbh4dGgI";
     static Color mainColor = Colors.lightBlue.shade900;
 
     final List<String> images = 

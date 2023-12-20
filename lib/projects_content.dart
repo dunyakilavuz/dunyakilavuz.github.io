@@ -49,7 +49,7 @@ class ProjectsContentState extends State<ProjectsContent>
                                 SvgPicture.asset
                                 (
                                     project.imagePath,
-                                    color: Colors.white,
+                                    colorFilter: const ColorFilter.mode( Colors.white,BlendMode.srcIn),
                                     width: 100,
                                     height: 100,
                                 )

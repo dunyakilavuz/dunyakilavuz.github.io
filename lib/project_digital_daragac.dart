@@ -100,7 +100,6 @@ class ProjectDigitalDaragac extends ProjectTemplate
                 ],
             ),
         );
-
     }
     
     @override

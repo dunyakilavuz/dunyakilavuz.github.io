@@ -34,7 +34,7 @@ class Curriculum extends StatelessWidget
                 (
                     Icons.chevron_left_sharp,
                     size: 30,
-                    color: Colors.black,
+                    color: Colors.white,
                 ),
             ),
             floatingActionButtonLocation: FloatingActionButtonLocation.miniStartTop,

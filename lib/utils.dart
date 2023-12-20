@@ -39,7 +39,7 @@ class Utils
         return SvgPicture.asset
         (
             prefix + svg + postfix,
-            color: color,
+            colorFilter: ColorFilter.mode(color, BlendMode.srcIn),
             width: size,
             height: size,
         );

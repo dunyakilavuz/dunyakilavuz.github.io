@@ -1,4 +1,3 @@
-import 'package:dunyakilavuz_github_io/main.dart';
 import 'package:dunyakilavuz_github_io/projects_content.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
@@ -46,5 +45,4 @@ class ProjectsState extends State<Projects>
             floatingActionButtonLocation: FloatingActionButtonLocation.miniStartTop,
         );
     }
-
 }

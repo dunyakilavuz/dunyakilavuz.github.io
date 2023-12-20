@@ -5,8 +5,8 @@ import 'package:dunyakilavuz_github_io/projects_page.dart';
 import 'package:dunyakilavuz_github_io/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class NavButtons extends StatefulWidget
 {
@@ -178,24 +178,6 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
         );
     }
 
-    Material svgOnlyButton(SvgPicture svg, onTap)
-    {
-        return  Material
-        (
-            shape: RoundedRectangleBorder(borderRadius:BorderRadius.circular(10.0)),
-            color: const Color.fromARGB(20, 255, 255, 255),
-            child: InkWell
-            (
-                customBorder: RoundedRectangleBorder(borderRadius:BorderRadius.circular(10.0)),
-                highlightColor: Colors.transparent,
-                hoverColor: const Color.fromARGB(28, 121, 121, 121),
-                splashColor: const Color.fromARGB(14, 255, 255, 255),
-                onTap: onTap,
-                child: svg
-            ),
-        );
-    }
-
     @override
     void initState()
     {
@@ -214,6 +196,8 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
     @override
     Widget build(BuildContext context) 
     {
+        Color btnColor = buttonColor.evaluate(AlwaysStoppedAnimation(buttonColorController.value)) ?? Colors.amber;
+
         return Row
         (
             mainAxisAlignment: MainAxisAlignment.center,
@@ -224,7 +208,7 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
                     Icon
                     (
                         Icons.history_edu_sharp,
-                        color: buttonColor.evaluate(AlwaysStoppedAnimation(buttonColorController.value)),
+                        color: btnColor,
                         size: iconSize,
                     ),
                     onCurriculumTap,
@@ -236,33 +220,31 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
                     Icon
                     (
                         Icons.architecture_sharp,
-                        color: buttonColor.evaluate(AlwaysStoppedAnimation(buttonColorController.value)),
+                        color: btnColor,
                         size: iconSize,
                     ),
                     onProjectsTap,
                     "Projects",
                 ),
                 seperator(10),
-                svgOnlyButton
+                iconOnlyButton
                 (
-                    SvgPicture.asset
+                    Icon
                     (
-                        "assets/github_icon.svg",
-                        color: buttonColor.evaluate(AlwaysStoppedAnimation(buttonColorController.value)),
-                        width: iconSize,
-                        height: iconSize,
+                        FontAwesomeIcons.github,
+                        color: btnColor,
+                        size: iconSize,
                     ),
                     onGithubTap
                 ),
                 seperator(10),
-                svgOnlyButton
+                iconOnlyButton
                 (
-                    SvgPicture.asset
+                    Icon
                     (
-                        "assets/linkedin_icon.svg",
-                        color: buttonColor.evaluate(AlwaysStoppedAnimation(buttonColorController.value)),
-                        width: iconSize,
-                        height: iconSize,
+                        FontAwesomeIcons.linkedin,
+                        color: btnColor,
+                        size: iconSize,
                     ),
                     onLinkedInTap
                 ),
@@ -271,8 +253,8 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
                 (
                     Icon
                     (
-                        Icons.email_outlined,
-                        color: buttonColor.evaluate(AlwaysStoppedAnimation(buttonColorController.value)),
+                        FontAwesomeIcons.envelope,
+                        color: btnColor,
                         size: iconSize,
                     ),
                     onMailTap

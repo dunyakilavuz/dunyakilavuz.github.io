@@ -9267,7 +9267,8 @@ _.d=0
 _.e=e
 _.f=!1},
 Eq:function Eq(a){this.a=a},
-Wk:function Wk(a){this.a=a},
+Wk:function Wk(a,b){this.a=a
+this.b=b},
 pP:function pP(a){this.a=a},
 Wl:function Wl(a){this.a=a},
 nn:function nn(a){this.a=a},
@@ -42650,7 +42651,7 @@ A.Eq.prototype={
 U(a){var s,r,q,p=null,o=new A.oN()
 $.auV()
 s=A.aZ(o)
-$.CO().D0("[#"+s+"]",new A.Wk(a),!0)
+$.CO().D0("[#"+s+"]",new A.Wk(a,"https:dunyakilavuz.com/cv.html"),!0)
 s=t.w
 r=A.bJ(p,p,B.kg,p,56,p,p,A.cg(a,p,s).w.a.a)
 q=A.cg(a,p,s).w
@@ -42663,7 +42664,7 @@ s=this.a
 r=t.w
 q.width=B.c.i(A.cg(s,null,r).w.a.a)
 q.height=B.c.i(A.cg(s,null,r).w.a.b)
-q.src="assets/cv.html"
+q.src=this.b
 r=q.style
 r.border="none"
 s=q.style

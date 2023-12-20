@@ -16,7 +16,7 @@ else
     exit 1
 fi
 
-cp -a build/web/ docs/ #Copy everything in build/web --> docs
+cp -r build/web/* docs/ #Copy everything in build/web --> docs
 
 if [ $? -eq 0 ]; then
     echo "Copied build/web --> docs."

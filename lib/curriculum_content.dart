@@ -13,7 +13,7 @@ class CurriculumContent extends StatelessWidget
     Widget build(BuildContext context) 
     {
         UniqueKey viewID = UniqueKey();
-        String srcURL = kDebugMode ? 'assets/cv.html' : 'https:dunyakilavuz.com/cv.html';
+        String srcURL = 'https:dunyakilavuz.com/cv.html';
 
         ui_web.platformViewRegistry.registerViewFactory(
             viewID.toString(),

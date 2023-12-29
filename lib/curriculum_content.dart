@@ -1,6 +1,5 @@
 // ignore_for_file: avoid_web_libraries_in_flutter
 import 'package:dunyakilavuz_github_io/main.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'dart:html';
 import 'dart:ui_web' as ui_web;
@@ -13,7 +12,7 @@ class CurriculumContent extends StatelessWidget
     Widget build(BuildContext context) 
     {
         UniqueKey viewID = UniqueKey();
-        String srcURL = 'https:dunyakilavuz.com/cv.html';
+        String srcURL = 'https://dunyakilavuz.com/cv.html';
 
         ui_web.platformViewRegistry.registerViewFactory(
             viewID.toString(),

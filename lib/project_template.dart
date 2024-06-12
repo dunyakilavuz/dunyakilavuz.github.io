@@ -1,3 +1,4 @@
+import 'package:dunyakilavuz_github_io/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -100,11 +101,32 @@ abstract class ProjectTemplate extends StatelessWidget
         return Scaffold
         (
             backgroundColor: Colors.white,
-            body: Container
+            body: Column
             (
-                color: Colors.white,
-                padding: const EdgeInsets.all(20),
-                child: projectContent(context)
+                children: 
+                [
+                    Container
+                    (
+                        width: MediaQuery.of(context).size.width,
+                        height: 56, // Height of floating action button
+                        color: App.mainBGColor
+                    ),
+                    Container
+                    (
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height - 56, // Height of floating action button
+                        color: Colors.white,
+                        child: SingleChildScrollView
+                        (
+                            scrollDirection: Axis.vertical,
+                            child: Padding
+                            (
+                                padding: const EdgeInsets.all(20),
+                                child: projectContent(context),
+                            )
+                        ),
+                    )
+                ],
             ),
             floatingActionButton: FloatingActionButton
             (
@@ -119,7 +141,7 @@ abstract class ProjectTemplate extends StatelessWidget
                 (
                     Icons.chevron_left_sharp,
                     size: 30,
-                    color: Colors.black,
+                    color: Colors.white,
                 ),
             ),
             floatingActionButtonLocation: FloatingActionButtonLocation.miniStartTop,

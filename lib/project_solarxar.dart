@@ -29,69 +29,65 @@ class ProjectSolarXAR extends ProjectTemplate
 
     Widget content(BuildContext context) 
     {
-        return SingleChildScrollView
+        return  Column
         (
-            scrollDirection: Axis.vertical,
-            child: Column
-            (
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: 
-                [
-                    Row
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: 
+            [
+                Row
+                (
+                    children: 
+                    [
+                        Expanded(child: Container()),
+                        Text(title, style: ProjectTemplate.projectDetailTitle(),),
+                        Expanded(child: Container()),
+                    ],
+                ),
+                Utils.columnSeperator(10),
+                RichText // Intro
+                (
+                    textAlign: TextAlign.justify,
+                    text: TextSpan
                     (
                         children: 
                         [
-                            Expanded(child: Container()),
-                            Text(title, style: ProjectTemplate.projectDetailTitle(),),
-                            Expanded(child: Container()),
+                            ProjectTemplate.entry("SolarX AR is an app where you can explore solar system, discover planet positions and movements and enjoy"),
+                            ProjectTemplate.entry(" immersive augmented reality experiences. "),
+                            ProjectTemplate.entry(" I used "),
+                            ProjectTemplate.icon("flutter-logo", width: 25, height: 25),
+                            ProjectTemplate.entry(" to develop the app."),
+                        ]
+                    )
+                ),
+                Utils.columnSeperator(10),
+                Utils.imageGallery(images, galleryHeight),
+                Utils.columnSeperator(10),
+                RichText // Outro
+                (
+                    textAlign: TextAlign.justify,
+                    text: TextSpan
+                    (
+                        children: 
+                        [
+                            ProjectTemplate.entry("The project is only available for iOS devices right now. However I plan to publish for Android as well. "),
+                            ProjectTemplate.entry("You can download the app from the link below."),
+                        ]
+                    )
+                ),
+                Utils.columnSeperator(10),
+                FittedBox
+                (
+                    fit: BoxFit.scaleDown,
+                    child: Row
+                    (
+                        children: 
+                        [
+                            Utils.svgButton(SvgPicture.asset("assets/appStore.svg", width: 120, height: 80,), () => {Utils.openURLatNewTab(appStoreURL)}),
+                            //Utils.svgButton(SvgPicture.asset("assets/googlePlay.svg", width: 120, height: 80,), () => {Utils.openURLatNewTab(googlePlayURL)}),
                         ],
                     ),
-                    Utils.columnSeperator(10),
-                    RichText // Intro
-                    (
-                        textAlign: TextAlign.justify,
-                        text: TextSpan
-                        (
-                            children: 
-                            [
-                                ProjectTemplate.entry("SolarX AR is an app where you can explore solar system, discover planet positions and movements and enjoy"),
-                                ProjectTemplate.entry(" immersive augmented reality experiences. "),
-                                ProjectTemplate.entry(" I used "),
-                                ProjectTemplate.icon("flutter-logo", width: 25, height: 25),
-                                ProjectTemplate.entry(" to develop the app."),
-                            ]
-                        )
-                    ),
-                    Utils.columnSeperator(10),
-                    Utils.imageGallery(images, galleryHeight),
-                    Utils.columnSeperator(10),
-                    RichText // Outro
-                    (
-                        textAlign: TextAlign.justify,
-                        text: TextSpan
-                        (
-                            children: 
-                            [
-                                ProjectTemplate.entry("The project is only available for iOS devices right now. However I plan to publish for Android as well. "),
-                                ProjectTemplate.entry("You can download the app from the link below."),
-                            ]
-                        )
-                    ),
-                    Utils.columnSeperator(10),
-                    FittedBox
-                    (
-                        fit: BoxFit.scaleDown,
-                        child: Row
-                        (
-                            children: 
-                            [
-                                Utils.svgButton(SvgPicture.asset("assets/appStore.svg", width: 120, height: 80,), () => {Utils.openURLatNewTab(appStoreURL)}),
-                                //Utils.svgButton(SvgPicture.asset("assets/googlePlay.svg", width: 120, height: 80,), () => {Utils.openURLatNewTab(googlePlayURL)}),
-                            ],
-                        ),
-                    ),
-                ],
-            ),
+                ),
+            ],
         );
 
     }

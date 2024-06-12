@@ -1,3 +1,4 @@
+import 'package:dunyakilavuz_github_io/main.dart';
 import 'package:dunyakilavuz_github_io/projects_content.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
@@ -19,12 +20,24 @@ class ProjectsState extends State<Projects>
     {
         return Scaffold
         (
-            body: const SingleChildScrollView
+            body: Column
             (
-                child: Center
-                (
-                    child: ProjectsContent(),
-                ),
+                children: 
+                [
+                    Container
+                    (
+                        width: MediaQuery.of(context).size.width,
+                        height: 56, // Height of floating action button
+                        color: App.mainBGColor
+                    ),
+                    const SingleChildScrollView
+                    (
+                        child: Center
+                        (
+                            child: ProjectsContent(),
+                        ),
+                    ),
+                ],
             ),
             floatingActionButton: FloatingActionButton
             (
@@ -39,7 +52,7 @@ class ProjectsState extends State<Projects>
                 (
                     Icons.chevron_left_sharp,
                     size: 30,
-                    color: Colors.black,
+                    color: Colors.white,
                 ),
             ),
             floatingActionButtonLocation: FloatingActionButtonLocation.miniStartTop,

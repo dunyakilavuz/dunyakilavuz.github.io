@@ -21,13 +21,13 @@ class ProjectDigitalDaragac extends ProjectTemplate
     final String webURL = "http://digitaldaragac.ieu.edu.tr/";
     final List<String> images = 
     [
-        "assets/daragac_01.png",
-        "assets/daragac_02.png",
-        "assets/daragac_03.png",
-        "assets/daragac_04.png",
-        "assets/daragac_05.png",
-        "assets/daragac_06.png",
-        "assets/daragac_07.png",
+        "assets/daragac_01.webp",
+        "assets/daragac_02.webp",
+        "assets/daragac_03.webp",
+        "assets/daragac_04.webp",
+        "assets/daragac_05.webp",
+        "assets/daragac_06.webp",
+        "assets/daragac_07.webp",
     ];
 
     Widget content(BuildContext context) 

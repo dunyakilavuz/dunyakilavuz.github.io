@@ -19,11 +19,11 @@ class ProjectSolarX extends ProjectTemplate
     final String googlePlayURL = "https://play.google.com/store/apps/details?id=com.dunyakilavuz.SolarX";
     final List<String> images = 
     [
-        "assets/solarx_01.png",
-        "assets/solarx_02.png",
-        "assets/solarx_03.png",
-        "assets/solarx_04.png",
-        "assets/solarx_05.png",
+        "assets/solarx_01.webp",
+        "assets/solarx_02.webp",
+        "assets/solarx_03.webp",
+        "assets/solarx_04.webp",
+        "assets/solarx_05.webp",
     ];
 
 

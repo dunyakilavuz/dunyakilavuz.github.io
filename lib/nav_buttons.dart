@@ -229,7 +229,7 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
                 seperator(10),
                 iconOnlyButton
                 (
-                    Icon
+                    FaIcon
                     (
                         FontAwesomeIcons.github,
                         color: btnColor,
@@ -240,7 +240,7 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
                 seperator(10),
                 iconOnlyButton
                 (
-                    Icon
+                    FaIcon
                     (
                         FontAwesomeIcons.linkedin,
                         color: btnColor,
@@ -251,7 +251,7 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
                 seperator(10),
                 iconOnlyButton
                 (
-                    Icon
+                    FaIcon
                     (
                         FontAwesomeIcons.envelope,
                         color: btnColor,

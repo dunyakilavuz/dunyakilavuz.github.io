@@ -19,11 +19,11 @@ class ProjectSolarXAR extends ProjectTemplate
     final String googlePlayURL = "";
     final List<String> images = 
     [
-        "assets/solarxar_01.png",
-        "assets/solarxar_02.png",
-        "assets/solarxar_03.png",
-        "assets/solarxar_04.png",
-        "assets/solarxar_05.png",
+        "assets/solarxar_01.webp",
+        "assets/solarxar_02.webp",
+        "assets/solarxar_03.webp",
+        "assets/solarxar_04.webp",
+        "assets/solarxar_05.webp",
     ];
 
 

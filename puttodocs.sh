@@ -1,4 +1,4 @@
-flutter build web
+flutter build web --release
 
 if [ $? -eq 0 ]; then
     echo "Flutter build web complete!"

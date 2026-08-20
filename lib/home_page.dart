@@ -2,16 +2,13 @@ import 'package:dunyakilavuz_github_io/main.dart';
 import 'package:dunyakilavuz_github_io/nav_buttons.dart';
 import 'package:dunyakilavuz_github_io/particles.dart';
 import 'package:dunyakilavuz_github_io/utils.dart';
-import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Home extends StatefulWidget
 {
-    const Home({super.key, required this.analytics, required this.observer});
+    const Home({super.key});
     static const String route = "/";
-    final FirebaseAnalytics analytics;
-    final FirebaseAnalyticsObserver observer;
     @override
     State<StatefulWidget> createState() => HomeState();
 }

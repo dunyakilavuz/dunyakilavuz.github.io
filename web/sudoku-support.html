@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sudoku Support</title>
+<style>
+  :root {
+    --bg: #ffffff; --card: #ffffff; --ink: #111111; --muted: #6b6b6b;
+    --border: #111111; --accent: #c8f0e0; --pill: #fff4b0; --row: #e8e8e8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f131d; --card: #1f2534; --ink: #e5e7eb; --muted: #a3a0c8;
+      --border: #545474; --accent: #364058; --pill: #3b4766; --row: #2a3246;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    padding: max(16px, env(safe-area-inset-top)) 16px max(32px, env(safe-area-inset-bottom));
+  }
+  main { max-width: 760px; margin: 0 auto; }
+  header {
+    background: var(--accent); border: 2px solid var(--border); border-radius: 22px;
+    padding: 22px 20px; box-shadow: 0 4px 0 var(--border); margin-bottom: 22px;
+  }
+  h1 { font-size: 1.75rem; line-height: 1.2; margin: 0 0 6px; }
+  header p { margin: 2px 0; color: var(--ink); }
+  .meta { font-size: .9rem; opacity: .85; }
+  nav {
+    background: var(--card); border: 2px solid var(--border); border-radius: 18px;
+    padding: 12px 18px; margin-bottom: 22px;
+  }
+  nav ol { margin: 6px 0; padding-left: 20px; columns: 2 220px; column-gap: 24px; }
+  nav a { color: var(--ink); }
+  section {
+    background: var(--card); border: 2px solid var(--border); border-radius: 18px;
+    padding: 4px 18px 10px; margin-bottom: 16px;
+  }
+  h2 { font-size: 1.2rem; margin: 16px 0 6px; }
+  h3 { font-size: 1.02rem; margin: 14px 0 4px; }
+  ul { padding-left: 20px; margin: 6px 0 10px; }
+  li { margin: 3px 0; }
+  a { color: inherit; text-underline-offset: 2px; word-break: break-word; }
+  .pill {
+    display: inline-block; background: var(--pill); border: 1.2px solid var(--border);
+    border-radius: 12px; padding: 0 8px; font-size: .8rem; font-weight: 700;
+  }
+  .note { background: var(--row); border-radius: 14px; padding: 10px 14px; margin: 10px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: .92rem; margin: 8px 0 12px; }
+  th, td { text-align: left; vertical-align: top; padding: 8px 6px; border-bottom: 1px solid var(--row); }
+  th { font-weight: 700; }
+  @media (max-width: 520px) {
+    table, thead, tbody, tr, th, td { display: block; }
+    thead { display: none; }
+    tr { border-bottom: 1px solid var(--row); padding: 6px 0; }
+    td { border: 0; padding: 2px 0; }
+    td:first-child { font-weight: 700; }
+  }
+  footer { text-align: center; color: var(--muted); font-size: .85rem; margin-top: 22px; }
+</style>
+</head><body>
+<main>
+<h1>Sudoku: Classic Mind Game &mdash; Support</h1>
+<p>Need help, found a bug or have an idea? Email <a href="mailto:dunyakilavuz@gmail.com?subject=Sudoku%20support">dunyakilavuz@gmail.com</a>. Please include your device model and iOS version. We usually reply within a few days.</p>
+
+<h2>Frequently asked questions</h2>
+
+<h3>How do I play?</h3>
+<p>Fill every row, column and 3&times;3 box with the numbers 1 to 9, each exactly once. Tap <strong>How to Play</strong> on the home screen for a quick guide to notes, Quick Pencil, mistakes and hints.</p>
+
+<h3>How do I restore my Premium subscription?</h3>
+<p>Open the Premium page and tap <strong>Restore Purchases</strong>. Make sure you are signed in to the same Apple ID you used to subscribe.</p>
+
+<h3>How do I cancel or change my subscription?</h3>
+<p>On the Premium page, tap <strong>Manage or cancel subscription</strong>. You can also go to Settings &rarr; your name &rarr; Subscriptions on your iPhone or iPad. Cancel at least 24 hours before the renewal date to avoid being charged for the next period.</p>
+
+<h3>How do I get a refund?</h3>
+<p>Refunds for App Store purchases are handled by Apple. Request one at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+
+<h3>How do I keep my progress on another device?</h3>
+<p>Sign in with Apple or Google on the Profile screen. Your stats, coins and streak sync to every device where you sign in with the same account.</p>
+
+<h3>How do I delete my account?</h3>
+<p>Sign in, open Settings and tap <strong>Delete Account</strong>. You can also email us to request deletion. See the <a href="https://dunyakilavuz.com/sudoku-privacy.html">Privacy Policy</a> for details.</p>
+
+<h3>Why do I see ads?</h3>
+<p>The free version shows ads to support development. Premium removes all ads.</p>
+
+<p class="meta">Privacy Policy: <a href="https://dunyakilavuz.com/sudoku-privacy.html">dunyakilavuz.com/sudoku-privacy.html</a><br>&copy; 2026 Dunya Kulavuz</p>
+</main>
+</body></html>

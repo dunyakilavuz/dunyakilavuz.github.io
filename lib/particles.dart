@@ -1,7 +1,7 @@
-import 'dart:async';
 import 'dart:math' as math;
-import 'dart:math';
+import 'dart:math' show Random;
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:vector_math/vector_math_64.dart';
 
 class Particles extends StatefulWidget
@@ -26,81 +26,96 @@ class ParticlesState extends State<Particles> with SingleTickerProviderStateMixi
 {
     final Random random = Random();
     final List<ParticleModel> particles = [];
-    late Timer timer;
-    late Vector2 dimensions;
+    // Notifies the painter to repaint without rebuilding the widget tree.
+    final ValueNotifier<int> repaint = ValueNotifier<int>(0);
+    late final Ticker ticker;
+    Vector2 dimensions = Vector2(1, 1);
+    Duration lastStep = Duration.zero;
 
     @override
     void initState() 
     {
         super.initState();
-        List.generate(widget.numberOfParticles, (index) 
+        for (int i = 0; i < widget.numberOfParticles; i++)
         {
             particles.add(ParticleModel(random, widget.particleColors));
-        });
-    // defines a timer 
-        setState(() {});
-        timer = Timer.periodic
-        (
-            widget.refreshRate,
-            (Timer t) {setState(() {});}
-        );
+        }
+        ticker = createTicker(onTick)..start();
+    }
+
+    // Advance the simulation in fixed steps of [refreshRate] so motion speed
+    // is independent of the display refresh rate.
+    void onTick(Duration elapsed)
+    {
+        final int stepUs = widget.refreshRate.inMicroseconds;
+        int steps = 0;
+        while (elapsed - lastStep >= widget.refreshRate && steps < 5)
+        {
+            for (final particle in particles) 
+            {
+                particle.updateParticle(dimensions);
+            }
+            lastStep += Duration(microseconds: stepUs);
+            steps++;
+        }
+        if (elapsed - lastStep >= widget.refreshRate) lastStep = elapsed; // Skip backlog after tab was hidden.
+        if (steps > 0) repaint.value++;
     }
 
     @override
     void dispose() 
     {
-        timer.cancel();
+        ticker.dispose();
+        repaint.dispose();
         super.dispose();
     }
 
     @override
     Widget build(BuildContext context) 
     {
-        dimensions = Vector2(MediaQuery.of(context).size.width, MediaQuery.of(context).size.height);
+        final Size size = MediaQuery.sizeOf(context);
+        dimensions = Vector2(size.width, size.height);
 
         return Container
         (
             color: widget.bgColor,
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
+            width: size.width,
+            height: size.height,
             alignment: Alignment.topLeft,
-            child: CustomPaint(painter: ParticlePainter(particles, dimensions))
+            child: RepaintBoundary
+            (
+                child: CustomPaint(painter: ParticlePainter(particles, dimensions, repaint)),
+            ),
         );
-
     }
 }
 
 class ParticlePainter extends CustomPainter
 {
-    List<ParticleModel> particles;
-    Vector2 dimensions;
+    final List<ParticleModel> particles;
+    final Vector2 dimensions;
+    final Paint _paint = Paint()..style = PaintingStyle.fill;
 
-    ParticlePainter(this.particles, this.dimensions);
+    ParticlePainter(this.particles, this.dimensions, Listenable repaint) : super(repaint: repaint);
 
     @override
     void paint(Canvas canvas, Size size) 
     {
-        for (var particle in particles) 
+        for (final particle in particles) 
         {
-            particle.updateParticle(dimensions);
-
+            if (particle.position == Vector2.zero()) continue;
+            _paint.color = particle.particleColor.withValues(alpha: particle.alpha);
             canvas.drawCircle
             (
                 Offset(particle.position.x, particle.position.y),
                 particle.size,
-                Paint()
-                ..color = Color.fromRGBO(
-                    particle.particleColor.red, 
-                    particle.particleColor.green, 
-                    particle.particleColor.blue, 
-                    particle.alpha)
-                ..style = PaintingStyle.fill
+                _paint,
             );
         }
     }
  
     @override
-    bool shouldRepaint(CustomPainter oldDelegate) => true;
+    bool shouldRepaint(ParticlePainter oldDelegate) => oldDelegate.dimensions != dimensions;
 }
 
 class ParticleModel

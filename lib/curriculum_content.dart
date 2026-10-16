@@ -1,29 +1,41 @@
-// ignore_for_file: avoid_web_libraries_in_flutter
 import 'package:dunyakilavuz_github_io/main.dart';
 import 'package:flutter/material.dart';
-import 'dart:html';
+import 'package:web/web.dart' as web;
 import 'dart:ui_web' as ui_web;
 
 class CurriculumContent extends StatelessWidget
 {
     const CurriculumContent({super.key});
 
+    static const String viewType = 'cv-iframe';
+    static const String srcURL = 'cv.html';
+    static bool _registered = false;
+
+    static void _registerViewFactory()
+    {
+        if (_registered) return;
+        _registered = true;
+        ui_web.platformViewRegistry.registerViewFactory(
+            viewType,
+            (int viewID)
+            {
+                final iframe = web.HTMLIFrameElement()
+                    ..src = srcURL
+                    ..title = 'Curriculum Vitae';
+                iframe.style
+                    ..border = 'none'
+                    ..width = '100%'
+                    ..height = '100%';
+                return iframe;
+            },
+        );
+    }
+
     @override
     Widget build(BuildContext context) 
     {
-        UniqueKey viewID = UniqueKey();
-        String srcURL = 'https://dunyakilavuz.com/cv.html';
-
-        ui_web.platformViewRegistry.registerViewFactory(
-            viewID.toString(),
-            (int viewID) => IFrameElement()
-            ..width = MediaQuery.of(context).size.width.toString()
-            ..height = MediaQuery.of(context).size.height.toString()
-            ..src = srcURL
-            ..style.border = 'none'
-            ..style.width = "100%"
-            ..style.height = "100%"
-        );
+        _registerViewFactory();
+        final Size size = MediaQuery.sizeOf(context);
 
         return Column
         (
@@ -31,15 +43,15 @@ class CurriculumContent extends StatelessWidget
             [
                 Container
                 (
-                    width: MediaQuery.of(context).size.width,
+                    width: size.width,
                     height: 56, // Height of floating action button
                     color: App.mainBGColor
                 ),
                 SizedBox
                 (
-                    width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height - 56, // Height of floating action button
-                    child: HtmlElementView(viewType: viewID.toString()),
+                    width: size.width,
+                    height: size.height - 56, // Height of floating action button
+                    child: const HtmlElementView(viewType: viewType),
                 ),
             ],
         );

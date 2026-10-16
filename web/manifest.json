@@ -1,12 +1,11 @@
 {
-    "name": "dunyakilavuz_github_io",
-    "short_name": "dunyakilavuz_github_io",
-    "start_url": ".",
+    "name": "Dünya Kılavuz",
+    "short_name": "Dünya Kılavuz",
+    "start_url": "/",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
-    "orientation": "portrait-primary",
+    "background_color": "#1F334A",
+    "theme_color": "#1F334A",
+    "description": "Personal website of Dünya Kılavuz, M.Sc. Computer Engineer.",
     "prefer_related_applications": false,
     "icons": [
         {

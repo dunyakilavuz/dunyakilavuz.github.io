@@ -5,10 +5,11 @@ import 'package:flutter_svg/svg.dart';
 
 class ProjectDigitalDaragac extends ProjectTemplate
 {
+    static const String routeName = "/projects/digitaldaragac";
     ProjectDigitalDaragac({super.key}) : 
     super
     (
-        route: "/projects/digitaldaragac",
+        route: routeName,
         title: "DIGITAL DARAGAC",
         imagePath: "assets/digitaldaragac.png",
         isFolder: false,

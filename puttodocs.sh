@@ -1,4 +1,5 @@
-flutter build web --release
+# Legacy manual deploy (Pages source = /docs). Prefer the GitHub Actions workflow in .github/workflows/deploy.yml.
+flutter build web --release --wasm
 
 if [ $? -eq 0 ]; then
     echo "Flutter build web complete!"
@@ -17,6 +18,7 @@ else
 fi
 
 cp -r build/web/* docs/ #Copy everything in build/web --> docs
+find docs -name "*.symbols" -delete # Debug symbols are not needed in production
 
 if [ $? -eq 0 ]; then
     echo "Copied build/web --> docs."

@@ -1,3 +1,4 @@
+import 'package:dunyakilavuz_github_io/routes.dart';
 import 'package:dunyakilavuz_github_io/main.dart';
 import 'package:dunyakilavuz_github_io/projects_content.dart';
 import 'package:flutter/material.dart';
@@ -5,7 +6,7 @@ import 'package:flutter/material.dart';
 class Projects extends StatefulWidget
 {
     const Projects({super.key});
-    static const String route = "/projects";
+    static const String route = Routes.projects;
     @override
     State<StatefulWidget> createState() => ProjectsState();
 }

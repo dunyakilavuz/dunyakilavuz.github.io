@@ -1,7 +1,4 @@
-// ignore_for_file: avoid_web_libraries_in_flutter
-
-import 'package:dunyakilavuz_github_io/curriculum_page.dart';
-import 'package:dunyakilavuz_github_io/projects_page.dart';
+import 'package:dunyakilavuz_github_io/routes.dart';
 import 'package:dunyakilavuz_github_io/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -17,7 +14,6 @@ class NavButtons extends StatefulWidget
 
 class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMixin
 {
-    late Animation buttonColorAnim;
     late AnimationController buttonColorController;
     double iconSize = 35;
     static String linkedinURL = "https://www.linkedin.com/in/dunyakilavuz/";
@@ -84,12 +80,12 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
 
     void onCurriculumTap()
     {
-        Navigator.of(context).pushNamed(Curriculum.route);
+        Navigator.of(context).pushNamed(Routes.curriculum);
     }
 
     void onProjectsTap()
     {
-        Navigator.of(context).pushNamed(Projects.route);
+        Navigator.of(context).pushNamed(Routes.projects);
     }
 
     void onMailTap()
@@ -183,7 +179,6 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
     {
         super.initState();
         buttonColorController = AnimationController(vsync: this, duration: const Duration(seconds: 10))..repeat();
-        buttonColorAnim = buttonColor.animate(buttonColorController)..addListener(() { setState(() {});});
     }
 
     @override
@@ -196,8 +191,16 @@ class NavButtonsState extends State<NavButtons> with SingleTickerProviderStateMi
     @override
     Widget build(BuildContext context) 
     {
-        Color btnColor = buttonColor.evaluate(AlwaysStoppedAnimation(buttonColorController.value)) ?? Colors.amber;
+        // Rebuild only this subtree on each animation tick instead of calling setState.
+        return AnimatedBuilder
+        (
+            animation: buttonColorController,
+            builder: (context, _) => buildButtons(buttonColor.evaluate(buttonColorController) ?? Colors.amber),
+        );
+    }
 
+    Widget buildButtons(Color btnColor)
+    {
         return Row
         (
             mainAxisAlignment: MainAxisAlignment.center,

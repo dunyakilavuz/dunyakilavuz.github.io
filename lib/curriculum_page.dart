@@ -1,10 +1,11 @@
+import 'package:dunyakilavuz_github_io/routes.dart';
 import 'package:dunyakilavuz_github_io/curriculum_content.dart';
 import 'package:flutter/material.dart';
 
 class Curriculum extends StatelessWidget
 {
     const Curriculum({super.key});
-    static const String route = "/curriculum";
+    static const String route = Routes.curriculum;
     @override
     Widget build(BuildContext context) 
     {

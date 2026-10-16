@@ -5,12 +5,13 @@ import 'package:flutter_svg/svg.dart';
 
 class ProjectSolarXAR extends ProjectTemplate
 {
+    static const String routeName = "/projects/solarxar";
     ProjectSolarXAR({super.key}): 
     super
     (
-        route: "/projects/solarxar",
+        route: routeName,
         title: "SOLAR X AR",
-        imagePath: "assets/solarxar-logo.jpg",
+        imagePath: "assets/solarxar-logo.webp",
         isFolder:  false,
     );
 

@@ -1,8 +1,6 @@
-// ignore_for_file: avoid_web_libraries_in_flutter
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'dart:html' as html;
+import 'package:web/web.dart' as web;
 
 class Utils
 {
@@ -97,7 +95,13 @@ class Utils
                         (
                             color: Colors.grey,
                             margin: const EdgeInsets.all(20),
-                            child: Image.asset(images.elementAt(index), height: height,),
+                            child: Image.asset
+                            (
+                                images.elementAt(index),
+                                height: height,
+                                // Decode at display size instead of full resolution.
+                                cacheHeight: (height * MediaQuery.devicePixelRatioOf(context)).round(),
+                            ),
                         );
                     }
                 )
@@ -107,6 +111,6 @@ class Utils
 
     static void openURLatNewTab(String url)
     {
-        html.window.open(url, 'new tab');
+        web.window.open(url, '_blank');
     }
 }

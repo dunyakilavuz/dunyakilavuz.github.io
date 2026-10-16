@@ -61,12 +61,6 @@
 
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="styles.css"> <!--Added this for styles-->
-  <script>
-    // The value below is injected by flutter build, do not touch.
-    var serviceWorkerVersion = '{{flutter_service_worker_version}}';
-  </script>
-  <!-- This script adds the flutter initialization JS code -->
-  <script src="flutter.js" defer></script>
 </head>
 <body>
   <noscript>
@@ -89,7 +83,7 @@
     </main>
   </noscript>
   <div>
-      <div class="loading">
+      <div id="splash" class="loading">
         <h2>Almost there</h2>
         <div class="dots">
           <div class="dot"></div>
@@ -99,22 +93,16 @@
       </div>
   </div>
   <script>
-    window.addEventListener('load', function(ev) {
-      {{flutter_js}}
-      {{flutter_build_config}}
-      
-      _flutter.loader.load({
-        serviceWorker: {
-          serviceWorkerVersion: serviceWorkerVersion,
-        },
-        onEntrypointLoaded: function(engineInitializer) {
-          engineInitializer.initializeEngine().then(function(appRunner) {
-            if(document.getElementById('splash'))
-              document.getElementById('splash').remove();
-            appRunner.runApp();
-          });
-        }
-      });
+    {{flutter_js}}
+    {{flutter_build_config}}
+
+    _flutter.loader.load({
+      onEntrypointLoaded: async function(engineInitializer) {
+        const appRunner = await engineInitializer.initializeEngine();
+        const splash = document.getElementById('splash');
+        if (splash) splash.remove();
+        await appRunner.runApp();
+      }
     });
   </script>
 </body>

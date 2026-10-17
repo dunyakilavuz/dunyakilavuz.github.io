@@ -1,3 +1,4 @@
+import 'package:dunyakilavuz_github_io/image_gallery.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:web/web.dart' as web;
@@ -66,47 +67,9 @@ class Utils
         );
     }
 
-    static Container imageGallery(List<String> images, double height)
+    static Widget imageGallery(List<String> images, double height)
     {
-        final ScrollController scrollController = ScrollController();
-
-        return Container
-        (
-            height: height,
-            decoration: BoxDecoration
-            (
-                color: Colors.grey.shade100,
-                borderRadius: BorderRadius.circular(18.0),
-            ),
-            child: Scrollbar
-            (
-                thumbVisibility: true,
-                controller: scrollController,
-                child: ListView.builder
-                (
-                    controller: scrollController,
-                    scrollDirection: Axis.horizontal,
-                    itemCount: images.length,
-                    shrinkWrap: true,
-                    physics: const BouncingScrollPhysics(),
-                    itemBuilder: (context, index)
-                    {
-                        return Container
-                        (
-                            color: Colors.grey,
-                            margin: const EdgeInsets.all(20),
-                            child: Image.asset
-                            (
-                                images.elementAt(index),
-                                height: height,
-                                // Decode at display size instead of full resolution.
-                                cacheHeight: (height * MediaQuery.devicePixelRatioOf(context)).round(),
-                            ),
-                        );
-                    }
-                )
-            )
-        );
+        return ImageGallery(images: images, height: height);
     }
 
     static void openURLatNewTab(String url)

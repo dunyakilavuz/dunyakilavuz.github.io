@@ -1,5 +1,6 @@
 import 'package:dunyakilavuz_github_io/curriculum_page.dart' deferred as curriculum;
 import 'package:dunyakilavuz_github_io/home_page.dart';
+import 'package:dunyakilavuz_github_io/image_gallery.dart';
 import 'package:dunyakilavuz_github_io/projects_routes.dart' deferred as projects;
 import 'package:dunyakilavuz_github_io/routes.dart';
 import 'package:flutter/foundation.dart';
@@ -67,6 +68,7 @@ class App extends StatelessWidget
             title: 'Dünya Kılavuz',
             initialRoute: Routes.home,
             onGenerateRoute: onGenerateRoute,
+            scrollBehavior: AppScrollBehavior(),
         );
     }
 }

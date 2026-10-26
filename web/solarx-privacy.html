@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Privacy Policy – SolarX AR</title>
-<meta name="description" content="Privacy Policy for the iOS app SolarX AR. Gizlilik Politikası.">
+<title>Privacy Policy – SolarX</title>
+<meta name="description" content="Privacy Policy for the iOS app SolarX. Gizlilik Politikası.">
 <style>
   :root {
     --bg: #ffffff; --card: #ffffff; --ink: #111111; --muted: #6b6b6b;
@@ -68,8 +68,8 @@
 <main>
   <header>
     <h1>Privacy Policy</h1>
-    <p><strong>SolarX AR</strong> (iOS)</p>
-    <p class="meta">Effective date: 17 October 2026 · <a href="#tr" lang="tr">Türkçe</a></p>
+    <p><strong>SolarX</strong> (iOS)</p>
+    <p class="meta">Effective date: 26 October 2026 · <a href="#tr" lang="tr">Türkçe</a></p>
   </header>
 
   <nav aria-label="Contents">
@@ -83,6 +83,7 @@
       <li><a href="#purchases">SolarX Pro subscriptions</a></li>
       <li><a href="#device">Data stored on your device</a></li>
       <li><a href="#purposes">Purposes and legal bases</a></li>
+      <li><a href="#online">Online orbit data</a></li>
       <li><a href="#sharing">Service providers and transfers</a></li>
       <li><a href="#retention">Retention</a></li>
       <li><a href="#deletion">Deleting your data</a></li>
@@ -97,7 +98,7 @@
 
   <section id="who">
     <h2>1. Who we are</h2>
-    <p>SolarX AR (the “App”) is developed and published by
+    <p>SolarX (the “App”) is developed and published by
       <strong>Dünya Kulavuz</strong>, an individual developer based in Türkiye
       (“we”, “us”). We are the data controller for the personal data described here.</p>
     <p>Contact: <a href="mailto:dunyakilavuz@gmail.com">dunyakilavuz@gmail.com</a></p>
@@ -108,10 +109,11 @@
     <ul>
       <li>There is no account and no sign-up. We do not run any server for the App, and we do not receive your location, camera images or usage data.</li>
       <li>All astronomy (planet, Moon, Sun and star positions, rise and set times, moon phases, eclipses and other sky events) is calculated on your device. These features work offline.</li>
-      <li>Your location is used on your device only, to calculate the sky for where you are. You can also enter a location by hand instead.</li>
-      <li>The camera is used only to show the live sky behind the labels in Sky view and AR. Camera images are not recorded, stored or sent anywhere.</li>
+      <li>A few features need orbit data that changes all the time: ISS and satellite passes, and comets and asteroids (Pro). For these the App periodically downloads one small public orbit-data file from our own site, <a href="https://dunyakilavuz.com/solarx-data/">dunyakilavuz.com</a>, which holds a copy of public data from <a href="https://celestrak.org">CelesTrak</a> and the <a href="https://minorplanetcenter.net">IAU Minor Planet Center</a> (about daily for satellites, weekly for comets and asteroids). The request asks only for the public file: it contains no location, no identifier and no account. Passes and positions are still calculated on your device. See <a href="#online">section 3a</a>.</li>
+      <li>The App asks only for “While Using the App” location access, never “Always”. Your location is used on your device only, to calculate the sky for where you are. You can also enter a location by hand instead.</li>
+      <li>The camera is used only to show the live sky behind the labels in Sky view. Camera images are not recorded, stored or sent anywhere.</li>
       <li>The free version shows ads from Google AdMob. Where the law requires it, Google's consent form asks for your choice first. The App does not ask for Apple's tracking permission, so your advertising identifier (IDFA) is not used.</li>
-      <li>SolarX Pro is sold by Apple through the App Store. We never see your payment details. Pro subscribers do not see ads.</li>
+      <li>SolarX Pro is sold by Apple through the App Store. We never see your payment details. For Pro subscribers the ad SDK is not started at all, so there are no ads, no consent form and no ad requests.</li>
       <li>We do not sell your personal data. The App has no analytics or crash-reporting services.</li>
     </ul>
   </section>
@@ -121,36 +123,50 @@
     <table>
       <thead><tr><th>Data</th><th>Details</th><th>Where</th></tr></thead>
       <tbody>
-        <tr><td>Location</td><td>Your device's coordinates, read with your permission while you use the App. Used only to calculate the sky for your position. See <a href="#permissions">section 4</a>.</td><td>Your device only (in memory)</td></tr>
+        <tr><td>Location</td><td>Your device's coordinates, read with your “While Using the App” permission. Used only to calculate the sky for your position. See <a href="#permissions">section 4</a>.</td><td>Your device only (in memory)</td></tr>
         <tr><td>Manual location</td><td>If you choose “Enter manually” in Settings: the latitude, longitude and optional place name you type.</td><td>Your device only</td></tr>
-        <tr><td>Camera image</td><td>The live camera preview behind the sky in Sky view and AR. It is shown on screen and never recorded or saved.</td><td>Your device only (not stored)</td></tr>
+        <tr><td>Camera image</td><td>The live camera preview behind the sky in Sky view. It is shown live on screen and never recorded, stored or sent.</td><td>Your device only (not stored)</td></tr>
         <tr><td>Motion and compass</td><td>Readings from the motion sensors and compass, used to work out where your phone is pointing.</td><td>Your device only (not stored)</td></tr>
         <tr><td>Settings</td><td>Language, time format, distance unit, constellation lines, star label count, haptics and whether you finished the welcome screens.</td><td>Your device only</td></tr>
         <tr><td>Pro status</td><td>Whether a SolarX Pro subscription is active and which plan, as reported by Apple.</td><td>Your device</td></tr>
         <tr><td>Advertising data (free version)</td><td>See <a href="#ads">section 5</a>.</td><td>Google</td></tr>
-        <tr><td>Font download</td><td>The App may download its text font from Google Fonts the first time it is needed. Google receives standard connection data such as your IP address. The font is then kept on your device.</td><td>Google</td></tr>
-        <tr><td>Emails you send us</td><td>If you contact us, we receive your email address and whatever you write.</td><td>Our email inbox</td></tr>
+        <tr><td>Downloaded orbit data</td><td>Public satellite and comet/asteroid orbit files, with the time they were downloaded. They contain no personal data. See <a href="#online">section 3a</a>.</td><td>Your device</td></tr>
+        <tr><td>Emails you send us</td><td>If you contact us, we receive your email address and whatever you write. The App also offers an optional “Spot a typo or translation error? Help us fix it” row, which opens a draft email to dunyakilavuz@gmail.com in your mail app. Nothing is sent automatically, and anything you choose to send is handled like any other email to us.</td><td>Our email inbox</td></tr>
       </tbody>
     </table>
     <p>We do <strong>not</strong> collect your contacts, photos, microphone, messages, health data or browsing history.
       The App has no account system, no analytics and no crash-reporting SDK.</p>
   </section>
 
+  <section id="online">
+    <h2>3a. Online orbit data</h2>
+    <p>Satellites and comets move in ways that cannot be predicted far ahead, so these features use orbit data downloaded from the internet. Everything else in the App works without a connection.</p>
+    <ul>
+      <li><strong>What is downloaded:</strong> one plain public file, <code>dunyakilavuz.com/solarx-data/v1/orbits.json</code>, with no account, sign-up or API key. It is a copy we publish of public orbit data, refreshed about twice a day by an automated job from:
+        satellites (ISS free; bright satellites and Tiangong with Pro): CelesTrak, <code>celestrak.org/NORAD/elements/gp.php?GROUP=stations&amp;FORMAT=tle</code> and <code>GROUP=visual</code>;
+        comets and bright asteroids (Pro): IAU Minor Planet Center, <code>minorplanetcenter.net/iau/MPCORB/CometEls.txt</code> and <code>minorplanetcenter.net/iau/Ephemerides/Bright/&lt;year&gt;/Soft00Bright.txt</code>. The App itself does not contact CelesTrak or the Minor Planet Center.</li>
+      <li><strong>When:</strong> when you open the App and the data on your device is due for an update (about once a day for satellites, once a week for comets and asteroids; never more than once every 2 hours), and when you tap “Refresh now” in Settings &rsaquo; Online data. Nothing is downloaded in the background while the App is closed.</li>
+      <li><strong>What is sent:</strong> only a standard HTTPS request for the file. It does not include your location, a device or advertising identifier, or any account. The App sends a generic app name (“SolarX”) as its user agent and the date of the copy it already has, so an unchanged file is not downloaded again.</li>
+      <li><strong>What the server sees:</strong> dunyakilavuz.com is hosted on GitHub Pages (GitHub, Inc., USA). Like any website you visit, GitHub receives your IP address and the time of the request as part of the connection and may keep it in its server logs for security purposes (<a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a>). We do not receive or see this information. CelesTrak and the Minor Planet Center (Smithsonian Astrophysical Observatory, USA) receive nothing from your device.</li>
+      <li><strong>On your device:</strong> the downloaded orbit data, the time it was copied from its source and the time it was downloaded are stored in the App's local storage and replaced at each update. Passes, tracks and positions are calculated on your device. If the data is too old (satellites 3 days, comets and asteroids 30 days after it was copied from its source), the App does not show these predictions and asks for fresh data instead.</li>
+    </ul>
+  </section>
+
   <section id="permissions">
     <h2>4. Location, camera and motion</h2>
     <h3>Location</h3>
     <ul>
-      <li>iOS asks for permission the first time the App needs your location. The App uses the location while it is in use, to calculate where planets, the Moon, the Sun and stars are in your sky and when they rise and set.</li>
+      <li>iOS asks for permission the first time the App needs your location. The App requests only “While Using the App” access and never asks for “Always” access, so it does not use your location in the background. It uses the location to calculate where planets, the Moon, the Sun and stars are in your sky and when they rise and set.</li>
       <li>The coordinates stay in the App's memory and are not written to storage, sent to us or passed to the ad SDK.</li>
       <li>If you decline, the App uses a default location (Greenwich, UK), or you can enter your own coordinates in Settings &rsaquo; Location &rsaquo; Enter manually. Those are saved on your device.</li>
       <li>On the Earth detail page, the App shows an Apple Maps view with your position. Apple provides that map under its own privacy policy.</li>
-      <li>You can change location access at any time in iOS Settings &rsaquo; Privacy &amp; Security &rsaquo; Location Services &rsaquo; SolarX AR.</li>
+      <li>You can change location access at any time in iOS Settings &rsaquo; Privacy &amp; Security &rsaquo; Location Services &rsaquo; SolarX.</li>
     </ul>
     <h3>Camera</h3>
     <ul>
-      <li>The camera is used only to show the real sky behind the labels in Sky view and in the AR tab. The App does not take photos, record video or record audio.</li>
-      <li>Camera images are shown on screen and processed on your device only. They are never stored or sent.</li>
-      <li>Without camera access, Sky view still works on a dark background. You can change this in iOS Settings &rsaquo; SolarX AR &rsaquo; Camera.</li>
+      <li>The camera is used only to show the real sky behind the labels in Sky view. The App does not take photos, record video or record audio.</li>
+      <li>Camera frames are shown live on screen and processed on your device only. They are never recorded, stored or sent. An optional slider lets you dim the camera image behind the sky.</li>
+      <li>Without camera access, Sky view still works on a dark background. You can change this in iOS Settings &rsaquo; SolarX &rsaquo; Camera.</li>
     </ul>
     <h3>Motion sensors and compass</h3>
     <ul>
@@ -163,10 +179,10 @@
     <h2>5. Advertising (free version)</h2>
     <p>The free version may show <strong>full-screen (interstitial) ads</strong>, provided by <strong>Google AdMob</strong>. SolarX Pro subscribers do not see ads.</p>
     <ul>
-      <li><strong>Consent first.</strong> When the App starts, it uses Google's User Messaging Platform (UMP) to show a consent message where required, for example in the EEA, the UK and Switzerland. Ads are requested only if Google's consent check allows it. Where a choice is required, you can review or change it at any time in Settings &rsaquo; Privacy &amp; ads &rsaquo; Ad privacy choices.</li>
+      <li><strong>Consent first.</strong> In the free version, when the App starts it uses Google's User Messaging Platform (UMP) to show a consent message where required, for example in the EEA, the UK and Switzerland. Ads are requested only if Google's consent check allows it. Where a choice is required, you can review or change it at any time in Settings &rsaquo; Privacy &amp; ads &rsaquo; Ad privacy choices.</li>
       <li><strong>No tracking permission (iOS).</strong> The App does not show Apple's App Tracking Transparency prompt. Because of this, your advertising identifier (IDFA) is not available to Google, and ads are not personalised with the IDFA.</li>
       <li><strong>What Google may process:</strong> device and app information (such as device model, operating system and app version), device identifiers that the SDK can access without tracking permission, your IP address and an approximate location derived from it, ad requests and interactions (such as views and taps), and diagnostic information about ad performance. The App does not pass your GPS location to Google. Google uses this data to serve and measure ads, to limit how often you see the same ad, to prevent fraud and abuse and, where you consent, to personalise ads.</li>
-      <li>The Google Mobile Ads SDK is started when the App launches. In this version it also starts for Pro subscribers, but no ads are shown to them.</li>
+      <li><strong>Pro subscribers:</strong> for SolarX Pro subscribers the Google Mobile Ads SDK is not started at all. No consent form is shown and no ad requests are made, so no data goes to Google for ads.</li>
       <li>How Google uses data from apps that use its services: <a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a>. Google's privacy policy: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></li>
     </ul>
   </section>
@@ -184,7 +200,7 @@
 
   <section id="device">
     <h2>7. Data stored on your device</h2>
-    <p>The App keeps the following in its local storage on your device: your settings (language, time format, distance unit, constellation lines, star label count, haptics, location mode), a manual location and place name if you entered one, whether you completed the welcome screens, and your Pro status and active plan.
+    <p>The App keeps the following in its local storage on your device: your settings (language, time format, distance unit, constellation lines, star label count, haptics, location mode), a manual location and place name if you entered one, whether you completed the welcome screens, and your Pro status and active plan, and the downloaded public orbit files with their download times (<a href="#online">section 3a</a>).
       Google's consent form also saves your ad consent choice on your device.
       This data stays on your device and is removed when you uninstall the App. It may be included in your own device backups (iCloud or computer), which are controlled by you and Apple.</p>
   </section>
@@ -195,6 +211,7 @@
       <li><strong>Calculating the sky for your location, and using the camera and motion sensors:</strong> providing the App you asked for, with the iOS permission you granted (GDPR Art. 6(1)(b); KVKK Art. 5(2)(c)). This data is processed on your device only.</li>
       <li><strong>Showing ads in the free version:</strong> our legitimate interest in funding a free app. Personalised ads rely on your consent where the law requires it (GDPR Art. 6(1)(a) and (f); KVKK Art. 5(1) and 5(2)(f)).</li>
       <li><strong>Subscriptions:</strong> performance of the agreement, with Apple acting as the merchant.</li>
+      <li><strong>Downloading orbit data:</strong> providing the satellite and comet features you use (GDPR Art. 6(1)(b); KVKK Art. 5(2)(c)). No personal data is included in the request; the IP address is processed by the file servers as part of the connection.</li>
       <li><strong>Answering your emails:</strong> our legitimate interest in providing support (GDPR Art. 6(1)(f); KVKK Art. 5(2)(f)).</li>
       <li><strong>Legal obligations:</strong> GDPR Art. 6(1)(c); KVKK Art. 5(2)(ç).</li>
     </ul>
@@ -203,7 +220,8 @@
   <section id="sharing">
     <h2>9. Service providers and international transfers</h2>
     <ul>
-      <li><strong>Google</strong>: AdMob ads and the UMP consent form in the free version, and Google Fonts for the App's font. See <a href="#ads">section 5</a>.</li>
+      <li><strong>Google</strong>: AdMob ads and the UMP consent form in the free version. See <a href="#ads">section 5</a>.</li>
+      <li><strong>GitHub</strong> (GitHub, Inc., USA): hosts dunyakilavuz.com, from which the App downloads the public orbit-data file; it sees the IP address of the request (see <a href="#online">section 3a</a>). <strong>CelesTrak</strong> (USA) and the <strong>IAU Minor Planet Center</strong> (USA) are the original sources of that data; the App does not contact them and they receive no personal data.</li>
       <li><strong>Apple</strong>: App Store payments and subscriptions (StoreKit), and the Apple Maps view on the Earth page. Apple's privacy policy: <a href="https://www.apple.com/legal/privacy/">apple.com/legal/privacy</a></li>
     </ul>
     <p>We do not sell or rent your personal data, and we do not share your location, camera images or sensor readings with anyone. Google and Apple may process data outside Türkiye, for example in the European Union or the United States. Where required, transfers rely on the safeguards provided under KVKK Article 9 and GDPR Chapter V, such as standard contractual clauses. We may also disclose data if the law requires it.</p>
@@ -213,6 +231,7 @@
     <h2>10. Retention</h2>
     <ul>
       <li>Location, camera images and sensor readings are not retained. Your GPS position is held in memory only while the App runs.</li>
+      <li>Downloaded orbit files are replaced at each update and removed when you uninstall the App.</li>
       <li>Settings, a manual location and Pro status stay on your device until you change them or uninstall the App.</li>
       <li>Emails are kept as long as needed to answer you and then deleted, unless the law requires us to keep them longer.</li>
       <li>Advertising data is retained by Google under its own policies. Purchase records are retained by Apple under its own policies.</li>
@@ -222,7 +241,7 @@
   <section id="deletion">
     <h2>11. Deleting your data</h2>
     <p>There is no account to delete, because we do not hold any App data about you on a server. To remove everything the App stores, uninstall it. To clear a manual location, switch to “Use GPS” in Settings &rsaquo; Location.</p>
-    <p>To delete emails you sent us, write to <a href="mailto:dunyakilavuz@gmail.com?subject=SolarX%20AR%20data%20deletion">dunyakilavuz@gmail.com</a>. For ad data, see Google's controls at <a href="https://myadcenter.google.com">myadcenter.google.com</a>.</p>
+    <p>To delete emails you sent us, write to <a href="mailto:dunyakilavuz@gmail.com?subject=SolarX%20data%20deletion">dunyakilavuz@gmail.com</a>. For ad data, see Google's controls at <a href="https://myadcenter.google.com">myadcenter.google.com</a>.</p>
     <div class="note">Your SolarX Pro subscription is managed by Apple and is not cancelled by uninstalling the App. Cancel it in your Apple ID subscription settings to stop billing.</div>
   </section>
 
@@ -249,7 +268,7 @@
 
   <section id="security">
     <h2>14. Security</h2>
-    <p>Your location, camera images and sensor readings never leave your device through the App. Connections to Google and Apple use encrypted connections (HTTPS). No method of transmission or storage is completely secure, but we take reasonable measures to protect your data.</p>
+    <p>Your location, camera images and sensor readings never leave your device through the App. Connections to Google, Apple and dunyakilavuz.com are encrypted (HTTPS). No method of transmission or storage is completely secure, but we take reasonable measures to protect your data.</p>
   </section>
 
   <section id="changes">
@@ -267,13 +286,13 @@
   <div lang="tr">
   <header id="tr">
     <h1>Gizlilik Politikası</h1>
-    <p><strong>SolarX AR</strong> (iOS)</p>
-    <p class="meta">Yürürlük tarihi: 17 Ekim 2026 · <a href="#who" lang="en">English</a></p>
+    <p><strong>SolarX</strong> (iOS)</p>
+    <p class="meta">Yürürlük tarihi: 26 Ekim 2026 · <a href="#who" lang="en">English</a></p>
   </header>
 
   <section>
     <h2>1. Biz kimiz</h2>
-    <p>SolarX AR (“Uygulama”), Türkiye'de yaşayan bağımsız geliştirici <strong>Dünya Kulavuz</strong> (“biz”) tarafından geliştirilir ve yayınlanır. Burada açıklanan kişisel veriler için veri sorumlusu biziz.
+    <p>SolarX (“Uygulama”), Türkiye'de yaşayan bağımsız geliştirici <strong>Dünya Kulavuz</strong> (“biz”) tarafından geliştirilir ve yayınlanır. Burada açıklanan kişisel veriler için veri sorumlusu biziz.
       İletişim: <a href="mailto:dunyakilavuz@gmail.com">dunyakilavuz@gmail.com</a></p>
   </section>
 
@@ -282,10 +301,11 @@
     <ul>
       <li>Hesap ve üyelik yoktur. Uygulama için bir sunucu işletmiyoruz; konumunuz, kamera görüntüleriniz veya kullanım verileriniz bize ulaşmaz.</li>
       <li>Tüm astronomi hesapları (gezegen, Ay, Güneş ve yıldız konumları, doğuş ve batış saatleri, Ay evreleri, tutulmalar ve diğer gökyüzü olayları) cihazınızda yapılır ve internet olmadan çalışır.</li>
-      <li>Konumunuz yalnızca cihazınızda, bulunduğunuz yerin gökyüzünü hesaplamak için kullanılır. İsterseniz konumu elle de girebilirsiniz.</li>
-      <li>Kamera yalnızca Gökyüzü ve AR görünümünde etiketlerin arkasında gerçek gökyüzünü göstermek için kullanılır. Görüntüler kaydedilmez, saklanmaz ve hiçbir yere gönderilmez.</li>
+      <li>Birkaç özellik sürekli değişen yörünge verisine ihtiyaç duyar: ISS ve uydu geçişleri ile kuyruklu yıldızlar ve asteroitler (Pro). Bunlar için uygulama, <a href="https://celestrak.org">CelesTrak</a> ve <a href="https://minorplanetcenter.net">IAU Küçük Gezegen Merkezi</a>'nin herkese açık verilerinin bir kopyasını içeren küçük, herkese açık tek bir yörünge dosyasını kendi sitemiz <a href="https://dunyakilavuz.com/solarx-data/">dunyakilavuz.com</a>'dan düzenli olarak indirir (uydular için yaklaşık günde bir, kuyruklu yıldız ve asteroitler için haftada bir). İstek yalnızca herkese açık dosyayı ister; konum, tanımlayıcı veya hesap içermez. Geçişler ve konumlar yine cihazınızda hesaplanır.</li>
+      <li>Uygulama yalnızca “Uygulamayı Kullanırken” konum izni ister, hiçbir zaman “Her Zaman” izni istemez. Konumunuz yalnızca cihazınızda, bulunduğunuz yerin gökyüzünü hesaplamak için kullanılır. İsterseniz konumu elle de girebilirsiniz.</li>
+      <li>Kamera yalnızca Gökyüzü görünümünde etiketlerin arkasında gerçek gökyüzünü göstermek için kullanılır. Görüntüler kaydedilmez, saklanmaz ve hiçbir yere gönderilmez.</li>
       <li>Ücretsiz sürüm Google AdMob reklamları gösterir. Yasaların gerektirdiği yerlerde önce Google'ın onay formu tercihinizi sorar. Uygulama Apple'ın izleme iznini istemez, bu yüzden reklam kimliğiniz (IDFA) kullanılmaz.</li>
-      <li>SolarX Pro, App Store üzerinden Apple tarafından satılır. Ödeme bilgilerinizi hiçbir zaman görmeyiz. Pro abonelere reklam gösterilmez.</li>
+      <li>SolarX Pro, App Store üzerinden Apple tarafından satılır. Ödeme bilgilerinizi hiçbir zaman görmeyiz. Pro aboneler için reklam SDK'sı hiç başlatılmaz; reklam, onay formu veya reklam isteği olmaz.</li>
       <li>Kişisel verilerinizi satmayız. Uygulamada analiz veya çökme raporlama hizmeti yoktur.</li>
     </ul>
   </section>
@@ -293,13 +313,13 @@
   <section>
     <h2>3. İşlenen veriler</h2>
     <ul>
-      <li><strong>Konum:</strong> izninizle, uygulama kullanılırken okunan koordinatlar. Yalnızca gökyüzü hesabı için kullanılır, bellekte tutulur, kaydedilmez ve gönderilmez. İzin vermezseniz varsayılan konum (Greenwich, Birleşik Krallık) kullanılır ya da Ayarlar &rsaquo; Konum &rsaquo; Elle gir ile kendi koordinatlarınızı girebilirsiniz; bunlar cihazınızda saklanır. Dünya sayfasındaki Apple Haritalar görünümü konumunuzu gösterir; bu harita Apple'ın gizlilik politikasına tabidir.</li>
+      <li><strong>Konum:</strong> yalnızca “Uygulamayı Kullanırken” izninizle okunan koordinatlar; “Her Zaman” izni istenmez ve konum arka planda kullanılmaz. Yalnızca gökyüzü hesabı için kullanılır, bellekte tutulur, kaydedilmez ve gönderilmez. İzin vermezseniz varsayılan konum (Greenwich, Birleşik Krallık) kullanılır ya da Ayarlar &rsaquo; Konum &rsaquo; Elle gir ile kendi koordinatlarınızı girebilirsiniz; bunlar cihazınızda saklanır. Dünya sayfasındaki Apple Haritalar görünümü konumunuzu gösterir; bu harita Apple'ın gizlilik politikasına tabidir.</li>
       <li><strong>Kamera:</strong> yalnızca ekranda canlı önizleme olarak gösterilir. Fotoğraf, video veya ses kaydı yapılmaz; görüntüler saklanmaz ve gönderilmez.</li>
       <li><strong>Hareket sensörleri ve pusula (Core Motion):</strong> telefonun nereye baktığını bulmak için cihazda kullanılır, saklanmaz ve gönderilmez.</li>
       <li><strong>Ayarlar:</strong> dil, saat biçimi, mesafe birimi, takımyıldız çizgileri, yıldız etiketi sayısı, titreşim ve karşılama ekranlarının tamamlanıp tamamlanmadığı. Yalnızca cihazınızda saklanır.</li>
       <li><strong>Pro durumu:</strong> Apple'ın bildirdiği şekilde aboneliğin etkin olup olmadığı ve hangi plan olduğu. Cihazınızda saklanır.</li>
-      <li><strong>Yazı tipi indirme:</strong> Uygulama yazı tipini ilk gerektiğinde Google Fonts'tan indirebilir; Google bu sırada IP adresiniz gibi standart bağlantı verilerini alır.</li>
-      <li><strong>Bize gönderdiğiniz e-postalar:</strong> e-posta adresiniz ve yazdıklarınız.</li>
+      <li><strong>Çevrimiçi yörünge verisi:</strong> uygulama tek bir herkese açık dosya indirir: <code>dunyakilavuz.com/solarx-data/v1/orbits.json</code>. Bu, otomatik bir işle günde yaklaşık iki kez yenilenen, yayımladığımız bir kopyadır; içeriği CelesTrak'tan uydu verisi (<code>celestrak.org/NORAD/elements/gp.php?GROUP=stations&amp;FORMAT=tle</code> ve <code>GROUP=visual</code>; ISS ücretsiz, parlak uydular ve Tiangong Pro) ile IAU Küçük Gezegen Merkezi'nden kuyruklu yıldız ve parlak asteroit dosyaları (<code>minorplanetcenter.net/iau/MPCORB/CometEls.txt</code>, <code>…/Ephemerides/Bright/&lt;yıl&gt;/Soft00Bright.txt</code>; Pro) verisidir. Uygulamanın kendisi CelesTrak'a veya Küçük Gezegen Merkezi'ne bağlanmaz. Hesap, üyelik veya API anahtarı yoktur. Dosya, uygulamayı açtığınızda cihazdaki veri güncellenme zamanı geldiyse (uydular için yaklaşık günde bir, kuyruklu yıldız ve asteroitler için haftada bir; hiçbir zaman 2 saatte birden sık değil) ve Ayarlar &rsaquo; Çevrimiçi veri'de “Şimdi yenile”ye dokunduğunuzda indirilir; uygulama kapalıyken arka planda indirme yapılmaz. İstek yalnızca dosyayı ister: konumunuz, cihaz veya reklam kimliği ya da hesap bilgisi gönderilmez; yalnızca genel bir uygulama adı (“SolarX”) ve eldeki kopyanın tarihi gönderilir. dunyakilavuz.com, GitHub Pages'te (GitHub, Inc., ABD) barındırılır; her web sitesinde olduğu gibi GitHub bağlantı sırasında IP adresinizi ve istek zamanını görür ve güvenlik amacıyla sunucu kayıtlarında tutabilir (<a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Gizlilik Bildirimi</a>); bu bilgi bize ulaşmaz. CelesTrak ve Küçük Gezegen Merkezi cihazınızdan hiçbir şey almaz. İndirilen yörünge verisi, kaynağından kopyalandığı zaman ve indirme zamanı cihazınızda saklanır ve her güncellemede değiştirilir. Veri çok eskiyse (kaynağından kopyalandıktan sonra uydular 3 gün, kuyruklu yıldız ve asteroitler 30 gün) uygulama bu tahminleri göstermez, güncel veri ister. İnternet olmadan uygulamanın geri kalanı çalışır.</li>
+      <li><strong>Bize gönderdiğiniz e-postalar:</strong> e-posta adresiniz ve yazdıklarınız. Uygulamadaki isteğe bağlı “Yazım veya çeviri hatası mı gördünüz? Düzeltmemize yardım edin” satırı, e-posta uygulamanızda dunyakilavuz@gmail.com adresine bir taslak e-posta açar. Hiçbir şey otomatik olarak gönderilmez; göndermeyi seçtiğiniz her şey bize gönderilen diğer e-postalar gibi ele alınır.</li>
     </ul>
     <p>Kişileriniz, fotoğraflarınız, mikrofonunuz, mesajlarınız, sağlık verileriniz veya tarama geçmişiniz toplanmaz.</p>
   </section>
@@ -308,10 +328,10 @@
     <h2>4. Reklamlar (ücretsiz sürüm)</h2>
     <ul>
       <li>Ücretsiz sürüm, <strong>Google AdMob</strong> tarafından sağlanan tam ekran (geçiş) reklamlar gösterebilir. SolarX Pro abonelerine reklam gösterilmez.</li>
-      <li><strong>Önce onay:</strong> Uygulama açılırken, gerekli olan bölgelerde (ör. AEA, Birleşik Krallık ve İsviçre) Google'ın Kullanıcı Mesajlaşma Platformu (UMP) ile onay mesajı gösterilir. Reklamlar yalnızca Google'ın onay kontrolü izin verirse istenir. Tercih gereken bölgelerde seçiminizi istediğiniz zaman Ayarlar &rsaquo; Gizlilik ve reklamlar &rsaquo; Reklam gizlilik tercihleri bölümünden değiştirebilirsiniz.</li>
+      <li><strong>Önce onay:</strong> Ücretsiz sürümde uygulama açılırken, gerekli olan bölgelerde (ör. AEA, Birleşik Krallık ve İsviçre) Google'ın Kullanıcı Mesajlaşma Platformu (UMP) ile onay mesajı gösterilir. Reklamlar yalnızca Google'ın onay kontrolü izin verirse istenir. Tercih gereken bölgelerde seçiminizi istediğiniz zaman Ayarlar &rsaquo; Gizlilik ve reklamlar &rsaquo; Reklam gizlilik tercihleri bölümünden değiştirebilirsiniz.</li>
       <li><strong>İzleme izni yok:</strong> Uygulama Apple'ın Uygulama İzleme Şeffaflığı (ATT) iznini istemez. Bu nedenle reklam kimliğiniz (IDFA) Google'a açık değildir ve reklamlar IDFA ile kişiselleştirilmez.</li>
       <li><strong>Google'ın işleyebileceği veriler:</strong> cihaz ve uygulama bilgileri (cihaz modeli, işletim sistemi, uygulama sürümü), SDK'nın izleme izni olmadan erişebildiği cihaz kimlikleri, IP adresiniz ve buna dayalı yaklaşık konum, reklam istekleri ve etkileşimleri (görüntüleme, dokunma) ile reklam performansına ilişkin tanılama bilgileri. Uygulama GPS konumunuzu Google'a iletmez. Google bu verileri reklam sunmak ve ölçmek, aynı reklamın sıklığını sınırlamak, sahtekârlığı önlemek ve onay verdiyseniz reklamları kişiselleştirmek için kullanır.</li>
-      <li>Google Mobile Ads SDK uygulama açılırken başlatılır. Bu sürümde Pro aboneler için de başlatılır, ancak onlara reklam gösterilmez.</li>
+      <li><strong>Pro aboneler:</strong> SolarX Pro aboneleri için Google Mobile Ads SDK hiç başlatılmaz. Onay formu gösterilmez ve reklam isteği yapılmaz; bu nedenle reklam için Google'a veri gitmez.</li>
       <li>Google'ın verileri nasıl kullandığı: <a href="https://policies.google.com/technologies/partner-sites?hl=tr">policies.google.com/technologies/partner-sites</a> · Google Gizlilik Politikası: <a href="https://policies.google.com/privacy?hl=tr">policies.google.com/privacy</a></li>
     </ul>
   </section>
@@ -329,16 +349,17 @@
   <section>
     <h2>6. Hizmet sağlayıcılar, aktarım ve saklama</h2>
     <ul>
-      <li><strong>Google:</strong> ücretsiz sürümde AdMob reklamları ve UMP onay formu; ayrıca Google Fonts.</li>
+      <li><strong>Google:</strong> ücretsiz sürümde AdMob reklamları ve UMP onay formu.</li>
+      <li><strong>GitHub</strong> (GitHub, Inc., ABD): uygulamanın herkese açık yörünge dosyasını indirdiği dunyakilavuz.com'u barındırır; isteğin IP adresini görür. <strong>CelesTrak</strong> (ABD) ve <strong>IAU Küçük Gezegen Merkezi</strong> (ABD) bu verinin asıl kaynaklarıdır; uygulama onlara bağlanmaz ve kişisel veri almazlar.</li>
       <li><strong>Apple:</strong> App Store ödemeleri ve abonelikler (StoreKit) ile Dünya sayfasındaki Apple Haritalar görünümü. <a href="https://www.apple.com/tr/legal/privacy/">apple.com/tr/legal/privacy</a></li>
     </ul>
     <p>Konumunuzu, kamera görüntülerinizi veya sensör verilerinizi kimseyle paylaşmayız. Google ve Apple verileri Türkiye dışında (ör. Avrupa Birliği veya ABD) işleyebilir; gerektiğinde aktarımlar KVKK md. 9 ve GDPR Bölüm V kapsamındaki güvencelere (ör. standart sözleşme maddeleri) dayanır.
-      Konum, kamera ve sensör verileri saklanmaz. Ayarlar, elle girilen konum ve Pro durumu, değiştirene veya uygulamayı silene kadar cihazınızda kalır. E-postalar yanıt için gerektiği kadar tutulur. Reklam verileri Google'ın, satın alma kayıtları Apple'ın politikalarına göre saklanır.</p>
+      Konum, kamera ve sensör verileri saklanmaz. İndirilen yörünge dosyaları her güncellemede değiştirilir ve uygulamayı silince kaldırılır. Ayarlar, elle girilen konum ve Pro durumu, değiştirene veya uygulamayı silene kadar cihazınızda kalır. E-postalar yanıt için gerektiği kadar tutulur. Reklam verileri Google'ın, satın alma kayıtları Apple'ın politikalarına göre saklanır.</p>
   </section>
 
   <section>
     <h2>7. Verilerin silinmesi</h2>
-    <p>Sunucumuzda sizinle ilgili uygulama verisi bulunmadığı için silinecek bir hesap yoktur. Uygulamanın sakladığı her şeyi kaldırmak için uygulamayı silin. Elle girilen konumu temizlemek için Ayarlar &rsaquo; Konum'da “GPS kullan”ı seçin. Bize gönderdiğiniz e-postaların silinmesi için <a href="mailto:dunyakilavuz@gmail.com?subject=SolarX%20AR%20veri%20silme">dunyakilavuz@gmail.com</a> adresine yazın.</p>
+    <p>Sunucumuzda sizinle ilgili uygulama verisi bulunmadığı için silinecek bir hesap yoktur. Uygulamanın sakladığı her şeyi kaldırmak için uygulamayı silin. Elle girilen konumu temizlemek için Ayarlar &rsaquo; Konum'da “GPS kullan”ı seçin. Bize gönderdiğiniz e-postaların silinmesi için <a href="mailto:dunyakilavuz@gmail.com?subject=SolarX%20veri%20silme">dunyakilavuz@gmail.com</a> adresine yazın.</p>
   </section>
 
   <section>
@@ -354,14 +375,14 @@
 
   <section>
     <h2>10. Güvenlik, değişiklikler ve iletişim</h2>
-    <p>Konumunuz, kamera görüntüleriniz ve sensör verileriniz uygulama aracılığıyla cihazınızdan çıkmaz. Google ve Apple ile bağlantılar şifrelidir (HTTPS). Bu politikayı güncelleyebiliriz; yeni sürüm bu sayfada yeni yürürlük tarihiyle yayımlanır, önemli değişiklikleri uygulama içinde de bildiririz.</p>
+    <p>Konumunuz, kamera görüntüleriniz ve sensör verileriniz uygulama aracılığıyla cihazınızdan çıkmaz. Google, Apple ve dunyakilavuz.com ile bağlantılar şifrelidir (HTTPS). Bu politikayı güncelleyebiliriz; yeni sürüm bu sayfada yeni yürürlük tarihiyle yayımlanır, önemli değişiklikleri uygulama içinde de bildiririz.</p>
     <p>Dünya Kulavuz, Türkiye<br>
       E-posta: <a href="mailto:dunyakilavuz@gmail.com">dunyakilavuz@gmail.com</a><br>
       Destek: <a href="https://dunyakilavuz.com/solarx-support.html">dunyakilavuz.com/solarx-support.html</a></p>
   </section>
   </div>
 
-  <footer>© 2026 Dünya Kulavuz · SolarX AR</footer>
+  <footer>© 2026 Dünya Kulavuz · SolarX</footer>
 </main>
 </body>
 </html>
